@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/teamstyle.css" />
+  <!-- <link rel="stylesheet" href="style/teamstyle.css" /> -->
   <link rel="stylesheet" href="style/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
   <title>Contact Us</title>
 </head>
 
 <body>
+  <!-- DEMO TEAM DESIGN 
   <div class="content">
     <section id="team">
 
@@ -18,11 +19,10 @@
         <h3>team</h3>
       </div>
 
-      <!-- Slider -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
-          <!-------Slide-1------>
+     
           <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -33,10 +33,10 @@
                 <span> WEB DEVELOPER</span>
               </div>
             </div>
-          </div><!-----Slide-box-end--->
+          </div>
 
 
-          <!-------Slide-1------>
+    
           <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -47,9 +47,9 @@
                 <span> WEB DEVELOPER</span>
               </div>
             </div>
-          </div><!-----Slide-box-end--->
+          </div>
 
-           <!-------Slide-1------>
+       
            <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -60,9 +60,9 @@
                 <span> WEB DEVELOPER</span>
               </div>
             </div>
-          </div><!-----Slide-box-end--->
+          </div>
 
-           <!-------Slide-1------>
+        
            <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -73,9 +73,9 @@
                 <span> WEB DEVELOPER</span>
               </div>
             </div>
-          </div><!-----Slide-box-end--->
+          </div>
 
-           <!-------Slide-1------>
+    
            <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -86,17 +86,16 @@
                 <span> WEB DEVELOPER</span>
               </div>
             </div>
-          </div><!-----Slide-box-end--->
+          </div>
 
 
 
-        </div><!-----wapper end------>
-      </div><!----swiper-container-end---->
+        </div>
+      </div>
 
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
@@ -116,7 +115,7 @@
       });
     </script>
   </div>
-
+  -->
   <div class="container">
     <div class="box form-box">
       <header>Need Help?</header>
