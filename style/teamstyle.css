@@ -11,7 +11,7 @@ a {
 }
 
 .content {
-  background-color: black;
+  background-color: White;
 }
 
 #team {
@@ -24,7 +24,7 @@ a {
 }
 
 .team-heading h3 {
-  color: #56ab91;
+  color:#56ab91;
   font-size: 2rem;
   text-transform: uppercase;
 }
@@ -73,7 +73,7 @@ a {
 }
 
 .text span {
-  color: #919191;
+  color:#56ab91;
   font-size: 0.9rem;
 }
 

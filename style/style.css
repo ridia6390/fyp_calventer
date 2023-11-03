@@ -161,6 +161,31 @@ main {
 
 /************************************ CONTACT ************************************/
 
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.about-box {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  margin: 0px 10px;
+  padding: 25px 25px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 00, 0.5);
+}
+
+.about-box h3 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -173,13 +198,11 @@ input[name="message"] {
   height: 100px;
   padding-bottom: 75px;
   text-align: left;
- 
 }
 
-input[name="message"]::placeholder{
+input[name="message"]::placeholder {
   font-size: 14px;
   position: absolute;
   top: 5px;
   left: 10px;
-  
 }
