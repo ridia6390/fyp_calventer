@@ -13,17 +13,11 @@
     <div class="box form-box">
 
       <?php
-
       include("php/config.php");
-
-
-      
       if (isset($_POST['submit'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $age = $_POST['age'];
         $password = $_POST['password'];
-
 
         $checkExistingUser = "SELECT Email FROM users WHERE Email='$email'";
         $result = $conn->query($checkExistingUser);
@@ -35,17 +29,16 @@
           echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
 
         } else {
-          $sql = "INSERT INTO users (Username,Email,Age,Password) VALUES ('$username','$email','$age','$password')";
+          $sql = "INSERT INTO users (Username,Email,Password) VALUES ('$username','$email','$password')";
           if ($conn->query($sql) === TRUE) {
 
             echo "<div class='messager'>
               <p>Registration Successfull!!!</p>
               </div> <br>";
             echo "<a href='login.php'><button class='btn'>Login Now</button>";
-          $conn->close();
+            $conn->close();
 
-          } 
-          else {
+          } else {
             echo "Error: " . $conn->error;
           }
 
@@ -70,11 +63,6 @@
           </div>
 
           <div class="field input">
-            <label for="age">Age</label>
-            <input type="number" name="age" id="age" autocomplete="off" required>
-          </div>
-
-          <div class="field input">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" autocomplete="off" required>
           </div>
@@ -88,7 +76,7 @@
           </div>
         </form>
       </div>
-      
+
     <?php } ?>
   </div>
 </body>
