@@ -61,7 +61,10 @@ session_start();
           </div>
 
           <div class="links">
-            Don't have an account? <a href="register.php">Sign Up</a>
+            <a href="contact.php">Forgot Password?</a>
+          </div>
+          <div class="links">
+            <a href="register.php">Don't have an account?</a>
           </div>
         </form>
       </div>
