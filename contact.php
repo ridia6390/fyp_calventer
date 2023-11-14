@@ -10,39 +10,59 @@
 </head>
 
 <body>
-  <!-- DEMO TEAM DESIGN-->
+
   <div class="about">
     <div class="about-box">
-      <h3>About Us</h3>
-      <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem enim aut atque officiis
-        optio aspernatur magnam,
-        reiciendis in eum rerum fugiat illo! Sint porro nihil odio obcaecati temporibus corrupti tempore.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda culpa soluta accusamus,
-        optio neque distinctio vero deleniti nesciunt,
-        laudantium sint ullam necessitatibus. Magni maiores,
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem enim aut atque officiis
-        optio aspernatur magnam,
-        reiciendis in eum rerum fugiat illo! Sint porro nihil odio obcaecati temporibus corrupti tempore.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda culpa soluta accusamus,
-        optio neque distinctio vero deleniti nesciunt,
-        laudantium sint ullam necessitatibus. Magni maiores, dolore officiis numquam libero nisi expedita dolore officiis numquam libero nisi expedita
-      </p>
+      <img class="logo" src="images/logo.png" alt="">
+      <div class="about-content">
+        <h3>About Us</h3>
+        <p id="calventerContent"> Discover "Calventer", your ultimate event calendar for IIUM's social clubs!
+          We bring you a seamless platform to stay informed, manage your time, and never miss out on the exciting 
+          happenings at your university."Calventer" is the go-to web application designed exclusively for IIUM's 
+          vibrant social club scene. Our mission is to eliminate the chaos caused by conflicting events, allowing 
+          club owners to effortlessly schedule and update their activities without any clashes. With "Calventer", 
+          you can access event details, plan your schedule, and ensure a smooth flow of activities throughout the
+          academic year. But that's not all - "Calventer" is a community platform! Students and members can easily 
+          explore the calendar, keeping themselves informed about upcoming events. Whether it's a stimulating workshop, 
+          a thrilling sports tournament, or an engaging club activity, "Calventer" provides all the essential information 
+          to help you manage your time effectively and attend the events that interest you the most.We believe in the power 
+          of collaboration and user empowerment. That's why "Calventer" allows you to actively engage with the platform. 
+          Club owners can easily add and modify their event information, ensuring the calendar remains up to date. 
+          Students and members have the freedom to browse, discover, and make the most of their university experience.
+          Join "Calventer" today and unlock a world of possibilities, where managing your time and attending events
+          becomes a breeze. Embrace the vibrant spirit of IIUM's social clubs and create unforgettable memories along the way.
+          Together, let's make the most of your university journey!
+        </p>
+        <a href="#" id="readMoreLink">Read More</a>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var content = document.getElementById('calventerContent');
+            var link = document.getElementById('readMoreLink');
 
+            link.addEventListener('click', function (event) {
+              event.preventDefault();
 
+              if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+              } else {
+                content.style.maxHeight = content.scrollHeight + 'px'; 
+              }
+
+              link.textContent = link.textContent === 'Read More' ? 'Read Less' : 'Read More';
+            });
+          });
+        </script>
+      </div>
     </div>
   </div>
 
-
   <div class="content">
     <section id="team">
-
       <div class="team-heading">
         <h3>team</h3>
       </div>
-
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -54,7 +74,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -66,7 +85,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="team-box">
               <div class="image1">
@@ -80,7 +98,6 @@
           </div>
         </div>
       </div>
-
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -119,16 +136,6 @@
       </form>
     </div>
   </div>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">   
-          </div>
-        </div>
-      </div>
-    </div>
- </footer>
 </body>
 
 </html>

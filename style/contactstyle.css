@@ -19,20 +19,51 @@
 .about-box {
   background: white;
   display: flex;
-  flex-direction: column;
-  width: 550px;
+  align-items: center;
+  width: 100%;
   margin: 0px 10px;
   padding: 25px 25px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 00, 0.5);
 }
 
+.logo {
+  width: 300px;
+  height: auto;
+  margin-right: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+  flex: 1;
+}
+
+
 .about-box h3 {
-  text-align: center;
-  font-size: 25px;
-  font-weight: 600;
-  padding-bottom: 10px;
+  color: #56ab91;
+  font-size: 30px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
+
+.about-box p {
+  line-height: 1.6;
+}
+
+.about-content a{
+  color: #56ab91;
+}
+
+#calventerContent {
+  max-height: 150px; 
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; 
+}
+
+
+
+
+
 
 /****************************************************TEAM SECTION*****************************************/
 #team {
@@ -45,7 +76,7 @@
 }
 
 .team-heading h3 {
-  color:#56ab91;
+  color: #56ab91;
   font-size: 2rem;
   text-transform: uppercase;
 }
@@ -94,7 +125,7 @@
 }
 
 .text span {
-  color:#56ab91;
+  color: #56ab91;
   font-size: 0.9rem;
 }
 
@@ -115,12 +146,10 @@
   border: 10px solid #56ab91;
 }
 
-
-
 /********************************HELP SECTION*******************************************/
 
 .container {
-  background:#56ab91;
+  background: #56ab91;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,6 +224,3 @@ input[name="message"]::placeholder {
 .btn:hover {
   opacity: 0.82;
 }
-
-
-
