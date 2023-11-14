@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/********************************ABOUT SECTION*******************************************/
+/********************************ABOUT US*******************************************/
 
 .about {
   background: #56ab91;
@@ -38,7 +38,6 @@
   flex: 1;
 }
 
-
 .about-box h3 {
   color: #56ab91;
   font-size: 30px;
@@ -50,14 +49,106 @@
   line-height: 1.6;
 }
 
-.about-content a{
+.about-content a {
   color: #56ab91;
 }
 
 #calventerContent {
-  max-height: 150px; 
+  max-height: 150px;
   overflow: hidden;
-  transition: max-height 0.5s ease-out; 
+  transition: max-height 0.5s ease-out;
+}
+
+/****************************************************TEAM*****************************************/
+
+.slide-container {
+  background-color: white;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-content {
+  margin: 0 40px;
+}
+
+.card {
+  width: 320px;
+  border-radius: 25px;
+  background-color: #56ab91;
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content{
+  position: relative;
+  row-gap: 5px;
+}
+  
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #204b3e;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070f4;
+
+}
+
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #265df2;
+}
+
+
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: white;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #56ab91;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #204b3e;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: white;
+  text-align: center;
 }
 
 
@@ -65,8 +156,28 @@
 
 
 
-/****************************************************TEAM SECTION*****************************************/
-#team {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #team {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +220,7 @@
   height: 100%;
   object-fit: contain;
   object-position: bottom;
-  /* filter: grayscale(); */
+  
 }
 
 .text {
@@ -144,7 +255,7 @@
 .swiper-slider-active {
   opacity: 1;
   border: 10px solid #56ab91;
-}
+} */
 
 /********************************HELP SECTION*******************************************/
 
