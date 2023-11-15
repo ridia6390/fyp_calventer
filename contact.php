@@ -45,7 +45,7 @@
   <div class="team">
     <div class="slide-container swiper">
       <div class="slide-content">
-
+        <h3>THE TEAM</h3>
         <div class="card-wrapper swiper-wrapper">
 
           <!-------------------MEET THE TEAM-------------->
@@ -114,7 +114,7 @@
             </div>
             <div class="card-content">
               <h2 class="name">Alsalam Club IIUM</h2>
-              <h3 class="description">CURRENT CLUB</h3>
+              <text class="description">CURRENT CLUB</text>
             </div>
           </div>
 
@@ -122,12 +122,12 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/madam.png" alt="" class="card-img">
+                <img src="images/nibras.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Marini Binti Othman (Dr.)</h2>
-              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+              <h2 class="name">Nibras Club IIUM</h2>
+              <text class="description">CURRENT CLUB</text>
             </div>
           </div>
 
@@ -137,12 +137,12 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/madam.png" alt="" class="card-img">
+                <img src="images/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Marini Binti Othman (Dr.)</h2>
-              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+              <h2 class="name">Future Enagement</h2>
+              <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
 
@@ -150,12 +150,12 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/madam.png" alt="" class="card-img">
+                <img src="images/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Marini Binti Othman (Dr.)</h2>
-              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+              <h2 class="name">Future Enagement</h2>
+              <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
 
@@ -163,18 +163,20 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/madam.png" alt="" class="card-img">
+                <img src="images/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Marini Binti Othman (Dr.)</h2>
-              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+              <h2 class="name">Future Enagement</h2>
+              <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
+
+          
         </div>
         <div class="swiper-button-next swiper-navBtn "></div>
         <div class="swiper-button-prev swiper-navBtn "></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination swiper-dots"></div>
       </div>
     </div>
   </div>
