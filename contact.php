@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="style/contactstyle.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <title>Contact</title>
 </head>
 
@@ -37,166 +37,149 @@
           Together, let's make the most of your university journey!
         </p>
         <a href="#" id="readMoreLink">Read More</a>
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            var content = document.getElementById('calventerContent');
-            var link = document.getElementById('readMoreLink');
-
-            link.addEventListener('click', function (event) {
-              event.preventDefault();
-
-              if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-              } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-              }
-
-              link.textContent = link.textContent === 'Read More' ? 'Read Less' : 'Read More';
-            });
-          });
-        </script>
       </div>
     </div>
   </div>
 
-
   <!---------------------------------------------------------------TEAM------------------------------------------------------------->
   <div class="team">
-    <div class="slide-container">
+    <div class="slide-container swiper">
       <div class="slide-content">
-        <div class="card-wrapper">
-          <div class="card">
+
+        <div class="card-wrapper swiper-wrapper">
+
+          <!-------------------MEET THE TEAM-------------->
+
+          <div class="card swiper-slide">
             <div class="image-content">
               <span class="overlay"></span>
-
               <div class="card-image">
                 <img src="images/madam.png" alt="" class="card-img">
               </div>
             </div>
+            <div class="card-content">
+              <h2 class="name"> Marini Binti Othman (Dr.)</h2>
+              <text class="description">SUPERVISOR</text>
+            </div>
+          </div>
 
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/nouran.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name"> Nouran Ahmad Elmughrabi </h2>
+              <text class="description">FRONTEND DEVELOPER</text>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/ridia.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name"> Ridia Kashmeri</h2>
+              <text class="description">BACKEND DEVELOPER</text>
+            </div>
+
+          </div>
+
+          <!-------------------MEET THE CURRENT CLUBS-------------->
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/wamy.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Wamy Club IIUM</h2>
+              <text class="description">CURRENT CLUB</text>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/alsalam.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Alsalam Club IIUM</h2>
+              <h3 class="description">CURRENT CLUB</h3>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/madam.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Marini Binti Othman (Dr.)</h2>
+              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+            </div>
+          </div>
+
+          <!------------FUTURE COLLABORATORS-------------->
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/madam.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Marini Binti Othman (Dr.)</h2>
+              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/madam.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Marini Binti Othman (Dr.)</h2>
+              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="images/madam.png" alt="" class="card-img">
+              </div>
+            </div>
             <div class="card-content">
               <h2 class="name">Marini Binti Othman (Dr.)</h2>
               <h3 class="description">SUPERVISOR OF CALVENTER</h3>
             </div>
           </div>
         </div>
+        <div class="swiper-button-next swiper-navBtn "></div>
+        <div class="swiper-button-prev swiper-navBtn "></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="content">
-    <section id="team">
-      <div class="team-heading">
-        <h3>team</h3>
-      </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="team-box">
-              <div class="image1">
-                <img src="images/bu.jpg">
-              </div>
-              <div class="text">
-                <strong>Ms Butterfly</strong>
-                <span> WEB DEVELOPER</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-box">
-              <div class="image1">
-                <img src="images/bu.jpg">
-              </div>
-              <div class="text">
-                <strong>Ms Butterfly</strong>
-                <span> WEB DEVELOPER</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-box">
-              <div class="image1">
-                <img src="images/bu.jpg">
-              </div>
-              <div class="text">
-                <strong>Ms Butterfly</strong>
-                <span> WEB DEVELOPER</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-    </script>
-  </div> -->
+  <!-------------------------------------------------CONTACT------------------------------------------------------------->
 
   <div class="container">
     <div class="box form-box">
@@ -214,5 +197,10 @@
     </div>
   </div>
 </body>
+
+<script src="js/readmore.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/teamswiper.js"></script>
+
 
 </html>
