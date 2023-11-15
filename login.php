@@ -8,7 +8,7 @@ session_start();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/loginstyle.css" />
+  <link rel="stylesheet" href="style/login.css" />
   <title>Login</title>
 </head>
 
@@ -61,11 +61,13 @@ session_start();
           </div>
 
           <div class="links">
-            <a href="contact.php">Forgot Password?</a>
+            <a href="password.php">Forgot Password ?</a>
           </div>
           <div class="links">
-            <a href="register.php">Don't have an account?</a>
+          Don't have an account ? <a href="register.php"> Sign Up</a>
           </div>
+
+
         </form>
       </div>
     <?php } ?>

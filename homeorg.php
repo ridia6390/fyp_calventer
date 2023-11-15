@@ -28,7 +28,7 @@
       <li><a href="#home" class="home-active">Home</a></li>
       <li><a href="#cal">Calender</a></li>
       <li><a href="#events">Events</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="contact.php" class="contact-active">Contact</a></li>
     </nav>
 
         <div class="profile">

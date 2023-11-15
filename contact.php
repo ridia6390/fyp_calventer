@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
-  <link rel="stylesheet" href="style/contactstyle.css" />
+  <link rel="stylesheet" href="style/contact.css" />
   <title>Contact</title>
 </head>
 
@@ -102,7 +102,7 @@
             </div>
             <div class="card-content">
               <h2 class="name">Wamy Club IIUM</h2>
-              <text class="description">CURRENT CLUB</text>
+              <text class="description"> CLUB ID - CL2401</text>
             </div>
           </div>
 
@@ -115,7 +115,7 @@
             </div>
             <div class="card-content">
               <h2 class="name">Alsalam Club IIUM</h2>
-              <text class="description">CURRENT CLUB</text>
+              <text class="description">CLUB ID - CL2402</text>
             </div>
           </div>
 
@@ -128,7 +128,7 @@
             </div>
             <div class="card-content">
               <h2 class="name">Nibras Club IIUM</h2>
-              <text class="description">CURRENT CLUB</text>
+              <text class="description">CLUB ID - CL2403</text>
             </div>
           </div>
 
@@ -186,8 +186,8 @@
 
   <div class="container">
     <div class="box form-box">
-      <header>Need Help?</header>
-      <header2>We're Here For You! Contact Us
+      <header> Any Inquiry !!!</header>
+      <header2>We're here for you ! Contact Us
         Today</header2>
       <form action="cprocess.php" method="post">
         <input type="text" name="fname" class="form-control" placeholder="First Name" autocomplete="off" required>
