@@ -61,24 +61,23 @@
 
 
   <!---------------------------------------------------------------TEAM------------------------------------------------------------->
+  <div class="team">
+    <div class="slide-container">
+      <div class="slide-content">
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="image-content">
+              <span class="overlay"></span>
 
-  <div class="slide-container">
-    <div class="slide-content">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="image-content">
-            <span class="overlay"></span>
-
-            <div class="card-image">
-              <img src="images/madam.png" alt="" class="card-img">
+              <div class="card-image">
+                <img src="images/madam.png" alt="" class="card-img">
+              </div>
             </div>
-          </div>
 
-          <div class="card-content">
-            <h2 class="name">Marini Binti Othman (Dr.)</h2>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eos animi, molestias tenetur iusto aliquid harum porro quis totam, exercitationem
-              laudantium ea quia similique, eaque aliquam eius. Consectetur exercitationem accusamus</p>
+            <div class="card-content">
+              <h2 class="name">Marini Binti Othman (Dr.)</h2>
+              <h3 class="description">SUPERVISOR OF CALVENTER</h3>
+            </div>
           </div>
         </div>
       </div>
