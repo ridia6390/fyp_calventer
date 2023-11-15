@@ -90,6 +90,7 @@
 
           </div>
 
+
           <!-------------------MEET THE CURRENT CLUBS-------------->
 
           <div class="card swiper-slide">
@@ -141,7 +142,7 @@
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Future Enagement</h2>
+              <h2 class="name">Future Engagement</h2>
               <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
@@ -154,7 +155,7 @@
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Future Enagement</h2>
+              <h2 class="name">Future Engagement</h2>
               <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
@@ -167,16 +168,16 @@
               </div>
             </div>
             <div class="card-content">
-              <h2 class="name">Future Enagement</h2>
+              <h2 class="name">Future Engagement</h2>
               <text class="description">TO BE DETERMINED</text>
             </div>
           </div>
 
-          
+
         </div>
         <div class="swiper-button-next swiper-navBtn "></div>
         <div class="swiper-button-prev swiper-navBtn "></div>
-        <div class="swiper-pagination swiper-dots"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
