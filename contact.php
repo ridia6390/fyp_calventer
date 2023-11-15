@@ -205,5 +205,4 @@
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/teamswiper.js"></script>
 
-
 </html>
