@@ -1,0 +1,21 @@
+.video-container {
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: hidden; /* Ensure any content that overflows is hidden */
+}
+
+/* Style the video player */
+.video-container video {
+  width: 100%; 
+  height: auto;
+  /* display: block;  */
+}
+
+/* Style the controls */
+.video-container video::-webkit-media-controls {
+  /* background-color: rgba(0, 0, 0, 0.7);  */
+  color: white; 
+}
+
+/* Add more styles as needed */
