@@ -69,11 +69,10 @@ session_start();
           </div>
 
           
-            <h3 class="border-left">Or</h3>
-            
-         
-
-
+          
+            <div class="separator">
+            <span class="or">OR</span>
+        </div>
           <div class="link-three">
             Not a club admin ? <a href="cover.php"> View only</a>
           </div>
