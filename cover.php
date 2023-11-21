@@ -25,7 +25,7 @@
       <input type="submit" class="btn" name="submit" value="Event Viewers" >
       </div>
       <div class="video-border">
-        <h3>Calventer: Your Navigator through the Maze of IIUM's Social Club Events!</h3>
+        <h3>Calventer : Your Navigator through the Maze of IIUM's Social Club Events!</h3>
       </div>
     </div>
   </div>
