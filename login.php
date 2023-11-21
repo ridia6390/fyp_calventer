@@ -25,22 +25,22 @@ session_start();
         $result = mysqli_query($conn, "SELECT * FROM users WHERE Email='$email' AND Password = '$password'") or die("Select Error");
         $row = mysqli_fetch_assoc($result);
 
-        if(is_array($row) && !empty($row)){
+        if (is_array($row) && !empty($row)) {
           $_SESSION['valid'] = $row['Email'];
           $_SESSION['username'] = $row['Username'];
           $_SESSION['age'] = $row['Age'];
           $_SESSION['id'] = $row['Id'];
-      }else{
+        } else {
           echo "<div class='messagew'>
             <p>Wrong Username or Password</p>
              </div> <br>";
-         echo "<a href='login.php'><button class='btn'>Go Back</button>";
+          echo "<a href='login.php'><button class='btn'>Go Back</button>";
 
-      }
-      if(isset($_SESSION['valid'])){
+        }
+        if (isset($_SESSION['valid'])) {
           header("Location: home.php");
-      }
-    }else{
+        }
+      } else {
         ?>
         <header>Login</header>
         <header2>We're Here For You! Be The Admin Of Your Event Calendar
@@ -48,23 +48,34 @@ session_start();
         <form action="" method="post">
           <div class="field input">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" autocomplete="off" required >
+            <input type="text" name="email" id="email" autocomplete="off" required>
           </div>
 
           <div class="field input">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" autocomplete="off" required >
+            <input type="password" name="password" id="password" autocomplete="off" required>
           </div>
 
           <div class="field">
-            <input type="submit" class="btn" name="submit" value="Login" required >
+            <input type="submit" class="btn" name="submit" value="Login" required>
           </div>
 
-          <div class="links">
+          <div class="link-one">
             <a href="password.php">Forgot Password ?</a>
           </div>
-          <div class="links">
-          Don't have an account ? <a href="register.php"> Sign Up</a>
+
+          <div class="link-two">
+            Don't have an account ? <a href="register.php"> Sign up</a>
+          </div>
+
+          
+            <h3 class="border-left">Or</h3>
+            
+         
+
+
+          <div class="link-three">
+            Not a club admin ? <a href="cover.php"> View only</a>
           </div>
 
 

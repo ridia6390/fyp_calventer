@@ -48,7 +48,7 @@
 
         ?>
 
-        <header>Sign Up</header>
+        <header>Register</header>
         <header2>We're Here For You! Be The Admin Of Your Event Calendar
           Today</header2>
         <form action="" method="post">
@@ -72,7 +72,7 @@
           </div>
 
           <div class="links">
-            Already have an account ? <a href="login.php"> Sign In</a>
+            Already have an account ? <a href="login.php"> Sign in</a>
           </div>
         </form>
       </div>
