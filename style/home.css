@@ -1,18 +1,18 @@
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 /*color roots*/
 :root {
   --green-color: #159572;
-  --light-green-color: #95D8D6;
-  --gray-color: #F8F8F8;
+  --light-green-color: #95d8d6;
+  --gray-color: #f8f8f8;
   --text-color: #000000;
   --bg-color: #ffffff;
-  --card-color:  #bbb;
+  --card-color: #bbb;
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,26 +22,19 @@
   scroll-behavior: smooth;
 }
 
-
-
-section{
+section {
   padding: 0rem 2rem;
 }
 
-
-#section1{
-  padding: 0rem 2rem; 
-  
+#section1 {
+  padding: 0rem 2rem;
 }
 
-
-
-#section3{
+#section3 {
   border-top: 8px solid #bbb;
-  border-radius: 5px; 
+  border-radius: 5px;
   margin-bottom: 30px;
 }
-
 
 /* Your existing styles */
 
@@ -72,6 +65,8 @@ section{
     width: 100%; /* Make the links full width in the mobile menu */
   }
 
+ 
+
   .topnav .icon {
     display: block; /* Display the navigation icon for smaller screens */
     cursor: pointer;
@@ -99,35 +94,29 @@ section{
   transition: 0.5s;
 }
 
-
 .logo-container {
   display: flex;
   align-items: center;
   column-gap: 0.9rem;
 }
 
-
 .logo {
-  
   width: 8%;
   column-gap: 0.9rem;
 }
-
-
 
 .logo {
   width: 100px;
 }
 
-
 .logo_name {
-  font-size: 14px; 
-  margin-left: 10px; 
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 .bold-text {
-  font-weight: bold; 
-  font-size: 1.3rem;/* Make the text within the strong element bold */
+  font-weight: bold;
+  font-size: 1.3rem; /* Make the text within the strong element bold */
 }
 
 .smaller-text {
@@ -146,7 +135,10 @@ section{
   padding: 0.5rem 1rem;
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
+  text-decoration: none;;
 }
+
+ 
 
 .navbar a:hover,
 .navbar .home-active {
@@ -157,64 +149,28 @@ section{
 }
 
 .navbar.scrolled {
-  background-color: #333; /* Change to the desired background color on scroll */
-  color: #fff; /* Change text color to be visible on the new background color */
+  background-color: #333;
+  color: #fff;
 }
 
 .topnav .icon {
   display: none;
 }
 
-
-
-
-/*needs to be responsive*/
-/*
-.profile {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  cursor: pointer;
-}
-
-.profile img {
-  width: 80px;
-  height: 40px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-}
-
-.profile span {
-  font-size: 13px;
-  font-weight: 500;
-}
-*/
-
-
-
-
 body {
   color: var(--text-color);
   background-color: #e0e2e1;
 }
 
-
-
-
-
 /*big image note: need to change to sliders*/
 
 #section1 img {
-  max-width: 100%; 
-  height: auto; 
+  max-width: 100%;
+  height: auto;
   margin-top: 3em;
   margin-bottom: 1em;
   background-color: #fff;
 }
-
-
-
 
 /*news box*/
 
@@ -252,105 +208,97 @@ body {
   transition: left 1s; /* Only transition the left property */
 }
 
-
 .slider .list .item {
-margin-right: 50px; /* Adjust the spacing between cards if needed */
-position: center;
+  margin-right: 50px; /* Adjust the spacing between cards if needed */
+  position: center;
 }
 
 .slider .list .item .slide {
-width: 100%;
-height: 100%;
-border-radius: 10px; /* Adjust the border-radius as needed */
-overflow: hidden;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a card-like effect */
-
-
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Adjust the border-radius as needed */
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a card-like effect */
 }
 
 .slider .list .item .slide img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 10px; /* Match the border-radius of the card */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Match the border-radius of the card */
 }
 
 .slider .buttons {
-position: absolute;
-top: 45%;
-left: 5%;
-width: 90%;
-display: flex;
-justify-content: space-between;
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .slider .buttons button {
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background-color: rgba(0, 183, 134, 0.577);
-color: #ffffff;
-border: none;
-font-family: monospace;
-font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 183, 134, 0.577);
+  color: #ffffff;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 .slider .dots {
-position: absolute;
-bottom: 10px;
-left: 0;
-color: #fff;
-width: 100%;
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .slider .dots li {
-list-style: none;
-width: 10px;
-height: 10px;
-background-color: #048a60;
-margin: 10px;
-border-radius: 20px;
-transition: 0.5s;
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #048a60;
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
 }
 
 .slider .dots li.active {
-width: 30px;
+  width: 30px;
 }
 
 .item img {
-border-radius: 30px;
+  border-radius: 30px;
 }
 
 @media screen and (max-width: 768px) {
-.slider {
-  height: 400px;
+  .slider {
+    height: 400px;
+  }
 }
-}
-
-
 
 /*clubs card*/
 
 .custom-heading {
-  text-align: center; 
-  font-size: 36px; 
+  text-align: center;
+  font-size: 36px;
   font-family: sans-serif; /* Specify your desired font */
-  
-  margin-top: 1em;
 
+  margin-top: 1em;
 }
 
 .sub-heading {
   margin-top: 2em;
   margin-bottom: 6em;
-  text-align: center; 
-  
+  text-align: center;
 }
-
 
 .Clubs_info {
   width: 100%;
@@ -362,7 +310,6 @@ border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .card {
@@ -374,56 +321,48 @@ border-radius: 30px;
   align-items: flex-start; /* Align items to the start (left) */
   flex-direction: column;
   margin-right: 2em;
-  
-
 }
 .card__image {
   width: 20em;
-  height:20em;
+  height: 20em;
   border-radius: 0%;
   padding: 5px;
   margin-bottom: 1em;
-
 }
 
 .card__image img {
   width: 100%;
-  height:100%;
+  height: 100%;
   border-radius: 0%;
 }
 
-
-.card__content{
-  
+.card__content {
   width: 100%; /* Ensure content takes full width of the card */
   padding: 0em; /* Add padding for better readability */
- 
-
 }
 
-.club__title{
-font-size: 14px;
-font-weight: 600;
-position: relative;
-top: .2em;
-margin-left: 1em;
-color: rgba(0, 0, 0, 0.5);
+.club__title {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  top: 0.2em;
+  margin-left: 1em;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.club__name{
-
-color: rgb(0, 0, 0);
-margin-left: 1em;
-font-weight: 600;
+.club__name {
+  color: rgb(0, 0, 0);
+  margin-left: 1em;
+  font-weight: 600;
 }
 
-.card__text{
-  
+.card__text {
   font-size: 0.8rem;
   margin: 1em 1em;
-  
 }
-#more {display: none;}
+#more {
+  display: none;
+}
 
 button {
   background: none;
@@ -438,12 +377,7 @@ button:hover {
   font-weight: bold;
 }
 
-
-
-
-
 /*Footer note: needs to be changed*/
-
 
 footer {
   background-color: #333;

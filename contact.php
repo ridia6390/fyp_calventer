@@ -7,13 +7,29 @@
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="style/contact.css" />
   <title>Contact</title>
+  <!--Navbar-->
+  <header class="header">
+    <div class="logo-container">
+      <img class="logo" src="images/logo.png" alt="logo">
+      <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
+          Clubs</span></div>
+    </div>
+
+    <nav class="navbar">
+      <a href="home.php" >Home</a>
+      <a href="calender.php">Calender</a>
+      <a href="events.php" >Events</a>
+      <a href="contact.php" class= "contact-active">Contact</a>
+    </nav>
+  </header>
+
 </head>
 
 <body>
   <!---------------------------------------------------------------ABOUT US------------------------------------------------------------->
   <div class="about">
     <div class="about-box">
-      <img class="logo" src="images/logo.png" alt="">
+      <img class="about-logo" src="images/logo.png" alt="">
       <div class="about-content">
         <h3>About Us</h3>
         <p id="calventerContent"> Discover "Calventer", your ultimate event calendar for IIUM's social clubs!

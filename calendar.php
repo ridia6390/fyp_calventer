@@ -20,7 +20,23 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style/calendar.css" />
-    <title>Calendar with Events</title>
+    <title>Calendar</title>
+    
+    <!--Navbar-->
+  <header class="header">
+    <div class="logo-container">
+      <img class="logo" src="images/logo.png" alt="logo">
+      <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
+          Clubs</span></div>
+    </div>
+
+    <nav class="navbar">
+      <a href="home.php">Home</a>
+      <a href="calender.php" class="calendar-active">Calender</a>
+      <a href="events.php" >Events</a>
+      <a href="contact.php">Contact</a>
+    </nav>
+  </header>
   </head>
   <body>
     <div class="container">

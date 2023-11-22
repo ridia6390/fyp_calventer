@@ -1,14 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
 :root {
   --primary-clr: #56ab91;
+  --green-color: #159572;
+  --light-green-color: #95d8d6;
+  --gray-color: #f8f8f8;
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --card-color: #bbb;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 0px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .logo {
+    width: 15%; /* Adjust logo size for smaller screens */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack the navigation links vertically */
+    align-items: flex-end; /* Align the links to the right */
+    position: absolute;
+    top: 80px; /* Adjust the distance from the top */
+    left: 0;
+    width: 100%;
+    background: white; /* Background color for the mobile menu */
+    display: none; /* Hide the navigation links by default */
+  }
+
+  .navbar a {
+    padding: 15px; /* Adjust padding for the mobile menu */
+    text-align: center; /* Center the text in the mobile menu */
+    width: 100%; /* Make the links full width in the mobile menu */
+  }
+
+  .topnav .icon {
+    display: block; /* Display the navigation icon for smaller screens */
+    cursor: pointer;
+  }
+
+  .navbar.active {
+    display: flex; /* Display the navigation links when the mobile menu is active */
+  }
+}
+
+/*Nav*/
+.header {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 8px 11px rgba(14, 55, 54, 0.15);
+  padding: 0px 90px;
+  transition: 0.5s;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.9rem;
+}
+
+.logo {
+  width: 8%;
+  column-gap: 0.9rem;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo_name {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 1.3rem; /* Make the text within the strong element bold */
+}
+
+.smaller-text {
+  font-size: smaller; /* Set a smaller font size for the specific part of the text */
+}
+
+.navbar {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.navbar a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  transition: background 0.1s, color 0.1s;
+  border-radius: 5rem;
+}
+
+.navbar a:hover,
+.navbar .calendar-active {
+  background: var(--green-color);
+  color: var(--bg-color);
+  border-radius: 5rem;
+  transition: background 0.5s;
+  text-decoration: none;
 }
 
 
+.navbar.scrolled {
+  background-color: #333;
+  color: #fff;
+}
+
+.topnav .icon {
+  display: none;
+}
 
 body {
   position: relative;
@@ -18,13 +141,12 @@ body {
   justify-content: center;
   padding-bottom: 30px;
   background-color: #17685f;
-  
 }
+
 .container {
   padding: 5px;
   color: #fff;
   display: flex;
- 
 }
 
 .calendar {
@@ -34,6 +156,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 120px;
   align-items: center;
   justify-content: center;
   color: #878895;
@@ -246,17 +369,15 @@ body {
   margin-bottom: 20px;
   text-transform: capitalize;
 }
- .today-date .event-day {
+.today-date .event-day {
   font-size: 2rem;
   font-weight: 500;
 }
- .today-date .event-date {
+.today-date .event-date {
   font-size: 1rem;
   font-weight: 400;
   color: white;
 }
-
-
 
 .events {
   width: 100%;
@@ -352,9 +473,9 @@ body {
 } */
 
 .add-event {
-  position: fixed; 
-  bottom: 10px; 
-  right: 30px; 
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
   width: 50px;
   height: 50px;
   display: flex;
@@ -368,7 +489,6 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
-
 
 .add-event:hover {
   opacity: 1;
@@ -389,15 +509,15 @@ body {
 }
 
 .add-event-wrapper {
-  position: fixed; 
+  position: fixed;
   bottom: 80px;
-  right: 60px; 
+  right: 60px;
   width: 20%;
   max-height: 0;
   overflow: hidden;
   border-radius: 5px;
   background-color: #bdbcbc;
-  transform: none; 
+  transform: none;
   transition: max-height 0.5s ease;
 }
 

@@ -21,10 +21,10 @@
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
       <div class="club-admin">
-        <input type="submit" class="btn" name="submit" value="Club Admin" onclick="navigateToPage()">
+        <input type="submit" class="btn" name="submit" value="Club Admin" onclick="navigateToLoginPage()">
       </div>
       <div class="event-viewer">
-        <input type="submit" class="btn" name="submit" value="Event Viewer">
+        <input type="submit" class="btn" name="submit" value="Event Viewer" onclick="navigateToHomePage()">
       </div>
       <div class="video-border">
         <div class="icon-left"><i class='bx bxl-play-store'></i></div>
@@ -34,6 +34,4 @@
     </div>
   </div>
 </body>
-
-
 </html>
