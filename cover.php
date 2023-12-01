@@ -7,24 +7,21 @@
   <link rel="stylesheet" href="style/cover.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>Cover</title>
-  <script src="js/cover.js"></script>
 </head>
 
 <body>
   <div class="video-container">
-    <video autoplay loop muted>
+    <video id="myVideo" autoplay muted>
       <source src="images/cover.mp4" type="video/mp4">
     </video>
+
     <div class="color-overlay">
       <img class="iiumlogo" src="images/iiumlogo.png" alt="">
       <img class="logo" src="images/logo.png" alt="">
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
       <div class="club-admin">
-        <input type="submit" class="btn" name="submit" value="Club Admin" onclick="navigateToLoginPage()">
-      </div>
-      <div class="event-viewer">
-        <input type="submit" class="btn" name="submit" value="Event Viewer" onclick="navigateToHomePage()">
+        <input type="submit" class="btn" name="submit" value="Get Started" onclick="navigateToLoginPage()">
       </div>
       <div class="video-border">
         <div class="icon-left"><i class='bx bxl-play-store'></i></div>
@@ -33,5 +30,6 @@
       </div>
     </div>
   </div>
+  <script src="js/cover.js"></script>
 </body>
 </html>
