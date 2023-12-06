@@ -18,14 +18,14 @@ session_start();
       <?php
 
       include("php/config.php");
-      if (isset($_POST['submit'])) {
+      if(isset($_POST['submit'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         $result = mysqli_query($conn, "SELECT * FROM users WHERE Email='$email' AND Password = '$password'") or die("Select Error");
         $row = mysqli_fetch_assoc($result);
 
-        if (is_array($row) && !empty($row)) {
+        if(is_array($row) && !empty($row)) {
           $_SESSION['valid'] = $row['Email'];
           $_SESSION['username'] = $row['Username'];
           $_SESSION['age'] = $row['Age'];
@@ -37,7 +37,7 @@ session_start();
           echo "<a href='login.php'><button class='btn'>Go Back</button>";
 
         }
-        if (isset($_SESSION['valid'])) {
+        if(isset($_SESSION['valid'])) {
           header("Location: home.php");
         }
       } else {
@@ -64,17 +64,18 @@ session_start();
             <a href="password.php">Forgot Password ?</a>
           </div>
 
-          <div class="link-two">
-            Don't have an account ? <a href="register.php"> Sign up</a>
+         
+          <div class="link-three">
+            Not a club admin ? <a href="home.php"> view only</a>
           </div>
 
-          
-          
-            <div class="separator">
+          <div class="separator">
             <span class="or">OR</span>
-        </div>
-          <div class="link-three">
-            Not a club admin ? <a href="cover.php"> View only</a>
+          </div>
+
+
+          <div class="link-two">
+            Don't have an account ? <a href="register.php"> sign up</a>
           </div>
 
 

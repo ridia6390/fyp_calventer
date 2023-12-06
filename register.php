@@ -72,7 +72,7 @@
           </div>
 
           <div class="links">
-            Already have an account ? <a href="login.php"> Sign in</a>
+            Already have an account ? <a href="login.php"> sign in</a>
           </div>
         </form>
       </div>
