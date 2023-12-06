@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/cover.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" /> 
   <title>Cover</title>
+
 </head>
 
 <body>
@@ -16,20 +17,23 @@
     </video>
 
     <div class="color-overlay">
-      <img class="iiumlogo" src="images/iiumlogo.png" alt="">
-      <img class="logo" src="images/logo.png" alt="">
+      <img class="iium-logo" src="images/iiumlogo.png" alt="">
+      <img class="calventer-logo" src="images/logo.png" alt="">
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
-      <div class="club-admin">
-        <input type="submit" class="btn" name="submit" value="Get Started" onclick="navigateToLoginPage()">
-      </div>
-      <div class="video-border">
-        <div class="icon-left"><i class='bx bxl-play-store'></i></div>
-        <h3> Calventer : Your Navigator through the Maze of IIUM's Social Club Events!</h3>
-        <div class="icon-right"><i class='bx bxl-play-store'></i></div>
-      </div>
+      <button class="btn" onclick="navigateToLoginPage()"> Get Started</button>
     </div>
+
+    <div class="video-border">
+      <div class="icon-left"><i class='bx bxl-play-store'></i></div>
+      <h3> Calventer : Your Navigator through the Maze of IIUM's Social Club Events!</h3>
+      <div class="icon-right"><i class='bx bxl-play-store'></i></div>
+    </div>
+
+
   </div>
+
   <script src="js/cover.js"></script>
 </body>
+
 </html>
