@@ -43,8 +43,7 @@ session_start();
       } else {
         ?>
         <header>Login</header>
-        <header2>We're Here For You! Be The Admin Of Your Event Calendar
-          Today</header2>
+        <header2> Admin please enter from here towards your Event Calendar</header2>
         <form action="" method="post">
           <div class="field input">
             <label for="email">Email</label>
@@ -66,7 +65,7 @@ session_start();
 
          
           <div class="link-three">
-            Not a club admin ? <a href="home.php"> view only</a>
+            Not an admin ? <a href="home.php"> view only</a>
           </div>
 
           <div class="separator">
