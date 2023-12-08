@@ -471,7 +471,7 @@ body {
   cursor: pointer;
 } */
 
-.scroll-arrow {
+/* .scroll-arrow {
   position: fixed;
   bottom: 10px;
   left: 30px;
@@ -496,7 +496,7 @@ body {
 #scroll-to-top {
   bottom: auto;
   top: 20px;
-}
+} */
 
 .add-event {
   position: fixed;

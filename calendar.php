@@ -89,12 +89,12 @@
           </div>
         </div>
       </div>
-      <div id="scroll-to-bottom" class="scroll-arrow">
+      <!-- <div id="scroll-to-bottom" class="scroll-arrow">
         <i class="fas fa-chevron-down"></i>
       </div>
       <div id="scroll-to-top" class="scroll-arrow">
         <i class="fas fa-chevron-up"></i>
-      </div>
+      </div> -->
       <button class="add-event">
         <i class="fas fa-plus"></i>
       </button>
