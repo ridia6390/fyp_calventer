@@ -58,10 +58,6 @@
           <button class="today-btn">Today</button>
         </div>
       </div>
-
-     
-      
-
       <div class="right">
         <div class="today-date">
           <div class="event-day">wed</div>
