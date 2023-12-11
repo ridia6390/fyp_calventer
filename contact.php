@@ -57,6 +57,25 @@
     </div>
   </div>
 
+  
+  <!-------------------------------------------------CONTACT------------------------------------------------------------->
+
+  <div class="container">
+    <div class="box form-box">
+      <header> Contact Us </header>
+      <header2>We're here for you ! Contact Us
+        Today</header2>
+      <form action="cprocess.php" method="post">
+        <input type="text" name="fname" class="form-control" placeholder="First Name" autocomplete="off" required>
+        <input type="text" name="lname" class="form-control" placeholder="Last Name" autocomplete="off" required>
+        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
+        <input type="text" name="subject" class="form-control" placeholder="Subject" autocomplete="off" required>
+        <input type="text" name="message" placeholder="Write the message...." autocomplete="off" required>
+        <input type="submit" class="btn" name="submit" value="Submit" required>
+      </form>
+    </div>
+  </div>
+
   <!---------------------------------------------------------------TEAM------------------------------------------------------------->
   <div class="team">
     <div class="slide-container swiper">
@@ -195,24 +214,6 @@
         <div class="swiper-button-prev swiper-navBtn "></div>
         <div class="swiper-pagination"></div>
       </div>
-    </div>
-  </div>
-
-  <!-------------------------------------------------CONTACT------------------------------------------------------------->
-
-  <div class="container">
-    <div class="box form-box">
-      <header> Any Inquiry !!!</header>
-      <header2>We're here for you ! Contact Us
-        Today</header2>
-      <form action="cprocess.php" method="post">
-        <input type="text" name="fname" class="form-control" placeholder="First Name" autocomplete="off" required>
-        <input type="text" name="lname" class="form-control" placeholder="Last Name" autocomplete="off" required>
-        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
-        <input type="text" name="subject" class="form-control" placeholder="Subject" autocomplete="off" required>
-        <input type="text" name="message" placeholder="Write the message...." autocomplete="off" required>
-        <input type="submit" class="btn" name="submit" value="Submit" required>
-      </form>
     </div>
   </div>
 </body>
