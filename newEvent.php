@@ -3,7 +3,7 @@
 // setlocale(LC_ALL,"es_ES");
 //$hora = date("g:i:A");
 
-require("config.php");
+require("php/config.php");
 $event             = ucwords($_REQUEST['event']);
 $d_start           = $_REQUEST['start_date'];
 $start_date        = date('Y-m-d', strtotime($d_start)); 

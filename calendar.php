@@ -4,12 +4,28 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Calendar </title>
-  <link rel="stylesheet" type="text/css" href="style/fullcalendar.min.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="style/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style/calendar.css">
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/calendar.css">
+  <title> Calendar </title>
+
+  <!--Navbar-->
+  <header class="header">
+    <div class="logo-container">
+      <img class="logo" src="images/logo.png" alt="logo">
+      <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
+          Clubs</span></div>
+    </div>
+
+    <nav class="navbar">
+      <a href="home.php">Home</a>
+      <a href="calender.php" class="calendar-active">Calender</a>
+      <a href="events.php">Events</a>
+      <a href="contact.php">Contact</a>
+    </nav>
+  </header>
 </head>
 
 <body>
@@ -85,7 +101,7 @@
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
-            {
+              {
               _id: '<?php echo $eventData['id']; ?>',
               title: '<?php echo $eventData['event']; ?>',
               start: '<?php echo $eventData['start_date']; ?>',

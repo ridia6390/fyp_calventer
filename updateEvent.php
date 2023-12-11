@@ -22,7 +22,7 @@ $UpdateProd = ("UPDATE calendar
         end_date ='$end_date',
         color_event ='$color_event'
     WHERE id='".$idEvent."' ");
-$result = mysqli_query($con, $UpdateProd);
+$result = mysqli_query($conn, $UpdateProd);
 
 header("Location:calendar.php?ea=1");
 ?>
