@@ -1,3 +1,39 @@
+<?php
+session_start();
+
+// Function to get user information based on ID
+function getUserInfo($id) {
+   global $conn;
+   $select = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
+   $select->execute([$id]);
+   return $select->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to the login page if not logged in
+    header('location: login.php');
+    exit();
+}
+
+// Retrieve user information from the session
+$admin_id = $_SESSION['admin_id'];
+
+// Assuming you have a function to get user information based on the ID
+$user_info = getUserInfo($admin_id);
+
+// Check if user information is available
+if ($user_info) {
+    $image = $user_info['image'];
+    $username = $user_info['name'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +45,7 @@
   <title>Calventer - Home</title>
 
   <!-- CSS link -->
-  <link rel="stylesheet" href="style/home.css">
+  <link rel="stylesheet" href="style/adminHome.css">
 
   <!-- Boxicon link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -19,7 +55,7 @@
 
   <script src="js/home.js"></script>
 
-  <!--Navbar-->
+ <!--Navbar-->
   <header class="header">
     <div class="logo-container">
       <img class="logo" src="image/logo.png" alt="logo">
@@ -31,9 +67,13 @@
       <a href="calendar.php" >Calender</a>
       <a href="events.php" >Events</a>
       <a href="contact.php">Contact</a>
+      <?php if (isset($image) && isset($username)) : ?>
+        <div class="user-profile">
+            <img src="<?php echo $image; ?>">
+            <span class="username"><?php echo $username; ?></span>
+        </div>
+    <?php endif; ?>
     </nav>
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
-   
   </header>
 
 </head>

@@ -54,3 +54,7 @@ function myFunction(cardNumber) {
         btn.innerHTML = "Read less";
     }
 }
+
+function navigateToLoginPage(){
+    window.location.href = "login.php";
+  }

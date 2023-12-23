@@ -1,4 +1,4 @@
-<!---------------------------TO CONNECT REGISTER AND LOGIN------------------------------->  
+  
 <?php
 $servername = "localhost";
 $username = "root";

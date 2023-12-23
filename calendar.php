@@ -25,6 +25,7 @@
       <a href="events.php">Events</a>
       <a href="contact.php">Contact</a>
     </nav>
+    
   </header>
 </head>
 

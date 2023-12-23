@@ -21,7 +21,7 @@
       <img class="calventer-logo" src="image/logo.png" alt="">
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
-      <button class="btn" onclick="navigateToLoginPage()"> Get Started</button>
+      <button class="btn" onclick="navigateToHomePage()"> Get Started</button>
     </div>
 
     <div class="video-border">
