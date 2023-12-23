@@ -24,7 +24,7 @@ include "db_conn.php";
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
-      <img class="logo" src="images/logo.png" alt="logo">
+      <img class="logo" src="image/logo.png" alt="logo">
       <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
           Clubs</span></div>
     </div>

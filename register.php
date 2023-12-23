@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'admins.php';
 
 if(isset($_POST['submit'])){
 
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
    $image_size = $_FILES['image']['size'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+   $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ?");
    $select->execute([$email]);
 
    if($select->rowCount() > 0){
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
       }elseif($image_size > 2000000){
          $message[] = 'image size is too large!';
       }else{
-         $insert = $conn->prepare("INSERT INTO `users`(name, email, password, image) VALUES(?,?,?,?)");
+         $insert = $conn->prepare("INSERT INTO `admins`(name, email, password, image) VALUES(?,?,?,?)");
          $insert->execute([$name, $email, $cpass, $image]);
          if($insert){
             move_uploaded_file($image_tmp_name, $image_folder);

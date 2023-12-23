@@ -22,7 +22,7 @@
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
-      <img class="logo" src="images/logo.png" alt="logo">
+      <img class="logo" src="image/logo.png" alt="logo">
       <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
           Clubs</span></div>
     </div>
@@ -41,39 +41,39 @@
 
   <main>
     <section id="section1">
-      <img src="images/Event Calender For IIUM's Social Clubs.png" alt="">
+      <img src="image/Event Calender For IIUM's Social Clubs.png" alt="">
     </section>
     <section class="news">
       <div class="slider">
         <div class="list">
           <div class="item">
             <div class="slide">
-              <img src="images/legal framework to protect women poster.jpg" alt="">
+              <img src="image/legal framework to protect women poster.jpg" alt="">
             </div>
           </div>
           <div class="item">
             <div class="slide">
-              <img src="images/kfp5076w.png" alt="">
+              <img src="image/kfp5076w.png" alt="">
             </div>
           </div>
           <div class="item">
             <div class="slide">
-              <img src="images/poster.jpeg" alt="">
+              <img src="image/poster.jpeg" alt="">
             </div>
           </div>
           <div class="item">
             <div class="slide">
-              <img src="images/kfp5076w.png" alt="">
+              <img src="image/kfp5076w.png" alt="">
             </div>
           </div>
           <div class="item">
             <div class="slide">
-              <img src="images/legal framework to protect women poster.jpg" alt="">
+              <img src="image/legal framework to protect women poster.jpg" alt="">
             </div>
           </div>
           <div class="item">
             <div class="slide">
-              <img src="images/legal framework to protect women poster.jpg" alt="">
+              <img src="image/legal framework to protect women poster.jpg" alt="">
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
         <div class="swiper-wrapper">
           <div class="card ">
             <div class="card__image">
-              <img src="images/image1.png" alt="card1">
+              <img src="image/image1.png" alt="card1">
             </div>
 
             <div class="card__content"></div>
@@ -122,7 +122,7 @@
           </div>
           <div class="card ">
             <div class="card__image">
-              <img src="images/image2.png" alt="card1">
+              <img src="image/image2.png" alt="card1">
             </div>
 
             <div class="card__content"></div>
@@ -140,7 +140,7 @@
 
           <div class="card ">
             <div class="card__image">
-              <img src="images/image3.png" alt="card1">
+              <img src="image/image3.png" alt="card1">
             </div>
 
             <div class="card__content"></div>

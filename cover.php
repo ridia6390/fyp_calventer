@@ -13,12 +13,12 @@
 <body>
   <div class="video-container">
     <video id="myVideo" autoplay muted>
-      <source src="images/cover.mp4" type="video/mp4">
+      <source src="image/cover.mp4" type="video/mp4">
     </video>
 
     <div class="color-overlay">
-      <img class="iium-logo" src="images/iiumlogo.png" alt="">
-      <img class="calventer-logo" src="images/logo.png" alt="">
+      <img class="iium-logo" src="image/iiumlogo.png" alt="">
+      <img class="calventer-logo" src="image/logo.png" alt="">
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
       <button class="btn" onclick="navigateToLoginPage()"> Get Started</button>

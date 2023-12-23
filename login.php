@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'admins.php';
 
 session_start();
 
@@ -11,15 +11,15 @@ if (isset($_POST['submit'])) {
    $pass = md5($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
-   $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+   $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ? AND password = ?");
    $select->execute([$email, $pass]);
    $row = $select->fetch(PDO::FETCH_ASSOC);
 
    if ($select->rowCount() > 0) {
 
-      if ($row['user_type'] == 'user') {
+      if ($row['admin_type'] == 'admin') {
 
-         $_SESSION['user_id'] = $row['id'];
+         $_SESSION['admin_id'] = $row['id'];
          header('location:user_page.php');
 
          // }elseif($row['user_type'] == 'user'){

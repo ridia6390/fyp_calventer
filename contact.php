@@ -10,7 +10,7 @@
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
-      <img class="logo" src="images/logo.png" alt="logo">
+      <img class="logo" src="image/logo.png" alt="logo">
       <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
           Clubs</span></div>
     </div>
@@ -29,7 +29,7 @@
   <!---------------------------------------------------------------ABOUT US------------------------------------------------------------->
   <div class="about">
     <div class="about-box">
-      <img class="about-logo" src="images/logo.png" alt="">
+      <img class="about-logo" src="image/logo.png" alt="">
       <div class="about-content">
         <h3>About Us</h3>
         <p id="calventerContent"> Discover "Calventer", your ultimate event calendar for IIUM's social clubs!
@@ -89,7 +89,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/madam.png" alt="" class="card-img">
+                <img src="image/madam.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -102,7 +102,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/nouran.png" alt="" class="card-img">
+                <img src="image/nouran.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -115,7 +115,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/ridia.png" alt="" class="card-img">
+                <img src="image/ridia.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -132,7 +132,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/wamy.png" alt="" class="card-img">
+                <img src="image/wamy.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -145,7 +145,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/alsalam.png" alt="" class="card-img">
+                <img src="image/alsalam.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -158,7 +158,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/nibras.png" alt="" class="card-img">
+                <img src="image/nibras.png" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -173,7 +173,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/collaborator.jpg" alt="" class="card-img">
+                <img src="image/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -186,7 +186,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/collaborator.jpg" alt="" class="card-img">
+                <img src="image/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
@@ -199,7 +199,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="images/collaborator.jpg" alt="" class="card-img">
+                <img src="image/collaborator.jpg" alt="" class="card-img">
               </div>
             </div>
             <div class="card-content">
