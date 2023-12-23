@@ -22,14 +22,6 @@ body {
    background: #56ab91;
  }
 
-/* *{
-   font-family: 'Nunito', sans-serif;
-   margin:0; padding:0;
-   box-sizing: border-box;
-   outline: none; border:none;
-   text-decoration: none;
-} */
-
 *::-webkit-scrollbar {
   height: 5px;
   width: 10px;
@@ -49,47 +41,71 @@ html {
   background-color: white;
 }
 
-.form-container {
+.title {
+  padding: 3.5rem 1rem 0.2rem 1rem ;
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.update-profile-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  /* padding: 1rem; */
   min-height: 100vh;
 }
 
-.form-container form {
-  position: relative;
-  width: 50rem;
+.update-profile-container form {
+  width: 70rem;
   border-radius: 0.5rem;
-  background-color:  white;
+  background-color: white;
   padding: 2rem;
   text-align: center;
 }
 
-.form-container form h3 {
-  font-size: 2rem;
+.update-profile-container form .flex {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.update-profile-container form .flex .inputBox {
+  width: 49%;
+}
+
+.update-profile-container form img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
   margin-bottom: 1rem;
-  color: var(--black);
-  text-transform: uppercase;
 }
 
-.form-container form .box {
+.update-profile-container form .flex .inputBox span {
+  font-size: 1.5rem;
+  color: var(--black);
+  display: block;
+  padding-top: 1 rem;
+}
+
+.update-profile-container form .flex .inputBox .box {
   width: 100%;
-  border-radius: 0.5rem;
   padding: 1.2rem 1.4rem;
-  font-size: 1 rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
   color: var(--black);
-  outline: none;
-  border: 1px solid #ccc;
   margin: 1rem 0;
+  outline: none;
+  border: 2px solid #ccc;
+  
 }
 
-
-.btn
- {
+.btn,
+.option-btn {
   display: block;
   width: 100%;
-  background-color:  #56ab91;
   border-radius: 0.5rem;
   color: var(--white);
   font-size: 1.8rem;
@@ -98,68 +114,34 @@ html {
   text-transform: capitalize;
   text-align: center;
   margin-top: 1rem;
+}
+
+.btn {
+  background-color:  #56ab91;
   cursor: pointer;
   transition: all 0.3s;
   border: none;
 }
 
+.option-btn {
+  background-color: var(--orange);
+}
 
-.btn:hover
- {
+.btn:hover,
+.option-btn:hover {
   color: var(--black);
 }
 
-.form-container form p {
-  font-size: 1.5rem;
-  color: var(--black);
-  font-weight: 600;
-  margin: 30px;
-  /* padding:1rem 0; */
-}
-
-.form-container form p a {
-  color: #56ab91;
-}
-
-.form-container form p a:hover {
-  text-decoration: underline;
-}
-
-.separator {
+.flex-btn {
   display: flex;
-  align-items: center;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 5px 0;
-  color: var(--black);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.separator::before,
-.separator::after {
-  content: "";
+.flex-btn > * {
   flex: 1;
-  border-bottom: 2px solid #ccc;
 }
 
-
-.form-container form .link {
-  position: absolute;
-  font-size: 1.3rem;
-  color: var(--black);
-  right: 20px;
-  bottom: 10px;
-}
-
-.form-container form .link:hover {
-  text-decoration: underline;
-}
-
-.form-container form .link a{
-   color: var(--black);
-   font-size: 1rem;
-   font-weight: 600;
-}
 
 .message {
   position: sticky;

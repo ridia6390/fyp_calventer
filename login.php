@@ -1,87 +1,105 @@
 <?php
+
+include 'config.php';
+
 session_start();
+
+if (isset($_POST['submit'])) {
+
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $pass = md5($_POST['pass']);
+   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+
+   $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+   $select->execute([$email, $pass]);
+   $row = $select->fetch(PDO::FETCH_ASSOC);
+
+   if ($select->rowCount() > 0) {
+
+      if ($row['user_type'] == 'user') {
+
+         $_SESSION['user_id'] = $row['id'];
+         header('location:user_page.php');
+
+         // }elseif($row['user_type'] == 'user'){
+
+         //    $_SESSION['user_id'] = $row['id'];
+         //    header('location:user_page.php');
+
+      } else {
+         $message[] = 'no user found!';
+      }
+
+   } else {
+      $message[] = 'incorrect email or password!';
+   }
+
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/login.css" />
-  <title>Login</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style/login.css">
+
 </head>
 
 <body>
-  <div class="container">
-    <div class="box form-box">
-      <?php
 
-      include("php/config.php");
-      if(isset($_POST['submit'])) {
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+   <?php
+   if (isset($message)) {
+      foreach ($message as $message) {
+         echo '
+         <div class="message">
+            <span>' . $message . '</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+      }
+   }
+   ?>
 
-        $result = mysqli_query($conn, "SELECT * FROM users WHERE Email='$email' AND Password = '$password'") or die("Select Error");
-        $row = mysqli_fetch_assoc($result);
+   <section class="form-container">
 
-        if(is_array($row) && !empty($row)) {
-          $_SESSION['valid'] = $row['Email'];
-          $_SESSION['username'] = $row['Username'];
-          $_SESSION['age'] = $row['Age'];
-          $_SESSION['id'] = $row['Id'];
-        } else {
-          echo "<div class='messagew'>
-            <p>Wrong Username or Password</p>
-             </div> <br>";
-          echo "<a href='login.php'><button class='btn'>Go Back</button>";
+      <form action="" method="post" enctype="multipart/form-data">
+         <h3>Login</h3>
+         <input type="email" required placeholder="Enter your email" class="box" name="email">
+         <input type="password" required placeholder="Enter your password" class="box" name="pass">
+         <input type="submit" value="login" class="btn" name="submit">
 
-        }
-        if(isset($_SESSION['valid'])) {
-          header("Location: home.php");
-        }
-      } else {
-        ?>
-        <header>Login</header>
-        <header2> Admin please enter from here towards your Event Calendar</header2>
-        <form action="" method="post">
-          <div class="field input">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" autocomplete="off" required>
-          </div>
+       
 
-          <div class="field input">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" autocomplete="off" required>
-          </div>
-
-          <div class="field">
-            <input type="submit" class="btn" name="submit" value="Login" required>
-          </div>
-
-          <div class="link-one">
-            <a href="password.php">Forgot Password ?</a>
-          </div>
-
-         
-          <div class="link-three">
+         <p>
             Not an admin ? <a href="home.php"> view only</a>
-          </div>
+         </p>
 
-          <div class="separator">
+         <div class="separator">
             <span class="or">OR</span>
-          </div>
+         </div>
+
+         <p>Don't have an account? <a href="register.php">Register</a></p>
+
+         <div class="link">
+            <a href="password.php">Forgot Password ?</a>
+         </div>
 
 
-          <div class="link-two">
-            Don't have an account ? <a href="register.php"> sign up</a>
-          </div>
+      </form>
 
+   </section>
 
-        </form>
-      </div>
-    <?php } ?>
-  </div>
 </body>
 
 </html>
