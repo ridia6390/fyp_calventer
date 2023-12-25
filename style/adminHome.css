@@ -127,7 +127,7 @@ section {
   /* position: relative; */
   display: flex;
   column-gap: 0.5rem;
-  /* padding: 0px 50px; */
+/* padding: 0px 50px; */
 }
 
 .navbar a {
@@ -158,25 +158,29 @@ section {
 .topnav .icon {
   display: none;
 }
-
-.btn {
-  height: 40px;
-  width: 100px;
-  background: #56ab91;
-  border: 0;
-  border-radius: 5px; /* Adjust this value for a more square look */
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-  text-decoration: none;
+/* Add this CSS in your stylesheet or in a <style> tag in your HTML file */
+.user-profile {
+  /* height: 100px; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+   /* background-color: #3498db;   */
+  /* margin-left: 20px; */
+  /* padding: 0px 50px 0px 20px;  */
+  /* border-radius: 8px;  */
 }
 
 
-.btn:hover {
-  opacity: 0.65; 
+.user-profile img {
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #159572;
+  width: 40px; /* Set the width of the circular image */
+  height: 40px; /* Set the height of the circular image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-right: 8px; 
 }
+
 
 body {
   color: var(--text-color);

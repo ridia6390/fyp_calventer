@@ -31,6 +31,7 @@ $user_info = getUserInfo($admin_id);
 if ($user_info) {
     $image = $user_info['image'];
     $username = $user_info['name'];
+    $image_path = "image/$image";
 }
 ?>
 
@@ -69,10 +70,12 @@ if ($user_info) {
       <a href="contact.php">Contact</a>
       <?php if (isset($image) && isset($username)) : ?>
         <div class="user-profile">
-            <img src="<?php echo $image; ?>">
+            <img src="<?php echo $image_path; ?>">
             <span class="username"><?php echo $username; ?></span>
         </div>
     <?php endif; ?>
+
+
     </nav>
   </header>
 
