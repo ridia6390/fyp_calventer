@@ -65,25 +65,30 @@ if ($user_info) {
           Clubs</span></div>
     </div>
     <nav class="navbar">
-      <a href="home.php" class="home-active">Home</a>
-      <a href="calendar.php">Calender</a>
-      <a href="events.php">Events</a>
-      <a href="contact.php">Contact</a>
-      <?php if (isset($image) && isset($username)): ?>
-        <div class="user-profile" onclick="showPopup('user_page.php?id=<?php echo $admin_id; ?>')">
-          <img src="<?php echo $image_path; ?>" alt="User Image">
-          <span class="username">
-            <?php echo $username; ?>
-          </span>
-        </div>
-      <?php endif; ?>
-    </nav>
-    <div id="popup-container">
-    <div class="popup-content">
-      <!-- <span class="close-btn" onclick="closePopup()">&times;</span> -->
-      <iframe id="popup-iframe" frameborder="0" allowfullscreen ></iframe>
-
+  <a href="home.php" class="home-active">Home</a>
+  <a href="calendar.php">Calender</a>
+  <a href="events.php">Events</a>
+  <a href="contact.php">Contact</a>
+  <?php if (isset($image) && isset($username)): ?>
+    <div class="user-profile" onclick="openUserProfileUpdate()">
+      <img src="<?php echo $image_path; ?>" alt="User Image">
+      <span class="username">
+        <?php echo $username; ?>
+      </span>
     </div>
+    <div class="logout-icon">
+    <a href="logout.php">
+    <i class='bx bx-log-out'></i>
+    </a>
+    </div>
+  <?php endif; ?>
+   
+</nav>
+
+    <!-- <div id="popup-container">
+    <div class="popup-content">
+      <iframe id="popup-iframe" frameborder="0" allowfullscreen ></iframe>
+    </div> -->
   </div>
   </header>
 

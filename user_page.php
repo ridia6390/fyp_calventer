@@ -31,9 +31,7 @@ if (!isset($admin_id)) {
 </head>
 
 <body>
-
-
-
+   
    <section class="profile-container">
 
       <?php

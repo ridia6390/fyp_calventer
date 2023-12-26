@@ -30,13 +30,8 @@ section {
   padding: 0rem 2rem;
 }
 
-#section3 {
-  border-top: 8px solid #bbb;
-  border-radius: 5px;
-  margin-bottom: 30px;
-}
 
-/* Your existing styles */
+
 
 /* Add a media query for screens with a maximum width of 768px (adjust as needed) */
 @media only screen and (max-width: 768px) {
@@ -190,31 +185,43 @@ section {
 
 /* Add the following styles to your external CSS file */
 
-#popup-container {
+/* #popup-container {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(175%, -120%);
-  /* background-color: rgba(0, 0, 0, 0.5); */
-   /* Adjust the width as needed */
-  
-  max-width: 250px; /* Set a maximum width if necessary */
+  max-width: 250px; 
   padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
-}
+} */
 
 /* .popup-content {
   position: relative;
 } */
 
-
+/* 
 #popup-iframe {
   width: 100%;
   height: 100%;
   border: none;
+} */
+
+.logout-icon a {
+  color: #1d1b1b; /* Set the desired color */
+  margin-left: 20px; /* Adjust the margin as needed */
+  margin-bottom: 120px;
+  text-decoration: none;
+  font-size: 24px; /* Set the font size */
+  transition: color 0.3s; /* Add a smooth color transition */
 }
+
+.logout-icon a:hover {
+  color: #ff0000 !important; /* Change color on hover */
+  background-color: transparent !important; /* Remove background color on hover */
+}
+
 
 
 
@@ -234,248 +241,3 @@ body {
   background-color: #fff;
 }
 
-/*news box*/
-
-.slider {
-  width: 100%;
-  max-width: 1300px; /* Adjust the maximum width as needed */
-  height: 700px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #ccc; /* Border color and size */
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.225); /* Add a shadow for a box-like effect */
-  border-radius: 10px; /* Adjust the border-radius as needed */
-}
-
-.slider .list {
-  position: absolute;
-  width: max-content;
-  height: 100%;
-  left: 0;
-  top: 0;
-  display: flex;
-  transition: left 1s; /* Only transition the left property */
-}
-
-.slider .list-inner {
-  display: flex;
-  justify-content: center; /* Center the cards horizontally */
-  position: absolute;
-  width: max-content;
-  height: 100%;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  transition: left 1s; /* Only transition the left property */
-}
-
-.slider .list .item {
-  margin-right: 50px; /* Adjust the spacing between cards if needed */
-  position: center;
-}
-
-.slider .list .item .slide {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px; /* Adjust the border-radius as needed */
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a card-like effect */
-}
-
-.slider .list .item .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px; /* Match the border-radius of the card */
-}
-
-.slider .buttons {
-  position: absolute;
-  top: 45%;
-  left: 5%;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.slider .buttons button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(0, 183, 134, 0.577);
-  color: #ffffff;
-  border: none;
-  font-family: monospace;
-  font-weight: bold;
-}
-
-.slider .dots {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  color: #fff;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.slider .dots li {
-  list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #048a60;
-  margin: 10px;
-  border-radius: 20px;
-  transition: 0.5s;
-}
-
-.slider .dots li.active {
-  width: 30px;
-}
-
-.item img {
-  border-radius: 30px;
-}
-
-@media screen and (max-width: 768px) {
-  .slider {
-    height: 400px;
-  }
-}
-
-/*clubs card*/
-
-.custom-heading {
-  text-align: center;
-  font-size: 36px;
-  font-family: sans-serif; /* Specify your desired font */
-
-  margin-top: 1em;
-}
-
-.sub-heading {
-  margin-top: 2em;
-  margin-bottom: 6em;
-  text-align: center;
-}
-
-.Clubs_info {
-  width: 100%;
-}
-
-.swiper-wrapper {
-  width: 100%;
-  height: 35em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  width: 20em;
-  height: 100%;
-  background-color: rgb(214 214 214 / 92%);
-  border-radius: 0em;
-  display: flex;
-  align-items: flex-start; /* Align items to the start (left) */
-  flex-direction: column;
-  margin-right: 2em;
-}
-.card__image {
-  width: 20em;
-  height: 20em;
-  border-radius: 0%;
-  padding: 5px;
-  margin-bottom: 1em;
-}
-
-.card__image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 0%;
-}
-
-.card__content {
-  width: 100%; /* Ensure content takes full width of the card */
-  padding: 0em; /* Add padding for better readability */
-}
-
-.club__title {
-  font-size: 14px;
-  font-weight: 600;
-  position: relative;
-  top: 0.2em;
-  margin-left: 1em;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.club__name {
-  color: rgb(0, 0, 0);
-  margin-left: 1em;
-  font-weight: 600;
-}
-
-.card__text {
-  font-size: 0.8rem;
-  margin: 1em 1em;
-}
-#more {
-  display: none;
-}
-
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 14px;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-button:hover {
-  font-weight: bold;
-}
-
-/*Footer note: needs to be changed*/
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.footer-content h3 {
-  font-size: 24px;
-}
-
-.footer-content p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.footer-icons i {
-  font-size: 24px;
-  margin: 0 10px;
-  color: #fff;
-}
-
-.footer-bottom {
-  margin-top: 20px;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-}
-
-.footer-bottom span {
-  color: #f8d615; /* Color for the designer's names */
-}
