@@ -1,7 +1,7 @@
 <?php
 require("php/config.php");
 
-$event_title  = ucwords($_REQUEST['event']);
+$event_title  = ucwords($_REQUEST['event_title']);
 $club_name    = $_REQUEST['club_name'];
 $event_date   = $_REQUEST['event_date'];
 $start_time   = $_REQUEST['start_time'];

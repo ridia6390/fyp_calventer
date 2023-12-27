@@ -2,7 +2,7 @@
 require("php/config.php");
 
 $idEvent = $_POST['idEvent'];
-$event_title = ucwords($_POST['event']);
+$event_title = ucwords($_POST['event_title']);
 $club_name = $_POST['club_name']; // Use the club_name from the form, not from the database
 $event_date = $_POST['event_date'];
 $start_time = $_POST['start_time'];

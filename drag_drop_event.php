@@ -4,19 +4,26 @@
 
 include('php/config.php');
                         
-$idEvent         = $_POST['idEvent'];
-$start            = $_REQUEST['start'];
-$start_date       = date('Y-m-d', strtotime($start)); 
-$end              = $_REQUEST['end']; 
-$end_date        = date('Y-m-d', strtotime($end));  
+$idEvent    = $_POST['idEvent'];
+$start      = $_POST['start'];
+$end        = $_POST['end']; 
 
+$event_date = date('Y-m-d H:i:s', strtotime($start));
 
-$UpdateProd = ("UPDATE calendar 
+$UpdateProd = "UPDATE calendar 
     SET 
-        start_date ='$start_date',
-        end_date ='$end_date'
+        event_date = '$event_date'
+    WHERE id = '$idEvent'";
 
-    WHERE id='".$idEvent."' ");
 $result = mysqli_query($conn, $UpdateProd);
 
+// Check if the query executed successfully
+if ($result) {
+    echo "Event updated successfully";
+} else {
+    echo "Error updating event: " . mysqli_error($conn);
+}
+
+// Close the database connection (if necessary)
+mysqli_close($conn);
 ?>

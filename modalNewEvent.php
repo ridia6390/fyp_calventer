@@ -17,7 +17,7 @@
         <div class="form-group">
           <label for="event" class="col-sm-12 control-label"> Event Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="event" id="event_title" placeholder="Enter event title" required />
+            <input type="text" class="form-control" name="event_title" id="event_title" placeholder="Enter event title" required />
           </div>
         </div>
         <div class="form-group">

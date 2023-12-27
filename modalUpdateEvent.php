@@ -18,7 +18,7 @@
         <div class="form-group">
           <label for="event" class="col-sm-12 control-label"> Event Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="event" id="event_title" required />
+            <input type="text" class="form-control" name="event_title" id="event_title" required />
           </div>
         </div>
         <div class="form-group">
@@ -45,10 +45,10 @@
           <input type="radio" name="color_event" id="dark-blue" value="#0A2472" checked>
           <label for="dark-blue" class="circu" style="background-color: #0A2472;"> </label>
 
-          <input type="radio" name="color_event" id="blue" value="#2196F3">
+          <input type="radio" name="color_event" id="blue" value="#2196F3" >
           <label for="blue" class="circu" style="background-color: #2196F3;"> </label>
 
-          <input type="radio" name="color_event" id="orange" value="#FFAC1C" >
+          <input type="radio" name="color_event" id="orange" value="#FFAC1C"  >
           <label for="orange" class="circu" style="background-color: #FFAC1C;"> </label>
 
         </div>

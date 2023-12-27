@@ -83,9 +83,8 @@
         // New Event
 select: function (start, end) {
   $("#exampleModal").modal();
-  $("input[name=club]").val(''); // Clear club input
-  $("input[name=event]").val(''); // Clear event title input
   $("input[name=club_name]").val(''); // Clear club name input
+  $("input[name=event_title]").val(''); // Clear event title input
   $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
   $("input[name=start_time]").val(''); // Clear start time input
   $("input[name=end_time]").val(''); // Clear end time input
@@ -154,7 +153,7 @@ select: function (start, end) {
           var idEvent = event._id;
           $('input[name=idEvent]').val(idEvent);
           $('input[name=club_name]').val(event.club_name); // Set club name input
-          $('input[name=event]').val(event.title);
+          $('input[name=event_title]').val(event.title);
           $('input[name=event_date]').val(moment(event.start).format('YYYY-MM-DD')); // Correctly set the date
           $('input[name=start_time]').val(moment(event.start).format('HH:mm')); // Correctly set start time
           $('input[name=end_time]').val(moment(event.end).format('HH:mm')); // Correctly set end time

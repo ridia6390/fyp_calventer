@@ -3,13 +3,12 @@ include "db_conn.php";
 $id = $_GET["id"];
 
 if (isset($_POST["submit"])) {
-  $event_date = $_POST['event_date'];
-  $club_name = $_POST['club_name'];
-  $event_title = $_POST['event_title'];
-  $event_details = $_POST['event_details'];
-  $event_media = $_POST['event_media'];
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $email = $_POST['email'];
+  $gender = $_POST['gender'];
 
-  $sql = "UPDATE `events` SET `event_date`='$event_date',`club_name`='$club_name',`event_title`='$event_title',`event_media`='$event_media',`event_details`='$event_details' WHERE id = $id";
+  $sql = "UPDATE `events` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
 
   $result = mysqli_query($conn, $sql);
 
@@ -19,10 +18,6 @@ if (isset($_POST["submit"])) {
     echo "Failed: " . mysqli_error($conn);
   }
 }
-
-// // Fetch events in ascending order by event_date
-// $sql = "SELECT * FROM `events` ORDER BY `event_date` ASC";
-// $result = mysqli_query($conn, $sql);
 
 ?>
 
@@ -43,13 +38,11 @@ if (isset($_POST["submit"])) {
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Events</title>
+  <title>PHP CRUD Application</title>
 </head>
 
 <body>
-  <!-- <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #00ff5573;">
-    PHP Complete CRUD Application
-  </nav> -->
+ 
 
   <div class="container">
     <div class="text-center mb-4">
@@ -65,37 +58,36 @@ if (isset($_POST["submit"])) {
 
     <div class="container d-flex justify-content-center">
       <form action="" method="post" style="width:50vw; min-width:300px;">
-      <div class="row mb-3">
-               <div class="col">
-                  <label class="form-label">Event Date</label>
-                  <input type="text" class="form-control" name="event_date" placeholder="2024/10/04">
-               </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label class="form-label">First Name:</label>
+            <input type="text" class="form-control" name="first_name" value="<?php echo $row['first_name'] ?>">
+          </div>
 
-               <div class="col">
-                  <label class="form-label">Club Name</label>
-                  <input type="text" class="form-control" name="club_name" placeholder="Wamy IIUM">
-               </div>
-            </div>
+          <div class="col">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" name="last_name" value="<?php echo $row['last_name'] ?>">
+          </div>
+        </div>
 
-            <div class="mb-3">
-                  <label class="form-label">Event Title</label>
-                  <input type="text" class="form-control" name="event_title" placeholder="Minal Aidin">
-               </div>
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
+        </div>
 
-            <div class="mb-3">
-               <label class="form-label">Event Details</label>
-               <textarea class="form-control" name="event_details" placeholder="Enter event details here..."
-                  rows="5"></textarea>
-            </div>
-
-            <div class="mb-3">
-               <label class="form-label">Event Media </label>
-               <textarea class="form-control" name="event_media" placeholder="Enter link here..." rows="3"></textarea>
-            </div>
+        <div class="form-group mb-3">
+          <label>Gender:</label>
+          &nbsp;
+          <input type="radio" class="form-check-input" name="gender" id="male" value="male" <?php echo ($row["gender"] == 'male') ? "checked" : ""; ?>>
+          <label for="male" class="form-input-label">Male</label>
+          &nbsp;
+          <input type="radio" class="form-check-input" name="gender" id="female" value="female" <?php echo ($row["gender"] == 'female') ? "checked" : ""; ?>>
+          <label for="female" class="form-input-label">Female</label>
+        </div>
 
         <div>
           <button type="submit" class="btn btn-success" name="submit">Update</button>
-          <a href="index.php" class="btn btn-danger">Cancel</a>
+          <a href="events.php" class="btn btn-danger">Cancel</a>
         </div>
       </form>
     </div>
