@@ -1,60 +1,63 @@
-<div class="modal" id="exampleModal"  tabindex="-1" role="dialog">
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Register New Event</h5>
+        <h5 class="modal-title">Register Event</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-  <form name="formEvent" id="formEvent" action="newEvent.php" class="form-horizontal" method="POST">
-		<div class="form-group">
-			<label for="event" class="col-sm-12 control-label">Name of the Event</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" name="event" id="event" placeholder="Name of the Event" required/>
-			</div>
-		</div>
-    <div class="form-group">
-      <label for="start_date" class="col-sm-12 control-label">Start Date</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="start_date" id="start_date" placeholder="Start Date">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="end_date" class="col-sm-12 control-label">End Date</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" name="end_date" id="end_date" placeholder="End Date">
-      </div>
-    </div>
+      <form name="formEvent" id="formEvent" action="newEvent.php" class="form-horizontal" method="POST">
+        <div class="form-group">
+          <label for="club" class="col-sm-12 control-label">Club Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="club_name" id="club_name" placeholder="Enter club name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="event" class="col-sm-12 control-label"> Event Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="event" id="event_title" placeholder="Enter event title" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="event_date" class="col-sm-12 control-label">Event Date</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="event_date" id="event_date" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="start_time" class="col-sm-12 control-label">Start Time</label>
+          <div class="col-sm-10">
+            <input type="time" class="form-control" name="start_time" id="start_time" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="end_time" class="col-sm-12 control-label">End Time</label>
+          <div class="col-sm-10">
+            <input type="time" class="form-control" name="end_time" id="end_time" required />
+          </div>
+        </div>
 
-  <div class="col-md-12" id="radioGroup">
-  
-  <!-- <input type="radio" name="color_event" id="orange" value="#FF5722" >
-  <label for="orange" class="circu" style="background-color: #FF5722;"> </label> -->
+        <div class="col-md-12" id="radioGroup">
 
-  <input type="radio" name="color_event" id="amber" value="#FFC107"checked>  
-  <label for="amber" class="circu" style="background-color: #FFC107;"> </label>
+          <input type="radio" name="color_event" id="dark-blue" value="#0A2472" checked>
+          <label for="dark-blue" class="circu" style="background-color: #0A2472;"> </label>
 
-  <!-- <input type="radio" name="color_event" id="lime" value="#8BC34A">  
-  <label for="lime" class="circu" style="background-color: #8BC34A;"> </label> -->
+          <input type="radio" name="color_event" id="blue" value="#2196F3">
+          <label for="blue" class="circu" style="background-color: #2196F3;"> </label>
 
-  <input type="radio" name="color_event" id="teal" value="#009688">  
-  <label for="teal" class="circu" style="background-color: #009688;"> </label>
+          <input type="radio" name="color_event" id="orange" value="#FFAC1C" >
+          <label for="orange" class="circu" style="background-color: #FFAC1C;"> </label>
 
-  <input type="radio" name="color_event" id="blue" value="#2196F3">  
-  <label for="blue" class="circu" style="background-color: #2196F3;"> </label>
+        </div>
 
-  <!-- <input type="radio" name="color_event" id="indigo" value="#9c27b0">  
-  <label for="indigo" class="circu" style="background-color: #9c27b0;"> </label> -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Save Event</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
 
-</div>
-		
-	   <div class="modal-footer">
-      	<button type="submit" class="btn btn-success">Save Event</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    	</div>
-	</form>
-      
     </div>
   </div>
 </div>

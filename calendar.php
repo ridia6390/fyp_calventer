@@ -21,11 +21,11 @@
 
     <nav class="navbar">
       <a href="home.php">Home</a>
-      <a href="calender.php" class="calendar-active">Calender</a>
+      <a href="calender.php" class="calendar-active">Calendar</a>
       <a href="events.php">Events</a>
       <a href="contact.php">Contact</a>
     </nav>
-    
+
   </header>
 </head>
 
@@ -50,17 +50,12 @@
     </div>
   </div>
 
-
-
   <div id="calendar"></div>
-
 
   <?php
   include('modalNewEvent.php');
   include('modalUpdateEvent.php');
   ?>
-
-
 
   <script src="js/jquery-3.0.0.min.js"> </script>
   <script src="js/popper.min.js"></script>
@@ -68,7 +63,6 @@
 
   <script type="text/javascript" src="js/moment.min.js"></script>
   <script type="text/javascript" src="js/fullcalendar.min.js"></script>
-  <!-- <script src='locales/es.js'></script> -->
 
   <script type="text/javascript">
     $(document).ready(function () {
@@ -79,8 +73,6 @@
           right: "month,agendaWeek,agendaDay"
         },
 
-        // locale: 'es',
-
         defaultView: "month",
         navLinks: true,
         editable: true,
@@ -88,69 +80,64 @@
         selectable: true,
         selectHelper: false,
 
-        //New Event
-        select: function (start, end) {
-          $("#exampleModal").modal();
-          $("input[name=start_date]").val(start.format('DD-MM-YYYY'));
+        // New Event
+select: function (start, end) {
+  $("#exampleModal").modal();
+  $("input[name=club]").val(''); // Clear club input
+  $("input[name=event]").val(''); // Clear event title input
+  $("input[name=club_name]").val(''); // Clear club name input
+  $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
+  $("input[name=start_time]").val(''); // Clear start time input
+  $("input[name=end_time]").val(''); // Clear end time input
+  $("input[name=club_name]").val(''); // Clear club name input
+},
 
-          var endDateValue = end.format("DD-MM-YYYY");
-          var D_final = moment(endDateValue, "DD-MM-YYYY").subtract(1, 'days').format('DD-MM-YYYY');
-          $('input[name=end_date').val(D_final);
-
-        },
 
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
               {
               _id: '<?php echo $eventData['id']; ?>',
-              title: '<?php echo $eventData['event']; ?>',
-              start: '<?php echo $eventData['start_date']; ?>',
-              end: '<?php echo $eventData['end_date']; ?>',
+              title: '<?php echo $eventData['event_title']; ?>',
+              club_name: '<?php echo $eventData['club_name']; ?>',
+              start: '<?php echo $eventData['event_date'] . 'T' . $eventData['start_time']; ?>',
+              end: '<?php echo $eventData['event_date'] . 'T' . $eventData['end_time']; ?>',
               color: '<?php echo $eventData['color_event']; ?>'
             },
           <?php } ?>
         ],
 
-
-        //Delete Event
+        // Delete Event
         eventRender: function (event, element) {
           element
             .find(".fc-content")
             .prepend("<span id='btnClose'; class='closeon material-icons'>&#xe5cd;</span>");
 
-          //Delete Event
+          // Delete Event
           element.find(".closeon").on("click", function () {
-
             var question = confirm("Do you want to delete this event?");
             if (question) {
-
               $("#calendar").fullCalendar("removeEvents", event._id);
-
               $.ajax({
                 type: "POST",
                 url: 'deleteEvent.php',
                 data: { id: event._id },
                 success: function (data) {
                   $(".alert-danger").show();
-
                   setTimeout(function () {
                     $(".alert-danger").slideUp(500);
                   }, 3000);
-
                 }
               });
             }
           });
         },
 
-
-        //Moving Event Drag and Drop
+        // Moving Event Drag and Drop
         eventDrop: function (event, delta) {
           var idEvent = event._id;
-          var start = (event.start.format('DD-MM-YYYY'));
-          var end = (event.end.format("DD-MM-YYYY"));
-
+          var start = event.start.format('YYYY-MM-DDTHH:mm:ss');
+          var end = event.end.format('YYYY-MM-DDTHH:mm:ss');
           $.ajax({
             url: 'drag_drop_event.php',
             data: 'start=' + start + '&end=' + end + '&idEvent=' + idEvent,
@@ -161,29 +148,27 @@
           });
         },
 
+
         // Modify Calendar Event
         eventClick: function (event) {
           var idEvent = event._id;
-          $('input[name=idEvent').val(idEvent);
-          $('input[name=event').val(event.title);
-          $('input[name=start_date').val(event.start.format('DD-MM-YYYY'));
-          $('input[name=end_date').val(event.end.format("DD-MM-YYYY"));
+          $('input[name=idEvent]').val(idEvent);
+          $('input[name=club_name]').val(event.club_name); // Set club name input
+          $('input[name=event]').val(event.title);
+          $('input[name=event_date]').val(moment(event.start).format('YYYY-MM-DD')); // Correctly set the date
+          $('input[name=start_time]').val(moment(event.start).format('HH:mm')); // Correctly set start time
+          $('input[name=end_time]').val(moment(event.end).format('HH:mm')); // Correctly set end time
 
           $("#modalUpdateEvent").modal();
         },
 
-
       });
 
-
-      //Hide Notification Messages
+      // Hide Notification Messages
       setTimeout(function () {
         $(".alert").slideUp(300);
       }, 3000);
-
-
     });
-
   </script>
 </body>
 

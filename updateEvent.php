@@ -1,27 +1,26 @@
 <?php
-// date_default_timezone_set("America/Bogota");
-// setlocale(LC_ALL,"es_ES");
+require("php/config.php");
 
-include('php/config.php');
-                        
-$idEvent        = $_POST['idEvent'];
+$idEvent = $_POST['idEvent'];
+$event_title = ucwords($_POST['event']);
+$club_name = $_POST['club_name']; // Use the club_name from the form, not from the database
+$event_date = $_POST['event_date'];
+$start_time = $_POST['start_time'];
+$end_time = $_POST['end_time'];
 
-$event            = ucwords($_REQUEST['event']);
-$d_start          = $_REQUEST['start_date'];
-$start_date        = date('Y-m-d', strtotime($d_start)); 
 
-$d_end            = $_REQUEST['end_date']; 
-$set_final_date = date('Y-m-d', strtotime($d_end));  
-$end_date1         = strtotime($set_final_date."+ 1 days");
-$end_date          = date('Y-m-d', ($end_date1));  
-$color_event      = $_REQUEST['color_event'];
+$start_datetime = date('Y-m-d H:i:s', strtotime("$event_date $start_time"));
+$end_datetime   = date('Y-m-d H:i:s', strtotime("$event_date $end_time"));
 
-$UpdateProd = ("UPDATE calendar 
-    SET event ='$event',
-        start_date ='$start_date',
-        end_date ='$end_date',
-        color_event ='$color_event'
-    WHERE id='".$idEvent."' ");
+$UpdateProd = "UPDATE calendar 
+    SET 
+        club_name = '$club_name',
+        event_title = '$event_title',
+        event_date = '$event_date',
+        start_time = '$start_datetime',
+        end_time = '$end_datetime'
+    WHERE id = '$idEvent'";
+
 $result = mysqli_query($conn, $UpdateProd);
 
 header("Location:calendar.php?ea=1");
