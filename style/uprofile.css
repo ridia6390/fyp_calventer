@@ -155,12 +155,12 @@ html {
   justify-content: space-between;
   gap: 1.5rem;
   z-index: 1000;
-  background-color: rgb(255, 162, 179);
+  background-color: #a4e0ce;
   margin: 0 auto;
 }
 
 .message span {
-  color: var(--red);
+  color: #56ab91;
   font-size: 1.5rem;
 }
 

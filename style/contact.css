@@ -118,7 +118,7 @@
 
 .navbar a:hover,
 .navbar .contact-active {
-  background: var(--green-color);
+  background:#078c7c;
   color: var(--bg-color);
   border-radius: 5rem;
   transition: background 0.5s;

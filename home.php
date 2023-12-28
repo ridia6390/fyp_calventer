@@ -2,185 +2,223 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="style/home.css">
 
-  <title>Calventer - Home</title>
+    <!-------------------------------------------------NAV------------------------------------------------------------->
 
-  <!-- CSS link -->
-  <link rel="stylesheet" href="style/home.css">
+    <!--Navbar-->
+    <header class="header">
+        <div class="logo-container">
+            <img class="logo" src="image/logo.png" alt="logo">
+            <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's
+                    Social
+                    Clubs</span></div>
+        </div>
+        <nav class="navbar">
+            <a href="home.php" class="home-active">Home</a>
+            <a href="calendar.php">Calender</a>
+            <a href="events.php">Events</a>
+            <a href="contact.php">Contact</a>
+        </nav>
+        <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+        <!-- <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#calender">Calender</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="action_btn">Login</a></li>
+            </ul>
+        </div> -->
 
-  <!-- Boxicon link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <script src="js/home.js"></script>
-
-  <!--Navbar-->
-  <header class="header">
-    <div class="logo-container">
-      <img class="logo" src="image/logo.png" alt="logo">
-      <div><strong class="bold-text">Calventer</strong> <br> <span class="smaller-text">Event Calendar For IIUM's Social
-          Clubs</span></div>
-    </div>
-    <nav class="navbar">
-      <a href="home.php" class="home-active">Home</a>
-      <a href="calendar.php" >Calender</a>
-      <a href="events.php" >Events</a>
-      <a href="contact.php">Contact</a>
-    </nav>
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
-   
-  </header>
-
+    </header>
 </head>
 
 <body>
+    <main>
 
-  <main>
-    <section id="section1">
-      <img src="image/Event Calender For IIUM's Social Clubs.png" alt="">
-    </section>
-    <section class="news">
-      <div class="slider">
-        <div class="list">
-          <div class="item">
-            <div class="slide">
-              <img src="image/legal framework to protect women poster.jpg" alt="">
+
+
+        <!-------------------------------------------------IMAGE HEADER------------------------------------------------------------->
+        <section class="section_header" id="home">
+            <div class="home-text">
+                <div class="header_img">
+                    <img src="image/logo.png" alt="logo">
+                </div>
+                <h1>Calventer</h1>
+                <p>Events Calender For IIUM's Social Clubs</p>
+                <a href="#" class="home-btn">Check Calender</a>
             </div>
-          </div>
-          <div class="item">
-            <div class="slide">
-              <img src="image/kfp5076w.png" alt="">
+
+        </section>
+        <!-------------------------------------------------NEWS PANNEL------------------------------------------------------------->
+
+        <section class="section_news">
+            <div class="Section_header">
+                <div class="inner">
+                    <div class="custom-heading">Announcements</div>
+                    <!--<div class="border"></div>-->
+                    <div class="sub-heading">Stay updated with the latest club news and posters.</div>
+                    <br>
+                    <section class="innercontainer">
+                        <section class="container">
+                            <div class="card">
+                                <div class="image">
+                                    <img src="image/kfp5076w.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="image/legal framework to protect women poster.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="image">
+                                    <img src="image/WhatsApp-Image-2023-02-02-at-4.25.22-PM.jpeg" alt="" />
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="slide">
-              <img src="image/poster.jpeg" alt="">
-            </div>
-          </div>
-          <div class="item">
-            <div class="slide">
-              <img src="image/kfp5076w.png" alt="">
-            </div>
-          </div>
-          <div class="item">
-            <div class="slide">
-              <img src="image/legal framework to protect women poster.jpg" alt="">
-            </div>
-          </div>
-          <div class="item">
-            <div class="slide">
-              <img src="image/legal framework to protect women poster.jpg" alt="">
-            </div>
-          </div>
+        </section>
+        <br><br>
+
+        <!-------------------------------------------------CLUBS------------------------------------------------------------->
+
+        <section class="section_clubs">
+            <div class="Section_header">
+                <div class="inner">
+                    <div class="custom-heading">Clubs</div>
+                    <div class="sub-heading">Stay updated with the events hosted by the registered clubs to ensure you
+                        don't miss out on any exciting activities.</div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="IIUM_clubs">
+                                <div class="club_code1"></div>
+                                <br><br>
+                                <img src="image/image1.png" alt="">
+                                <br>
+                                <span class="club__title">Club name</span>
+                                <div class="name">WAMY IIUM</div>
+                                <p class="club">
+                                    WAMY IIUM Club at the International Islamic University Malaysia promotes Islamic
+                                    values, community engagement, and personal development among Muslim students.
+                                    Through various activities, the club strives to create an inclusive environment that
+                                    fosters a sense of unity and strengthens the Islamic identity of its members.</p>
+                                <div class="club-icons">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="IIUM_clubs">
+                                <div class="club_code2"></div>
+                                <br><br>
+                                <img src="image/image2.png" alt="">
+                                <br>
+                                <span class="club__title">Club name</span>
+                                <div class="name">Alsalam IIUM Club</div>
+                                <p class="club">
+                                    Alsalam IIUM Club at the International Islamic University Malaysia is committed to
+                                    promoting peace, unity, and Islamic teachings. Through events like seminars,
+                                    community service, and social gatherings, the club aims to cultivate a sense of
+                                    brotherhood/sisterhood and make a positive impact based on Islamic principles.</p>
+                                <br>
+                                <div class="club-icons">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="IIUM_clubs">
+                                <div class="club_code3"></div>
+                                <br><br>
+                                <img src="image/image3.png" alt="">
+                                <br>
+                                <span class="club__title">Club name</span>
+                                <div class="name">Nibras IIUM Club</div>
+                                <p class="club">
+                                    Nibras IIUM Club at the International Islamic University Malaysia empowers Muslim
+                                    students through educational, social, and developmental activities. The club focuses
+                                    on leadership, Islamic values, and building a supportive community for personal and
+                                    spiritual growth.
+                                <div class="club-icons">
+                                    <br><br>
+                                    <div class="club-icons">
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+
+    <!-------------------------------------------------FOOTER------------------------------------------------------------->
+
+    <footer class="footer">
+        <div class="footer-col">
+            <h4>2023 Event Calendar For IIUM's Social Club</h4>
+            <ul>
+                <li>Website: <a href="www.calventer.com">www.calventer.com</a></li>
+                <li>Email: <a href="mailto:calventer@edu.my">calventer@edu.my</a></li>
+            </ul>
         </div>
-        <div class="buttons">
-          <button id="prev">
-            << /button>
-              <button id="next">></button>
+
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <ul class="dots">
-          <li class="active"></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </section>
-    </div>
-    </div>
-    </section>
 
-    <br><br>
-
-    <section id="section4">
-      <h3 class="custom-heading">Clubs</h3>
-      <div class="sub-heading">Stay updated with the events hosted by the registered clubs to ensure you don't miss out
-        on any exciting activities.</div>
-      <section class="Clubs_info">
-        <div class="swiper-wrapper">
-          <div class="card ">
-            <div class="card__image">
-              <img src="image/image1.png" alt="card1">
-            </div>
-
-            <div class="card__content"></div>
-            <span class="club__title">Club name</span>
-            <span class="club__name">WAMY IIUM Club</span>
-
-            <p class="card__text">
-              WAMY IIUM Club is an Islamic organization at the International Islamic University Malaysia that promotes
-              Islamic values, community engagement,<span id="dots1">...</span><span id="more1"> and personal development
-                among Muslim students.The club organizes various activities, including
-                educational events, seminars, community service initiatives, and social gatherings, to foster a sense of
-                brotherhood/sisterhood and create a positive impact based on Islamic principles.</span></p>
-            <button onclick="myFunction(1)" id="myBtn1">Read more</button>
-          </div>
-          <div class="card ">
-            <div class="card__image">
-              <img src="image/image2.png" alt="card1">
-            </div>
-
-            <div class="card__content"></div>
-            <span class="club__title">Club name</span>
-            <span class="club__name">Alsalam IIUM Club</span>
-
-            <p class="card__text">Alsalam IIUM Club is an organization at the International Islamic University Malaysia
-              (IIUM) dedicated to promoting peace, unity, and the<span id="dots2">...</span><span id="more2">teachings
-                of Islam among its members and the wider community. The club organizes various activities, including
-                educational events, seminars, community service initiatives, and social gatherings, to foster a sense of
-                brotherhood/sisterhood and create a positive impact based on Islamic principles.</span> </p>
-
-            <button onclick="myFunction(2)" id="myBtn2">Read more</button>
-          </div>
-
-          <div class="card ">
-            <div class="card__image">
-              <img src="image/image3.png" alt="card1">
-            </div>
-
-            <div class="card__content"></div>
-            <span class="club__title">Club name</span>
-            <span class="club__name">​Nibras IIUM Club</span>
-
-            <p class="card__text">Nibras IIUM Club is an organization at the International Islamic University Malaysia
-              (IIUM) that aims to empower and enlighten Muslim students<span id="dots3">...</span><span id="more3">
-                through educational, social, and developmental activities. The club focuses on nurturing leadership
-                skills, fostering Islamic values, and creating a supportive community for personal and spiritual
-                growth.</span></p>
-
-            <button onclick="myFunction(3)" id="myBtn3">Read more</button>
-          </div>
+        <div class="footer-col">
+            <p class="footer-copyright">
+                Copyright &copy; 2023 calventer. Designed by <span>Ridia and Nouran</span>
+            </p>
         </div>
-      </section>
-    </section>
+    </footer>
 
-    <section class="quote">
-    </section>
-  </main>
-  <br><br><br><br><br><br>
-  <footer>
-    <div class="footer-content">
-      <h3>2023 Event Calendar For IIUM's Social Club</h3>
-      <p>Website: www.calventer.com<br>
-        Email: calventer@edu.my<br>
-        Follow Us</p>
-      <div class="footer-icons">
-        <i class='bx bxl-facebook'></i>
-        <i class='bx bxl-twitter'></i>
-        <i class='bx bxl-instagram'></i>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright &copy;2023 calvener. Designed by <span>Ridia and Nouran</span></p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+    <!-------------------------------------------------JS------------------------------------------------------------->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
+        crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
+
+
 </body>
 
 </html>
