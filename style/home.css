@@ -652,7 +652,7 @@ a:hover{
 .club_code1 {
   margin-top: 0px;
   text-align: center;
-  background-color: #5377e5; /* Choose your desired background color */
+  background-color:#0A2472; /* Choose your desired background color */
   padding: 10px; /* Add padding to create some space around the content */
   border-radius: 1px; /* Adjust the value for the desired roundness */
 
@@ -660,7 +660,7 @@ a:hover{
 .club_code2 {
   margin-top: 0px;
   text-align: center;
-  background-color: #ecf187; /* Choose your desired background color */
+  background-color:#2196F3; /* Choose your desired background color */
   padding: 10px; /* Add padding to create some space around the content */
   border-radius: 1px; /* Adjust the value for the desired roundness */
 
@@ -668,7 +668,7 @@ a:hover{
 .club_code3 {
   margin-top: 0px;
   text-align: center;
-  background-color: #dd9d61; /* Choose your desired background color */
+  background-color:#FFAC1C; /* Choose your desired background color */
   padding: 10px; /* Add padding to create some space around the content */
   border-radius: 1px; /* Adjust the value for the desired roundness */
 }
