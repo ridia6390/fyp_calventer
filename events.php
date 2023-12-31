@@ -1,7 +1,7 @@
 <?php
 include('php/config.php');
 
-// Fetch events from the database
+// Fetch events from the calendar database
 $sqlEvents = "SELECT * FROM calendar";
 $resultEvents = mysqli_query($conn, $sqlEvents);
 
@@ -24,6 +24,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
 
   // Store events in an array for later use
   $events[] = [
+    'id' => $eventData['id'],
     'event_date' => $eventData['event_date'], // Keep the date even if time is invalid 
     'club_name' => $eventData['club_name'],
     'event_title' => $eventData['event_title'],
@@ -32,6 +33,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   ];
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,12 +78,11 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
     if (isset($_GET["msg"])) {
       $msg = $_GET["msg"];
       echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-            ' . $msg . '
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
+                    ' . $msg . '
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
     }
     ?>
-    <!-- <a href="addEventDetails.php" class="btn btn-dark mb-3">Add Details</a> -->
 
     <table class="table table-hover text-center">
       <thead class="table-dark">
@@ -91,13 +92,11 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
           <th scope="col">Event Title</th>
           <th scope="col">Start Time</th>
           <th scope="col">End Time</th>
-          <th scope="col">Action</th>
+          <th scope="col">Details</th>
         </tr>
       </thead>
       <tbody>
-        <?php
-        foreach ($events as $event) {
-          ?>
+        <?php foreach ($events as $event): ?>
           <tr>
             <td>
               <?php echo $event['event_date'] ?>
@@ -115,27 +114,24 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
               <?php echo $event['end_time'] ?>
             </td>
             <td>
-              <a href="add.php?id=<?php echo $row["id"] ?>"" class=" link-dark"><i class="fa-solid fa-plus-circle fs-5"
+              <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
                   style="margin-right: 15px;"></i></a>
-              <a href="view.php?id=<?php echo $row["id"] ?>" class="link-dark"><i class="fa-solid fa-eye fs-5"
-                  style="margin-right: 15px;"></i></a>
-              <a href="edit.php?id=<?php echo $row["id"] ?>" class="link-dark"><i
-                  class="fa-solid fa-pen-to-square fs-5 me-3" style="margin-right: 5px;"></i></a>
-              <a href="delete.php?id=<?php echo $row["id"] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"
-                  style="margin-left: 5px;"></i></a>
-
-
+              <a href="edit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+                  class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+              <a href="delete.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+                  class="fa-solid fa-trash fs-5"></i></a>
             </td>
           </tr>
-          <?php
-        }
-        ?>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
 
   <!-- Bootstrap -->
-  <!-- ... (your existing Bootstrap script tag) ... -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,9 @@
 <?php
 include "db_conn.php";
 
+// Start the session at the beginning of the file
+session_start();
+
 if (isset($_POST["submit"])) {
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
@@ -12,16 +15,18 @@ if (isset($_POST["submit"])) {
    $result = mysqli_query($conn, $sql);
 
    if ($result) {
-      header("Location: events.php?msg=New record created successfully");
+      // Assuming you have the event ID available after insertion
+      $event_id = mysqli_insert_id($conn);
+
+      // Store the event ID in the session
+      $_SESSION['added_event_id'] = $event_id;
+
+      header("Location: events.php?msg=New details added successfully");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
 }
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,14 +46,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-
-
    <div class="container">
-      <div class="text-center mb-4">
-         <h3>Add New User</h3>
-         <p class="text-muted">Complete the form below to add a new user</p>
-      </div>
-
       <div class="container d-flex justify-content-center">
          <form action="" method="post" style="width:50vw; min-width:300px;">
             <div class="row mb-3">
