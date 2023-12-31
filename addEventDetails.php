@@ -1,18 +1,34 @@
 <?php
-include "db_conn.php";
-
-// Start the session at the beginning of the file
+include 'php/config.php';
 session_start();
 
 if (isset($_POST["submit"])) {
-   $first_name = $_POST['first_name'];
-   $last_name = $_POST['last_name'];
-   $email = $_POST['email'];
-   $gender = $_POST['gender'];
+   $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
+   $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
+   $venue = mysqli_real_escape_string($conn, $_POST['venue']);
+   $location = mysqli_real_escape_string($conn, $_POST['location']);
 
-   $sql = "INSERT INTO `events`(`id`, `first_name`, `last_name`, `email`, `gender`) VALUES (NULL,'$first_name','$last_name','$email','$gender')";
+   // Handle file upload
+   $poster = '';
+   if (isset($_FILES['poster']) && $_FILES['poster']['error'] == 0) {
+      $poster_temp = $_FILES['poster']['tmp_name'];
+      $poster_name = $_FILES['poster']['name'];
+      $poster = 'uploaded_poster/' . $poster_name;
 
-   $result = mysqli_query($conn, $sql);
+      // Move the uploaded file to the desired location
+      if (move_uploaded_file($poster_temp, $poster)) {
+         echo "File uploaded successfully!<br>";
+      } else {
+         echo "Failed to move the uploaded file!<br>";
+      }
+   }
+
+   // Use prepared statement to avoid SQL injection
+   $sql = "INSERT INTO `events`(`event_theme`, `dress_code`, `venue`, `location`, `poster`) VALUES (?, ?, ?, ?, ?)";
+
+   $stmt = mysqli_prepare($conn, $sql);
+   mysqli_stmt_bind_param($stmt, "sssss", $event_theme, $dress_code, $venue, $location, $poster);
+   $result = mysqli_stmt_execute($stmt);
 
    if ($result) {
       // Assuming you have the event ID available after insertion
@@ -22,11 +38,17 @@ if (isset($_POST["submit"])) {
       $_SESSION['added_event_id'] = $event_id;
 
       header("Location: events.php?msg=New details added successfully");
+      exit;
    } else {
-      echo "Failed: " . mysqli_error($conn);
+      echo "Failed to insert data: " . mysqli_error($conn) . "<br>";
    }
+
+   mysqli_stmt_close($stmt);
 }
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +78,8 @@ if (isset($_POST["submit"])) {
 
    <div class="container">
       <div class="container d-flex justify-content-center">
-         <form action="" method="post" style="width:100vw; min-width:100px; font-weight: 600;">
+         <form action="" method="post" enctype="multipart/form-data"
+            style="width:100vw; min-width:100px; font-weight: 600;">
             <div class="row mb-3">
                <div class="col">
                   <label class="form-label">Event Theme</label>
@@ -65,8 +88,7 @@ if (isset($_POST["submit"])) {
 
                <div class="col">
                   <label class="form-label">Dress Code</label>
-                  <input type="text" class="form-control" name="dress_code"
-                     placeholder="Traditional Attire">
+                  <input type="text" class="form-control" name="dress_code" placeholder="Traditional Attire">
                </div>
             </div>
 
@@ -83,13 +105,14 @@ if (isset($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Poster</label>
-               <input type="file" class="form-control" name="image" required class="box"
+               <input type="file" class="form-control" name="poster" required class="box"
                   accept="image/jpg, image/png, image/jpeg">
             </div>
 
 
             <div>
-               <button type="submit" class="btn btn-success" name="submit" style="background-color: #56ab91; border: 1px solid #56ab91">Save</button>
+               <button type="submit" class="btn btn-success" name="submit"
+                  style="background-color: #56ab91; border: 1px solid #56ab91">Save</button>
                <a href="events.php" class="btn btn-danger">Cancel</a>
             </div>
 

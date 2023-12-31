@@ -1,91 +1,164 @@
 <?php
-include "db_conn.php";
+include 'db_conn.php';
+session_start();
 
-$id = $_GET["id"];
+if (isset($_POST['submit'])) {
+    // Check if the event ID is set in the form
+    if (!isset($_POST['event_id'])) {
+        echo "Invalid request: Event ID is missing.";
+        exit;
+    }
 
-if (isset($_POST["submit"])) {
-  $details = mysqli_real_escape_string($conn, $_POST['details']);
+    // Update event details
+    $eventId = $_POST['event_id'];
+    $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
+    $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
+    $venue = mysqli_real_escape_string($conn, $_POST['venue']);
+    $location = mysqli_real_escape_string($conn, $_POST['location']);
 
-  $sql = "UPDATE `events` SET `details`='$details' WHERE id = $id";
+    // Get the current poster path
+    $poster = $eventData['poster'];
 
-  $result = mysqli_query($conn, $sql);
+    // Handle file upload only if a new poster is provided
+    if (!empty($_FILES['new_poster']['name'])) {
+        $uploadDir = 'uploaded_poster/';
+        $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
 
-  if ($result) {
-    header("Location: events.php?msg=Data updated successfully");
-    exit();
-  } else {
-    echo "Failed: " . mysqli_error($conn);
-  }
+        if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
+            $poster = $uploadFile; // Update poster path
+        } else {
+            echo "Failed to upload poster.";
+            exit;
+        }
+    }
+
+    $updateSql = "UPDATE events SET 
+        event_theme = '$event_theme', 
+        dress_code = '$dress_code', 
+        venue = '$venue', 
+        location = '$location', 
+        poster = '$poster'
+        WHERE id = $eventId";
+
+    $updateResult = mysqli_query($conn, $updateSql);
+
+    if ($updateResult) {
+        header("Location: events.php?msg=Event details updated successfully");
+        exit;
+    } else {
+        echo "Failed to update: " . mysqli_error($conn);
+    }
 }
 
-$sql = "SELECT * FROM `events` WHERE id = $id LIMIT 1";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+// Fetch the event details based on the ID from the URL
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    echo "Invalid event ID.";
+    exit;
+}
+
+$eventId = $_GET['id'];
+
+$sqlEvent = "SELECT * FROM events WHERE id = $eventId";
+$resultEvent = mysqli_query($conn, $sqlEvent);
+
+if (!$resultEvent) {
+    echo "Error: " . mysqli_error($conn);
+    exit;
+}
+
+if (mysqli_num_rows($resultEvent) == 0) {
+    echo "Event not found for ID: $eventId";
+    exit;
+}
+
+$eventData = mysqli_fetch_assoc($resultEvent);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <!-- Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>PHP CRUD Application</title>
+   <title> Edit Event Details </title>
 </head>
 
 <body>
-  <div class="container">
+
+   <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #078c7c; color: white;">
+      EDIT EVENT DETAILS
+   </nav>
+
+   <div class="container">
       <div class="container d-flex justify-content-center">
-         <form action="" method="post" style="width:50vw; min-width:300px;">
+         <form action="" method="post" enctype="multipart/form-data"
+            style="width:100vw; min-width:100px; font-weight: 600;">
             <div class="row mb-3">
                <div class="col">
-                  <label class="form-label">First Name:</label>
-                  <input type="text" class="form-control" name="first_name" placeholder="Albert">
+                  <label class="form-label">Event Theme</label>
+                  <input type="text" class="form-control" name="event_theme" value="<?= $eventData['event_theme'] ?>"
+                     placeholder="Cultural Night">
                </div>
 
                <div class="col">
-                  <label class="form-label">Last Name:</label>
-                  <input type="text" class="form-control" name="last_name" placeholder="Einstein">
+                  <label class="form-label">Dress Code</label>
+                  <input type="text" class="form-control" name="dress_code" value="<?= $eventData['dress_code'] ?>"
+                     placeholder="Traditional Attire">
                </div>
             </div>
 
             <div class="mb-3">
-               <label class="form-label">Email:</label>
-               <input type="email" class="form-control" name="email" placeholder="name@example.com">
+               <label class="form-label">Venue</label>
+               <input type="text" class="form-control" name="venue" value="<?= $eventData['venue'] ?>"
+                  placeholder="Main Auditorium">
             </div>
 
-            <div class="form-group mb-3">
-               <label>Gender:</label>
-               &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="male" value="male">
-               <label for="male" class="form-input-label">Male</label>
-               &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="female" value="female">
-               <label for="female" class="form-input-label">Female</label>
+            <div class="mb-3">
+               <label class="form-label">Location</label>
+               <input type="text" class="form-control" name="location" value="<?= $eventData['location'] ?>"
+                  placeholder="https://maps.app.goo.gl/YeL6bzCcGqsoYEhA9">
+            </div>
+
+            <div class="mb-3">
+               <label class="form-label">Current Poster</label>
+               <img src="<?= $eventData['poster'] ?>" alt="Current Poster" style="max-width: 200px;">
+            </div>
+
+            <!-- Hidden input field for event ID -->
+            <input type="hidden" name="event_id" value="<?= $eventId ?>">
+
+            <!-- Hidden input field for the current poster -->
+            <input type="hidden" name="poster" value="<?= $eventData['poster'] ?>">
+
+            <div class="mb-3">
+               <label class="form-label">New Poster</label>
+               <input type="file" class="form-control" name="new_poster" accept="image/jpg, image/png, image/jpeg">
             </div>
 
             <div>
-               <button type="submit" class="btn btn-success" name="submit">Save</button>
+               <button type="submit" class="btn btn-success" name="submit"
+                  style="background-color: #56ab91; border: 1px solid #56ab91">Update</button>
                <a href="events.php" class="btn btn-danger">Cancel</a>
             </div>
          </form>
       </div>
    </div>
 
-  <!-- Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+   <!-- Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
 
 </body>
 
