@@ -132,22 +132,6 @@ select: function (start, end) {
           });
         },
 
-        // Moving Event Drag and Drop
-        eventDrop: function (event, delta) {
-          var idEvent = event._id;
-          var start = event.start.format('YYYY-MM-DDTHH:mm:ss');
-          var end = event.end.format('YYYY-MM-DDTHH:mm:ss');
-          $.ajax({
-            url: 'drag_drop_event.php',
-            data: 'start=' + start + '&end=' + end + '&idEvent=' + idEvent,
-            type: "POST",
-            success: function (response) {
-              // $("#response").html(response);
-            }
-          });
-        },
-
-
         // Modify Calendar Event
         eventClick: function (event) {
           var idEvent = event._id;
