@@ -59,7 +59,7 @@ if(isset($_POST['update'])){
       }else{
          $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
          $update_password->execute([$confirm_pass, $admin_id]);
-         $message[] = 'password has been updated!';
+         $message[] = 'profile has been updated!';
       }
    }
 

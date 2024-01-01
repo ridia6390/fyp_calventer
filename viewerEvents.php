@@ -52,7 +52,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Events</title>
+  <title> Viewer Events</title>
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -62,11 +62,13 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
     </div>
 
     <nav class="navbar">
-      <a href="home.php">Home</a>
-      <a href="calendar.php">Calender</a>
-      <a href="events.php" class="events-active">Events</a>
-      <a href="contact.php">Contact</a>
+      <a href="viewerHome.php">Home</a>
+      <a href="viewerCalendar.php">Calender</a>
+      <a href="viewerEvents.php" class="events-active">Events</a>
+      <a href="viewerContact.php">Contact</a>
     </nav>
+
+    <button class="btn" style="visibility: hidden;"> LOGIN </button>
 
   </header>
 </head>
@@ -113,12 +115,9 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
               <?php echo $event['end_time'] ?>
             </td>
             <td>
-              <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
-                  style="margin-right: 15px;"></i></a>
-              <a href="edit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-edit fs-5 me-3"></i></a>
-              <a href="delete.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-trash fs-5"></i></a>
+              <!-- <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
+                  style="margin-right: 15px;"></i></a> -->
+              <a href="viewerEventsEdit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i class="fas fa-eye fs-5 me-3"></i></a>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -131,7 +130,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-    
+
 
 </body>
 

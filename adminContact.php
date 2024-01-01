@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="style/contact.css" />
-  <title>Contact</title>
+  <title> Admin Contact</title>
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -16,11 +16,13 @@
     </div>
 
     <nav class="navbar">
-      <a href="home.php" >Home</a>
-      <a href="calender.php">Calender</a>
-      <a href="events.php" >Events</a>
-      <a href="contact.php" class= "contact-active">Contact</a>
+      <a href="adminHome.php">Home</a>
+      <a href="adminCalendar.php">Calender</a>
+      <a href="adminEvents.php" >Events</a>
+      <a href="adminContact.php" class="events-active">Contact</a>
     </nav>
+   
+
   </header>
 
 </head>

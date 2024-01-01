@@ -12,7 +12,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Home</title>
+    <title> Viewer Home</title>
     <link rel="stylesheet" href="style/home.css">
 
     <!-------------------------------------------------NAV------------------------------------------------------------->
@@ -26,8 +26,8 @@
                     Clubs</span></div>
         </div>
         <nav class="navbar">
-            <a href="home.php" class="home-active">Home</a>
-            <a href="calendar.php">Calender</a>
+            <a href="viewerHome.php" class="home-active">Home</a>
+            <a href="viewerCalendar.php">Calender</a>
             <a href="events.php">Events</a>
             <a href="contact.php">Contact</a>
         </nav>

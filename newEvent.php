@@ -33,7 +33,7 @@ $resultadoNewEvent = mysqli_query($conn, $InsertNewEvent);
 
 
 
-header("Location:calendar.php?e=1");
+header("Location:adminCalendar.php?e=1");
 ?>
 
 

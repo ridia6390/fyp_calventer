@@ -1,5 +1,5 @@
-function navigateToHomePage(){
-  window.location.href = "home.php";
+function navigateToViewerHomePage(){
+  window.location.href = "viewerHome.php";
 }
 
 // Get the video element

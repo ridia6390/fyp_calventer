@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
       // Store the event ID in the session
       $_SESSION['added_event_id'] = $event_id;
 
-      header("Location: events.php?msg=New details added successfully");
+      header("Location: adminEvents.php?msg=New details added successfully");
       exit;
    } else {
       echo "Failed to insert data: " . mysqli_error($conn) . "<br>";
@@ -113,7 +113,7 @@ if (isset($_POST["submit"])) {
             <div>
                <button type="submit" class="btn btn-success" name="submit"
                   style="background-color: #56ab91; border: 1px solid #56ab91">Save</button>
-               <a href="events.php" class="btn btn-danger">Cancel</a>
+               <a href="adminEvents.php" class="btn btn-danger">Cancel</a>
             </div>
 
          </form>

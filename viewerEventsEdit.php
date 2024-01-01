@@ -3,37 +3,37 @@ include 'db_conn.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-    // Check if the event ID is set in the form
-    if (!isset($_POST['event_id'])) {
-        echo "Invalid request: Event ID is missing.";
-        exit;
-    }
+   // Check if the event ID is set in the form
+   if (!isset($_POST['event_id'])) {
+      echo "Invalid request: Event ID is missing.";
+      exit;
+   }
 
-    // Update event details
-    $eventId = $_POST['event_id'];
-    $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
-    $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
-    $venue = mysqli_real_escape_string($conn, $_POST['venue']);
-    $location = mysqli_real_escape_string($conn, $_POST['location']);
+   // Update event details
+   $eventId = $_POST['event_id'];
+   $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
+   $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
+   $venue = mysqli_real_escape_string($conn, $_POST['venue']);
+   $location = mysqli_real_escape_string($conn, $_POST['location']);
 
-    // Get the current poster path
-    $poster = $eventData['poster'];
+   // Get the current poster path
+   $poster = $eventData['poster'];
 
-    // Handle file upload only if a new poster is provided
-    if (!empty($_FILES['new_poster']['name'])) {
-        $uploadDir = 'uploaded_poster/';
-        $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
+   // Handle file upload only if a new poster is provided
+   if (!empty($_FILES['new_poster']['name'])) {
+      $uploadDir = 'uploaded_poster/';
+      $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
 
-        if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
-            $poster = $uploadFile; // Update poster path
-        } else {
-            echo "Failed to upload poster.";
-            exit;
-        }
-    }
-   
+      if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
+         $poster = $uploadFile; // Update poster path
+      } else {
+         echo "Failed to upload poster.";
+         exit;
+      }
+   }
 
-    $updateSql = "UPDATE events SET 
+
+   $updateSql = "UPDATE events SET 
         event_theme = '$event_theme', 
         dress_code = '$dress_code', 
         venue = '$venue', 
@@ -41,20 +41,20 @@ if (isset($_POST['submit'])) {
         poster = '$poster'
         WHERE id = $eventId";
 
-    $updateResult = mysqli_query($conn, $updateSql);
+   $updateResult = mysqli_query($conn, $updateSql);
 
-    if ($updateResult) {
-        header("Location: adminEvents.php?msg=Event details updated successfully");
-        exit;
-    } else {
-        echo "Failed to update: " . mysqli_error($conn);
-    }
+   if ($updateResult) {
+      header("Location: events.php?msg=Event details updated successfully");
+      exit;
+   } else {
+      echo "Failed to update: " . mysqli_error($conn);
+   }
 }
 
 // Fetch the event details based on the ID from the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
-    echo "Invalid event ID.";
-    exit;
+   echo "Invalid event ID.";
+   exit;
 }
 
 $eventId = $_GET['id'];
@@ -63,13 +63,13 @@ $sqlEvent = "SELECT * FROM events WHERE id = $eventId";
 $resultEvent = mysqli_query($conn, $sqlEvent);
 
 if (!$resultEvent) {
-    echo "Error: " . mysqli_error($conn);
-    exit;
+   echo "Error: " . mysqli_error($conn);
+   exit;
 }
 
 if (mysqli_num_rows($resultEvent) == 0) {
-    echo "Event not found for ID: $eventId";
-    exit;
+   echo "Event not found for ID: $eventId";
+   exit;
 }
 
 $eventData = mysqli_fetch_assoc($resultEvent);
@@ -92,43 +92,47 @@ $eventData = mysqli_fetch_assoc($resultEvent);
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   <title> Edit Event Details </title>
+   <title> View Event Details </title>
 </head>
 
 <body>
 
    <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #078c7c; color: white;">
-      EDIT EVENT DETAILS
+      VIEW EVENT DETAILS
    </nav>
 
    <div class="container">
       <div class="container d-flex justify-content-center">
          <form action="" method="post" enctype="multipart/form-data"
-            style="width:50vw; min-width:80px; font-weight: 600;">
+            style="width:80vw; min-width:80px; font-weight: 600;">
             <div class="row mb-3">
                <div class="col">
                   <label class="form-label">Event Theme</label>
-                  <input type="text" class="form-control" name="event_theme" value="<?= $eventData['event_theme'] ?>"
-                     placeholder="Cultural Night">
+                  <p class="form-control">
+                     <?= $eventData['event_theme'] ?>
+                  </p>
                </div>
 
                <div class="col">
                   <label class="form-label">Dress Code</label>
-                  <input type="text" class="form-control" name="dress_code" value="<?= $eventData['dress_code'] ?>"
-                     placeholder="Traditional Attire">
+                  <p class="form-control">
+                     <?= $eventData['dress_code'] ?>
+                  </p>
                </div>
             </div>
 
             <div class="mb-3">
                <label class="form-label">Venue</label>
-               <input type="text" class="form-control" name="venue" value="<?= $eventData['venue'] ?>"
-                  placeholder="Main Auditorium">
+               <p class="form-control">
+                  <?= $eventData['venue'] ?>
+               </p>
             </div>
 
             <div class="mb-3">
                <label class="form-label">Location</label>
-               <input type="text" class="form-control" name="location" value="<?= $eventData['location'] ?>"
-                  placeholder="https://maps.app.goo.gl/YeL6bzCcGqsoYEhA9">
+               <p class="form-control">
+                  <?= $eventData['location'] ?>
+               </p>
             </div>
 
             <div class="mb-3">
@@ -142,15 +146,10 @@ $eventData = mysqli_fetch_assoc($resultEvent);
             <!-- Hidden input field for the current poster -->
             <input type="hidden" name="poster" value="<?= $eventData['poster'] ?>">
 
-            <div class="mb-3">
-               <label class="form-label">New Poster</label>
-               <input type="file" class="form-control" name="new_poster" accept="image/jpg, image/png, image/jpeg">
-            </div>
 
             <div>
-               <button type="submit" class="btn btn-success" name="submit"
-                  style="background-color: #56ab91; border: 1px solid #56ab91">Update</button>
-               <a href="adminEvents.php" class="btn btn-danger">Cancel</a>
+               <a href="viewerEvents.php" class="btn btn-danger" style="background-color: #56ab91; border: 1px solid #56ab91">Back</a>
+
             </div>
          </form>
       </div>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style/bootstrap.min.css">
   <link rel="stylesheet" href="style/calendar.css">
-  <title> Calendar </title>
+  <title> Admin Calendar </title>
 
   <!--Navbar-->
   <header class="header">
@@ -20,10 +20,12 @@
     </div>
 
     <nav class="navbar">
-      <a href="home.php">Home</a>
-      <a href="calender.php" class="calendar-active">Calendar</a>
-      <a href="events.php">Events</a>
-      <a href="contact.php">Contact</a>
+      <a href="adminHome.php">Home</a>
+      <a href="adminCalender.php" class="calendar-active">Calendar</a>
+      <a href="adminEvents.php">Events</a>
+      <a href="adminContact.php">Contact</a>
+      
+      
     </nav>
 
   </header>
@@ -131,22 +133,6 @@ select: function (start, end) {
             }
           });
         },
-
-        // Moving Event Drag and Drop
-        eventDrop: function (event, delta) {
-          var idEvent = event._id;
-          var start = event.start.format('YYYY-MM-DDTHH:mm:ss');
-          var end = event.end.format('YYYY-MM-DDTHH:mm:ss');
-          $.ajax({
-            url: 'drag_drop_event.php',
-            data: 'start=' + start + '&end=' + end + '&idEvent=' + idEvent,
-            type: "POST",
-            success: function (response) {
-              // $("#response").html(response);
-            }
-          });
-        },
-
 
         // Modify Calendar Event
         eventClick: function (event) {

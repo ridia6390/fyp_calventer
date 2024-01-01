@@ -66,10 +66,10 @@ if ($user_info) {
                     Clubs</span></div>
         </div>
         <nav class="navbar">
-            <a href="home.php" class="home-active">Home</a>
-            <a href="calendar.php">Calender</a>
-            <a href="events.php">Events</a>
-            <a href="contact.php">Contact</a>
+            <a href="adminHome.php" class="home-active">Home</a>
+            <a href="adminCalendar.php">Calender</a>
+            <a href="adminEvents.php">Events</a>
+            <a href="adminContact.php">Contact</a>
             <?php if (isset($image) && isset($username)): ?>
                 <div class="user-profile" onclick="openUserProfileUpdate()">
                     <img src="<?php echo $image_path; ?>" alt="User Image">
@@ -116,7 +116,7 @@ if ($user_info) {
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <a href="#" class="home-btn">Check Calender</a>
+                <!-- <a href="#" class="home-btn">Check Calender</a> -->
             </div>
 
         </section>

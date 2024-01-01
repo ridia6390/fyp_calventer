@@ -20,11 +20,13 @@
     </div>
 
     <nav class="navbar">
-      <a href="home.php">Home</a>
-      <a href="calender.php" class="calendar-active">Calendar</a>
-      <a href="events.php">Events</a>
-      <a href="contact.php">Contact</a>
+      <a href="viewerHome.php">Home</a>
+      <a href="viewerCalender.php" class="calendar-active">Calendar</a>
+      <a href="viewerEvents.php">Events</a>
+      <a href="viewerContact.php">Contact</a>
     </nav>
+
+    <button class="btn" style="visibility: hidden;"> LOGIN </button>
 
   </header>
 </head>
@@ -105,7 +107,6 @@
           <?php } ?>
         ],
 
-        // Modify Calendar Event
         // Modify Calendar Event
         eventClick: function (event) {
           $('#idEvent').val(event._id);
