@@ -62,7 +62,7 @@
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <a href="#" class="home-btn">Check Calender</a>
+                <!-- <a href="#" class="home-btn">Check Calender</a> -->
             </div>
 
         </section>

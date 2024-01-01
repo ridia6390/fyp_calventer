@@ -133,24 +133,16 @@
 }
 
 body {
-  background-color: var(--green-color); 
+  background-color: var(--green-color);
+  
 }
 
-#calendar {
-  margin-top: 80px;
+#viewer-calendar {
+  margin-top: 130px;
   max-width: 1500px;
   background-color: white;
 }
 
-/* #title{
-  color: #9c27b0;
-  font-weight: 800;
-  border-bottom: 3px solid coral;
-  background: #ccc;
-  padding: 8px 30px;
-} */
-
-/****************/
 input {
   display: none;
 }
@@ -172,30 +164,6 @@ input {
   background-color: #333;
 }
 
-.circu {
-  padding: 25px;
-  background: #ccc;
-  border-radius: 50px;
-}
 
-#radiaGroup label:hover {
-  cursor: pointer;
-}
-
-#radioGroup input[type="radio"]:checked + label {
-  border: 3px solid #ccc !important;
-}
-
-.activated input[type="radio"]:checked + label {
-  border: 3px solid #555 !important;
-}
-
-.alert {
-  /* position: fixed; */
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
- 
-}
 
 
