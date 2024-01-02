@@ -1,15 +1,59 @@
+<?php
+session_start();
+
+// Function to get user information based on ID
+function getUserInfo($id)
+{
+  global $conn;
+  $select = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
+  $select->execute([$id]);
+  return $select->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+  // Redirect to the login page if not logged in
+  header('location: login.php');
+  exit();
+}
+
+// Retrieve user information from the session
+$admin_id = $_SESSION['admin_id'];
+
+// Assuming you have a function to get user information based on the ID
+$user_info = getUserInfo($admin_id);
+
+// Check if user information is available
+if ($user_info) {
+  $image = $user_info['image'];
+  $username = $user_info['name'];
+  $image_path = "image/$image";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Admin Calendar </title>
   <link rel="stylesheet" href="style/fullcalendar.min.css">
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/adminCalendar.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/calendar.css">
-  <title> Admin Calendar </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+
+
+
 
   <!--Navbar-->
   <header class="header">
@@ -24,8 +68,20 @@
       <a href="adminCalender.php" class="calendar-active">Calendar</a>
       <a href="adminEvents.php">Events</a>
       <a href="adminContact.php">Contact</a>
-      
-      
+      <?php if (isset($image) && isset($username)): ?>
+        <div class="user-profile" onclick="openUserProfileUpdate()">
+          <img src="<?php echo $image_path; ?>" alt="User Image">
+          <span class="username">
+            <?php echo $username; ?>
+          </span>
+        </div>
+        <div class="logout-icon">
+          <a href="logout.php" class='bx bx-log-out'>
+          </a>
+        </div>
+      <?php endif; ?>
+
+
     </nav>
 
   </header>
@@ -83,21 +139,21 @@
         selectHelper: false,
 
         // New Event
-select: function (start, end) {
-  $("#exampleModal").modal();
-  $("input[name=club_name]").val(''); // Clear club name input
-  $("input[name=event_title]").val(''); // Clear event title input
-  $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
-  $("input[name=start_time]").val(''); // Clear start time input
-  $("input[name=end_time]").val(''); // Clear end time input
-  $("input[name=club_name]").val(''); // Clear club name input
-},
+        select: function (start, end) {
+          $("#exampleModal").modal();
+          $("input[name=club_name]").val(''); // Clear club name input
+          $("input[name=event_title]").val(''); // Clear event title input
+          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
+          $("input[name=start_time]").val(''); // Clear start time input
+          $("input[name=end_time]").val(''); // Clear end time input
+          $("input[name=club_name]").val(''); // Clear club name input
+        },
 
 
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
-              {
+                      {
               _id: '<?php echo $eventData['id']; ?>',
               title: '<?php echo $eventData['event_title']; ?>',
               club_name: '<?php echo $eventData['club_name']; ?>',
@@ -155,6 +211,13 @@ select: function (start, end) {
       }, 3000);
     });
   </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
+    crossorigin="anonymous"></script>
+  <script src="js/adminCalendar.js"></script>
 </body>
 
 </html>

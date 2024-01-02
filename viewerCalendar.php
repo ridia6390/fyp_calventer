@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/calendar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/viewerCalendar.css">
   <title> Viewer Calendar </title>
 
   <!--Navbar-->
@@ -21,12 +23,12 @@
 
     <nav class="navbar">
       <a href="viewerHome.php">Home</a>
-      <a href="viewerCalender.php" class="calendar-active">Calendar</a>
+      <a href="viewerCalendar.php" class="calendar-active">Calendar</a>
       <a href="viewerEvents.php">Events</a>
       <a href="viewerContact.php">Contact</a>
     </nav>
 
-    <button class="btn" style="visibility: hidden;"> LOGIN </button>
+    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
 
   </header>
 </head>
@@ -55,7 +57,7 @@
   <div id="calendar"></div>
 
   <?php
-  include('modalEventViewer.php');
+  include('modalViewEventViewer.php');
   ?>
 
   <script src="js/jquery-3.0.0.min.js"> </script>
@@ -96,7 +98,7 @@
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
-                {
+                  {
               _id: '<?php echo $eventData['id']; ?>',
               title: '<?php echo $eventData['event_title']; ?>',
               club_name: '<?php echo $eventData['club_name']; ?>',
@@ -127,6 +129,13 @@
       }, 3000);
     });
   </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
+        crossorigin="anonymous"></script>
+    <script src="js/viewerCalendar.js"></script>
 </body>
 
 </html>

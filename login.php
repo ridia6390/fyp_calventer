@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
        
 
          <p>
-            Not an admin ? <a href="home.php"> view only</a>
+            Not an admin ? <a href="viewerHome.php"> view only</a>
          </p>
 
          <div class="separator">

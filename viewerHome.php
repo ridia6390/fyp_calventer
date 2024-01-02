@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"
+        <link rel="stylesheet" href="style/viewerHome.css">
+        <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title> Viewer Home</title>
-    <link rel="stylesheet" href="style/home.css">
+    
 
     <!-------------------------------------------------NAV------------------------------------------------------------->
 
@@ -28,15 +31,16 @@
         <nav class="navbar">
             <a href="viewerHome.php" class="home-active">Home</a>
             <a href="viewerCalendar.php">Calender</a>
-            <a href="events.php">Events</a>
-            <a href="contact.php">Contact</a>
+            <a href="viewerEvents.php">Events</a>
+            <a href="viewerContact.php">Contact</a>
         </nav>
         <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+
         <!-- <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
-        </div>
-        <div class="dropdown_menu">
+        </div> -->
+        <!-- <div class="dropdown_menu">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#calender">Calender</a></li>
@@ -62,7 +66,7 @@
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <!-- <a href="#" class="home-btn">Check Calender</a> -->
+                <a href="#" class="home-btn">Check Calender</a>
             </div>
 
         </section>
@@ -216,7 +220,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
         crossorigin="anonymous"></script>
-    <script src="js/home.js"></script>
+    <script src="js/viewerHome.js"></script>
 
 
 </body>

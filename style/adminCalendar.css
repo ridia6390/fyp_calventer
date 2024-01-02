@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
+  --box-color: #d6d6d6;
+  --header-color: #383838;
+  --background-color: #f3f3f3;
+  --buttons: #03b199;
+  --wb-color: #05b2a7;
+  --white-color: #fff;
   --primary-clr: #56ab91;
   --green-color: #159572;
   --light-green-color: #95d8d6;
@@ -17,6 +23,39 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
 }
+
+body {
+  background-color: var(--green-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: var(--green-color);
+}
+
+.logo_name {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.smaller-text {
+  font-size: 12px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .header {
@@ -80,11 +119,10 @@
 .logo {
   width: 8%;
   column-gap: 0.9rem;
-}
-
-.logo {
   width: 100px;
 }
+
+
 
 .logo_name {
   font-size: 14px;
@@ -112,11 +150,13 @@
   padding: 0.5rem 1rem;
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
+  text-decoration: none;
+  
 }
 
 .navbar a:hover,
 .navbar .calendar-active {
-  background:  #078c7c;
+  background: #078c7c;
   color: var(--bg-color);
   border-radius: 5rem;
   transition: background 0.5s;
@@ -132,9 +172,47 @@
   display: none;
 }
 
-body {
-  background-color: var(--green-color); 
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  /* margin-right: 50px; */
 }
+
+.user-profile img {
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #159572;
+  width: 40px; /* Set the width of the circular image */
+  height: 40px; /* Set the height of the circular image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-right: 8px;
+}
+
+.user-profile .username{
+  font-weight: 600;
+}
+
+.logout-icon a {
+  color: #1d1b1b;  /* Set the desired color */
+  /* Adjust the margin as needed */
+  /* margin-bottom: 5px; */
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s; /* Add a smooth color transition */
+  display: inline-block;
+  transform: rotate(180deg);
+  font-weight: 600;
+  
+}
+
+.logout-icon a:hover{
+  color: red;
+  background-color: transparent;
+
+}
+
+
 
 #calendar {
   margin-top: 80px;
@@ -142,15 +220,6 @@ body {
   background-color: white;
 }
 
-/* #title{
-  color: #9c27b0;
-  font-weight: 800;
-  border-bottom: 3px solid coral;
-  background: #ccc;
-  padding: 8px 30px;
-} */
-
-/****************/
 input {
   display: none;
 }
@@ -195,7 +264,4 @@ input {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
- 
 }
-
-

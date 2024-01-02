@@ -1,11 +1,56 @@
+<?php
+session_start();
+
+// Function to get user information based on ID
+function getUserInfo($id)
+{
+    global $conn;
+    $select = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
+    $select->execute([$id]);
+    return $select->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to the login page if not logged in
+    header('location: login.php');
+    exit();
+}
+
+// Retrieve user information from the session
+$admin_id = $_SESSION['admin_id'];
+
+// Assuming you have a function to get user information based on the ID
+$user_info = getUserInfo($admin_id);
+
+// Check if user information is available
+if ($user_info) {
+    $image = $user_info['image'];
+    $username = $user_info['name'];
+    $image_path = "image/$image";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  <link rel="stylesheet" href="style/adminContact.css" />
+
+  <!-- Boxicon link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
-  <link rel="stylesheet" href="style/contact.css" />
+ 
   <title> Admin Contact</title>
   <!--Navbar-->
   <header class="header">
@@ -18,10 +63,22 @@
     <nav class="navbar">
       <a href="adminHome.php">Home</a>
       <a href="adminCalendar.php">Calender</a>
-      <a href="adminEvents.php" >Events</a>
-      <a href="adminContact.php" class="events-active">Contact</a>
+      <a href="adminEvents.php">Events</a>
+      <a href="adminContact.php" class="contact-active">Contact</a>
+      <?php if (isset($image) && isset($username)): ?>
+                <div class="user-profile" onclick="openUserProfileUpdate()">
+                    <img src="<?php echo $image_path; ?>" alt="User Image">
+                    <span class="username">
+                        <?php echo $username; ?>
+                    </span>
+                </div>
+                <div class="logout-icon">
+                    <a href="logout.php" class='bx bx-log-out'>
+                    </a>
+                </div>
+            <?php endif; ?>
     </nav>
-   
+
 
   </header>
 
@@ -59,7 +116,7 @@
     </div>
   </div>
 
-  
+
   <!-------------------------------------------------CONTACT------------------------------------------------------------->
 
   <div class="container">
@@ -218,6 +275,13 @@
       </div>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
+        crossorigin="anonymous"></script>
+    <script src="js/adminContact.js"></script>
 </body>
 
 <script src="js/readmore.js"></script>

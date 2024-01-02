@@ -46,7 +46,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="style/events.css">
+  <link rel="stylesheet" href="style/viewerEvents.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -68,7 +68,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
       <a href="viewerContact.php">Contact</a>
     </nav>
 
-    <button class="btn" style="visibility: hidden;"> LOGIN </button>
+    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
 
   </header>
 </head>
@@ -117,7 +117,8 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
             <td>
               <!-- <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
                   style="margin-right: 15px;"></i></a> -->
-              <a href="viewerEventsEdit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i class="fas fa-eye fs-5 me-3"></i></a>
+              <a href="eventsDetailsViewViewer.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+                  class="fas fa-eye fs-5 me-3"></i></a>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -130,6 +131,12 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
+        crossorigin="anonymous"></script>
+    <script src="js/viewerEvents.js"></script>
 
 
 </body>

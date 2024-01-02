@@ -55,6 +55,9 @@ if ($user_info) {
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 
 
     <!--Navbar-->
@@ -78,8 +81,7 @@ if ($user_info) {
                     </span>
                 </div>
                 <div class="logout-icon">
-                    <a href="logout.php">
-                        <i class='bx bx-log-out'></i>
+                    <a href="logout.php" class='bx bx-log-out'>
                     </a>
                 </div>
             <?php endif; ?>
@@ -270,7 +272,7 @@ if ($user_info) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
         crossorigin="anonymous"></script>
-    <script src="js/home.js"></script>
+    <script src="js/adminHome.js"></script>
 
 
 </body>
