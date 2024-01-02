@@ -51,10 +51,6 @@ if ($user_info) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
 
-
-
-
-
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -148,7 +144,6 @@ if ($user_info) {
           $("input[name=end_time]").val(''); // Clear end time input
           $("input[name=club_name]").val(''); // Clear club name input
         },
-
 
         events: [
           <?php
