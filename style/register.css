@@ -38,7 +38,7 @@ body {
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .form-container {
@@ -173,10 +173,46 @@ html {
   color: white;
 }
 
+.event-form-container {
+  max-width: 500px; /* Set the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding for better visual appearance */
+}
 
 
+.event-form-container form {
+  position: relative;
+  width: 50rem;
+  border-radius: 0.5rem;
+  background-color:  white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.event-form-container form h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.event-form-container form .box {
+  width: 48%;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1 rem;
+  color: var(--black);
+  outline: none;
+  border: 1px solid #ccc;
+  /* background-color: transparent; */
+  margin: 1rem 0;
+}
 
 
+/* .event-form-container .box {
+  width: 48%; 
+  margin-bottom: 10px;
+} */
 
 /* media queries  */
 

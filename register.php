@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post" enctype="multipart/form-data">
-      <h3>register</h3>
+      <h3> Club Admin Registration</h3>
       <input type="text" required placeholder="Enter your username" class="box" name="name">
       <input type="email" required placeholder="Enter your email" class="box" name="email">
       <input type="password" required placeholder="Enter your password" class="box" name="pass">

@@ -3,6 +3,10 @@ function navigateToLoginPage() {
   window.location.href = "login.php";
 }
 
+function navigateToRegisterPage() {
+  window.location.href = "register.php";
+}
+
 //------------------------Navbar----------------------------
 //  const toggleBtn = document.querySelector('.toggle_btn');
 //  const toggleBtnIcon = document.querySelector('.toggle_btn i');

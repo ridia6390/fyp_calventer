@@ -34,7 +34,11 @@
             <a href="viewerEvents.php">Events</a>
             <a href="viewerContact.php">Contact</a>
         </nav>
+
         <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+        <!-- <button class="btn" onclick="navigateToRegisterPage()"> CLUB </button> -->
+       
+       
 
         <!-- <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>

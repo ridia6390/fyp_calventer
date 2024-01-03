@@ -179,6 +179,11 @@ a:hover{
   /* padding: 0px 50px; */
 }
 
+.navbar {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
 .navbar a {
   font-size: 14px;
   font-weight: 500;
@@ -187,7 +192,14 @@ a:hover{
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
   text-decoration: none;
+  /* margin-right: 10px;  */
 }
+
+/* .navbar a:last-child {
+  margin-right: 0; 
+} */
+
+
 
  
 
@@ -213,7 +225,7 @@ a:hover{
   width: 100px;
   background: #56ab91;
   border: 0;
-  border-radius: 5px; /* Adjust this value for a more square look */
+  border-radius: 5px;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -221,12 +233,14 @@ a:hover{
   transition: opacity 0.3s ease;
   z-index: 1;
   text-decoration: none;
+  /* margin-right: 0 !important;   */
+  /* padding: 0 !important;  */
 }
-
 
 .btn:hover {
   opacity: 0.65; 
 }
+
 
 /*dropdown menu*/
 

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
       if ($row['admin_type'] == 'admin') {
 
          $_SESSION['admin_id'] = $row['id'];
-         header('location:eventForm.php');
+         header('location:adminHome.php');
 
          // }elseif($row['user_type'] == 'user'){
 
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
    <section class="form-container">
 
       <form action="" method="post" enctype="multipart/form-data">
-         <h3> Club Admin Login</h3>
+         <h3> Admin Login</h3>
          <input type="email" required placeholder="Enter your email" class="box" name="email">
          <input type="password" required placeholder="Enter your password" class="box" name="pass">
          <input type="submit" value="login" class="btn" name="submit">
@@ -89,11 +89,11 @@ if (isset($_POST['submit'])) {
             <span class="or">OR</span>
          </div> -->
 
-         <p>Don't have an account? <a href="register.php"> Register</a></p>
+         <!-- <p>Don't have an account? <a href="register.php">Register</a></p>
 
          <div class="link">
             <a href="password.php">Forgot Password ?</a>
-         </div>
+         </div> -->
 
 
       </form>
