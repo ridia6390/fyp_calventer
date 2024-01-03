@@ -158,7 +158,7 @@ if ($user_info) {
           <th scope="col">Event Title</th>
           <th scope="col">Start Time</th>
           <th scope="col">End Time</th>
-          <th scope="col">Details</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>

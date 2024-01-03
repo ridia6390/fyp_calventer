@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
     $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
     $venue = mysqli_real_escape_string($conn, $_POST['venue']);
-    $location = mysqli_real_escape_string($conn, $_POST['location']);
+    
 
     // Get the current poster path
     $poster = $eventData['poster'];
@@ -37,7 +37,6 @@ if (isset($_POST['submit'])) {
         event_theme = '$event_theme', 
         dress_code = '$dress_code', 
         venue = '$venue', 
-        location = '$location', 
         poster = '$poster'
         WHERE id = $eventId";
 
@@ -123,12 +122,6 @@ $eventData = mysqli_fetch_assoc($resultEvent);
                <label class="form-label">Venue</label>
                <input type="text" class="form-control" name="venue" value="<?= $eventData['venue'] ?>"
                   placeholder="Main Auditorium">
-            </div>
-
-            <div class="mb-3">
-               <label class="form-label">Location</label>
-               <input type="text" class="form-control" name="location" value="<?= $eventData['location'] ?>"
-                  placeholder="https://maps.app.goo.gl/YeL6bzCcGqsoYEhA9">
             </div>
 
             <div class="mb-3">

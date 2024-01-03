@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
    $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
    $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
    $venue = mysqli_real_escape_string($conn, $_POST['venue']);
-   $location = mysqli_real_escape_string($conn, $_POST['location']);
+   
 
    // Handle file upload
    $poster = '';
@@ -23,27 +23,25 @@ if (isset($_POST["submit"])) {
       }
    }
 
-   // Use prepared statement to avoid SQL injection
-   $sql = "INSERT INTO `events`(`event_theme`, `dress_code`, `venue`, `location`, `poster`) VALUES (?, ?, ?, ?, ?)";
+ // Construct the SQL query
+$sql = "INSERT INTO `events` (`event_theme`, `dress_code`, `venue`, `poster`) VALUES ('$event_theme', '$dress_code', '$venue', '$poster')";
 
-   $stmt = mysqli_prepare($conn, $sql);
-   mysqli_stmt_bind_param($stmt, "sssss", $event_theme, $dress_code, $venue, $location, $poster);
-   $result = mysqli_stmt_execute($stmt);
+// Execute the query
+$result = mysqli_query($conn, $sql);
 
-   if ($result) {
-      // Assuming you have the event ID available after insertion
-      $event_id = mysqli_insert_id($conn);
+if ($result) {
+    // Assuming you have the event ID available after insertion
+    $event_id = mysqli_insert_id($conn);
 
-      // Store the event ID in the session
-      $_SESSION['added_event_id'] = $event_id;
+    // Store the event ID in the session
+    $_SESSION['added_event_id'] = $event_id;
 
-      header("Location: adminEvents.php?msg=New details added successfully");
-      exit;
-   } else {
-      echo "Failed to insert data: " . mysqli_error($conn) . "<br>";
-   }
+    header("Location: adminEvents.php?msg=New details added successfully");
+    exit;
+} else {
+    echo "Failed to insert data: " . mysqli_error($conn) . "<br>";
+}
 
-   mysqli_stmt_close($stmt);
 }
 ?>
 
@@ -95,12 +93,6 @@ if (isset($_POST["submit"])) {
             <div class="mb-3">
                <label class="form-label">Venue</label>
                <input type="text" class="form-control" name="venue" placeholder="Main Auditorium">
-            </div>
-
-            <div class="mb-3">
-               <label class="form-label">Location</label>
-               <input type="text" class="form-control" name="location"
-                  placeholder="https://maps.app.goo.gl/YeL6bzCcGqsoYEhA9">
             </div>
 
             <div class="mb-3">

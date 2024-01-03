@@ -42,14 +42,13 @@ if ($user_info) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Admin Calendar </title>
-  <link rel="stylesheet" href="style/fullcalendar.min.css">
+  <title>Admin Calendar</title>
   <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/adminCalendar.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
+  <link rel="stylesheet" href="style/fullcalendar.min.css">
+  <link rel="stylesheet" href="style/adminCalendar.css">
 
   <!--Navbar-->
   <header class="header">
@@ -61,7 +60,7 @@ if ($user_info) {
 
     <nav class="navbar">
       <a href="adminHome.php">Home</a>
-      <a href="adminCalender.php" class="calendar-active">Calendar</a>
+      <a href="adminCalendar.php" class="calendar-active">Calendar</a>
       <a href="adminEvents.php">Events</a>
       <a href="adminContact.php">Contact</a>
       <?php if (isset($image) && isset($username)): ?>
@@ -142,13 +141,14 @@ if ($user_info) {
           $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
           $("input[name=start_time]").val(''); // Clear start time input
           $("input[name=end_time]").val(''); // Clear end time input
-          $("input[name=club_name]").val(''); // Clear club name input
+          // $("input[name=club_name]").val(''); // Clear club name input
+          // $("input[name=color_event]").val(''); 
         },
 
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
-                      {
+                        {
               _id: '<?php echo $eventData['id']; ?>',
               title: '<?php echo $eventData['event_title']; ?>',
               club_name: '<?php echo $eventData['club_name']; ?>',
@@ -194,7 +194,7 @@ if ($user_info) {
           $('input[name=event_date]').val(moment(event.start).format('YYYY-MM-DD')); // Correctly set the date
           $('input[name=start_time]').val(moment(event.start).format('HH:mm')); // Correctly set start time
           $('input[name=end_time]').val(moment(event.end).format('HH:mm')); // Correctly set end time
-
+          // $('input[name=color_event]').val(event.color);
           $("#modalUpdateEvent").modal();
         },
 
@@ -207,11 +207,11 @@ if ($user_info) {
     });
   </script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
   <script src="js/adminCalendar.js"></script>
 </body>
 

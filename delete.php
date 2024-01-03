@@ -1,7 +1,7 @@
 <?php
 include "db_conn.php";
 $id = $_GET["id"];
-$sql = "DELETE FROM `events` WHERE id = $id";
+$sql = "DELETE FROM `calendar` WHERE id = $id";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {

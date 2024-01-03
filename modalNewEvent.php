@@ -11,7 +11,7 @@
         <div class="form-group">
           <label for="club" class="col-sm-12 control-label">Club Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="club_name" id="club_name" placeholder="Enter club name" required />
+            <input type="text" class="form-control" name="club_name" id="club_name" placeholder="e.g.- Wamy/Alsalam/Nibras" required />
           </div>
         </div>
         <div class="form-group">
