@@ -25,6 +25,7 @@
       <a href="viewerHome.php">Home</a>
       <a href="viewerCalendar.php" class="calendar-active">Calendar</a>
       <a href="viewerEvents.php">Events</a>
+      <a href="viewerAbout.php">About</a>
       <a href="viewerContact.php">Contact</a>
     </nav>
 

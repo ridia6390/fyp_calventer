@@ -32,6 +32,7 @@
             <a href="viewerHome.php" class="home-active">Home</a>
             <a href="viewerCalendar.php">Calender</a>
             <a href="viewerEvents.php">Events</a>
+            <a href="viewerAbout.php">About</a>
             <a href="viewerContact.php">Contact</a>
         </nav>
 

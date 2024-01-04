@@ -65,6 +65,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
       <a href="viewerHome.php">Home</a>
       <a href="viewerCalendar.php">Calender</a>
       <a href="viewerEvents.php" class="events-active">Events</a>
+      <a href="viewerAbout.php">About</a>
       <a href="viewerContact.php">Contact</a>
     </nav>
 
