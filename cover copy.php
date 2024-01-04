@@ -21,7 +21,6 @@
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
       <button class="btn" onclick="navigateToViewerHomePage()"> Get Started</button>
-      <button class="admin-btn" onclick="navigateToLoginPage()"> ADMIN </button>
     </div>
 
     <div class="video-border">

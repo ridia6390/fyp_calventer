@@ -188,10 +188,6 @@ a:hover{
   margin-right: 0; 
 } */
 
-
-
- 
-
 .navbar a:hover,
 .navbar .home-active {
   background: #078c7c;
@@ -209,7 +205,7 @@ a:hover{
   display: none;
 }
 
-.btn {
+/* .btn {
   height: 40px;
   width: 100px;
   background: #56ab91;
@@ -222,12 +218,51 @@ a:hover{
   transition: opacity 0.3s ease;
   z-index: 1;
   text-decoration: none;
-  /* margin-right: 0 !important;   */
-  /* padding: 0 !important;  */
 }
 
 .btn:hover {
   opacity: 0.65; 
+} */
+
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  /* margin-right: 50px; */
+}
+
+.user-profile img {
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #159572;
+  width: 40px; /* Set the width of the circular image */
+  height: 40px; /* Set the height of the circular image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-right: 8px;
+}
+
+.user-profile .username{
+  font-weight: 600;
+}
+
+
+.logout-icon a {
+  color: #1d1b1b;  /* Set the desired color */
+  /* Adjust the margin as needed */
+  /* margin-bottom: 5px; */
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s; /* Add a smooth color transition */
+  display: inline-block;
+  transform: rotate(180deg);
+  font-weight: 600;
+  
+}
+
+.logout-icon a:hover{
+  color: red;
+  background-color: transparent;
+
 }
 
 

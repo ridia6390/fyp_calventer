@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
          if($insert){
             move_uploaded_file($image_tmp_name, $image_folder);
             $messager[] = 'registered succesfully!';
-            // header('location:login.php');
+            // header('location:viewerLogin.php');
          }
       }
    }
@@ -96,7 +96,7 @@ if(isset($_POST['submit'])){
       <input type="password" required placeholder="Confirm your password" class="box" name="cpass">
       <input type="file" name="image" required class="box" accept="image/jpg, image/png, image/jpeg">
       <input type="submit" value="register" class="btn" name="submit">
-      <p>Already have an account? <a href="login.php">Login</a></p>
+      <p>Already have an account? <a href="viewerLogin.php">Login</a></p>
       
    </form>
 

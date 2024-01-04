@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
       if ($row['admin_type'] == 'admin') {
 
          $_SESSION['admin_id'] = $row['id'];
-         header('location:eventForm.php');
+         header('location:viewerHome2.php');
 
          // }elseif($row['user_type'] == 'user'){
 
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
             <span class="or">OR</span>
          </div> -->
 
-         <p>Don't have an account? <a href="register.php"> Register</a></p>
+         <p>Don't have an account? <a href="viewerRegister.php"> Register</a></p>
 
          <div class="link">
             <a href="password.php">Forgot Password ?</a>

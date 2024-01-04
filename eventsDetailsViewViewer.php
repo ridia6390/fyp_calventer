@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
    $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
    $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
    $venue = mysqli_real_escape_string($conn, $_POST['venue']);
-   $location = mysqli_real_escape_string($conn, $_POST['location']);
 
    // Get the current poster path
    $poster = $eventData['poster'];
@@ -37,14 +36,13 @@ if (isset($_POST['submit'])) {
         event_theme = '$event_theme', 
         dress_code = '$dress_code', 
         venue = '$venue', 
-        location = '$location', 
         poster = '$poster'
         WHERE id = $eventId";
 
    $updateResult = mysqli_query($conn, $updateSql);
 
    if ($updateResult) {
-      header("Location: events.php?msg=Event details updated successfully");
+      header("Location: viewerEvents.php?msg=Event details updated successfully");
       exit;
    } else {
       echo "Failed to update: " . mysqli_error($conn);
@@ -125,13 +123,6 @@ $eventData = mysqli_fetch_assoc($resultEvent);
                <label class="form-label">Venue</label>
                <p class="form-control">
                   <?= $eventData['venue'] ?>
-               </p>
-            </div>
-
-            <div class="mb-3">
-               <label class="form-label">Location</label>
-               <p class="form-control">
-                  <?= $eventData['location'] ?>
                </p>
             </div>
 

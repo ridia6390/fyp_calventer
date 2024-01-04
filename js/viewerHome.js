@@ -1,11 +1,8 @@
 // Function to navigate to the login page
-function navigateToLoginPage() {
-  window.location.href = "login.php";
+function navigateToViewerLoginPage() {
+  window.location.href = "viewerLogin.php";
 }
 
-function navigateToRegisterPage() {
-  window.location.href = "register.php";
-}
 
 //------------------------Navbar----------------------------
 //  const toggleBtn = document.querySelector('.toggle_btn');
