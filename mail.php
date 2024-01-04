@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
 
   // Recipients
   $mail->setFrom($_POST["email"], $_POST["name"]); // Sender Email and name
-  $mail->addAddress('ridia.kashmeri1011@gmail.com'); // Add a recipient email  
+  $mail->addAddress(''); // Add a recipient email  
   $mail->addReplyTo($_POST["email"], $_POST["name"]); // Reply to sender email
 
   // Content
@@ -43,6 +43,7 @@ if (isset($_POST["submit"])) {
   $mail->Body .= "Theme: " . $_POST["theme"] . "<br>";
   $mail->Body .= "Dress Code: " . $_POST["dress_code"] . "<br>";
   $mail->Body .= "Venue: " . $_POST["venue"] . "<br>";
+  $mail->Body .= "Description: " . $_POST["description"] . "<br>";
   $mail->Body .= "Poster: " . $_POST["poster"] . "<br>";
 
   // Add more formatting or structure as needed

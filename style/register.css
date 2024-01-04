@@ -193,20 +193,49 @@ html {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--black);
-  text-transform: uppercase;
+}
+
+
+.event-form-container form .guidance{
+  color: rgb(87, 85, 85);
+  font-size: 1.2rem;
+}
+
+.event-form-container form .disclaimer{
+  color: red;
+  margin-top: 15px;
+  font-size: 1.5rem;
 }
 
 .event-form-container form .box {
   width: 48%;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1 rem;
+  font-size: 1.5rem;
   color: var(--black);
   outline: none;
   border: 1px solid #ccc;
   /* background-color: transparent; */
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
+  margin-top: 15px;
 }
+.event-form-container form .paragraph {
+  width: 96%;
+  height: 120px;
+  border-radius: 0.5rem;
+  padding-left: 10px;
+  padding-bottom: 80px;
+  font-size: 1.5rem;
+  color: var(--black);
+  outline: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  /* background-color: transparent; */
+  /* margin: 1rem 0; */
+  margin-top: 15px;
+}
+
+
 
 
 /* .event-form-container .box {

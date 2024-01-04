@@ -93,7 +93,10 @@
   <section class="event-form-container">
 
     <form action="mail.php" method="post" enctype="multipart/form-data">
-      <h3> ADD UPCOMING EVENTS </h3> 
+      <h3> ADD UPCOMING EVENTS </h3>
+      <h4 class="guidance"> Fill up the form with correct event details. Make sure all the information is accurate
+        before submission.</h4>
+      <h4 class="disclaimer"> * Please send us the event details at least ONE WEEK prior * </h4>
       <input type="email" required placeholder="Email" class="box" name="email">
       <input type="text" required placeholder="Club Name" class="box" name="name">
       <input type="text" required placeholder="Event Title" class="box" name="title">
@@ -104,8 +107,10 @@
       <input type="text" required placeholder="Dress Code" class="box" name="dress_code">
       <input type="text" required placeholder="Venue" class="box" name="venue">
       <input type="file" name="poster" required class="box" accept="image/jpg, image/png, image/jpeg">
+      <input type="text" required placeholder="Event Description" class="paragraph" name="description">
       <input type="submit" value="submit" class="btn" name="submit">
     </form>
+
 
   </section>
 
