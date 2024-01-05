@@ -18,7 +18,7 @@ include 'admins.php';
 // Check if the user is logged in
 if (!isset($_SESSION['admin_id'])) {
   // Redirect to the login page if not logged in
-  header('location: login.php');
+  header('location: adminLogin.php');
   exit();
 }
 
@@ -62,6 +62,7 @@ if ($user_info) {
       <a href="adminHome.php">Home</a>
       <a href="adminCalendar.php" class="calendar-active">Calendar</a>
       <a href="adminEvents.php">Events</a>
+      <a href="viewerAbout.php">About</a>
       <a href="adminContact.php">Contact</a>
       <?php if (isset($image) && isset($username)): ?>
         <div class="user-profile" onclick="openUserProfileUpdate()">

@@ -56,8 +56,8 @@
 
 
         <div class="modal-footer">
+        <button type="submit" class="btn btn-success" style="background-color:#ffc869; border: 2px solid #ffc869;" >Add Details</button>
           <button type="submit" class="btn btn-success" style="background-color:#56ab91; border: 2px solid #56ab91;">Save Changes</button>
-          <button type="submit" class="btn btn-success" style="background-color:#ffc869; border: 2px solid #ffc869;" >Add Details</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </form>

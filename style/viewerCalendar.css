@@ -134,12 +134,12 @@
 
 .btn {
   height: 40px;
-  width: 100px;
+  width: 120px;
   background: #56ab91;
   border: 0;
   border-radius: 5px; /* Adjust this value for a more square look */
   color: #fff;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.3s ease;

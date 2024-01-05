@@ -72,6 +72,7 @@ if ($user_info) {
             <a href="adminHome.php" class="home-active">Home</a>
             <a href="adminCalendar.php">Calender</a>
             <a href="adminEvents.php">Events</a>
+            <a href="viewerAbout.php">About</a>
             <a href="adminContact.php">Contact</a>
             <?php if (isset($image) && isset($username)): ?>
                 <div class="user-profile" onclick="openUserProfileUpdate()">

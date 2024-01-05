@@ -29,7 +29,7 @@
       <a href="viewerContact.php">Contact</a>
     </nav>
 
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+    <button class="btn" onclick="navigateToLoginPage()"> SEND EVENTS </button>
 
   </header>
 </head>

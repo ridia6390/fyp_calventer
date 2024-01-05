@@ -205,7 +205,7 @@ a:hover{
   display: none;
 }
 
-/* .btn {
+.btn {
   height: 40px;
   width: 100px;
   background: #56ab91;
@@ -222,28 +222,28 @@ a:hover{
 
 .btn:hover {
   opacity: 0.65; 
-} */
+}
 
-.user-profile {
+/* .user-profile {
   position: relative;
   display: flex;
   align-items: center;
   margin-left: 100px;
-  /* margin-right: 50px; */
+  
 }
 
 .user-profile img {
-  border-radius: 50%; /* Make the image circular */
+  border-radius: 50%; 
   border: 2px solid #159572;
-  width: 40px; /* Set the width of the circular image */
-  height: 40px; /* Set the height of the circular image */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 40px;
+  height: 40px; 
+  object-fit: cover; 
   margin-right: 8px;
 }
 
 .user-profile .username{
   font-weight: 600;
-}
+} */
 
 
 .logout-icon a {

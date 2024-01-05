@@ -14,6 +14,7 @@
         <p><strong>Event Date:</strong> <span id="event_date"></span></p>
         <p><strong>Start Time:</strong> <span id="start_time"></span></p>
         <p><strong>End Time:</strong> <span id="end_time"></span></p>
+        <button type="submit" class="btn btn-success" style="background-color:#ffc869; border: 2px solid #ffc869; font-size: 13px" >View Details</button>
       </div>
     </div>
   </div>
