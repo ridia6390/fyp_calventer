@@ -1,3 +1,4 @@
+
 //------------------------Navbar----------------------------
 //  const toggleBtn = document.querySelector('.toggle_btn');
 //  const toggleBtnIcon = document.querySelector('.toggle_btn i');
@@ -91,7 +92,6 @@ window.onresize = function (event) {
   reloadSlider();
 };
 
-//--------------------------------------------------------------
 
 
 // Add an event listener to the user-profile for opening the popup
@@ -107,6 +107,12 @@ document.querySelector(".user-profile").addEventListener("click", function (even
 // Modify the openUserProfileUpdate function to navigate directly
 function openUserProfileUpdate() {
   window.location.href = 'user_profile_update.php';
+}
+
+
+// Function to navigate to the login page
+function navigateToAdminLoginPage() {
+  window.location.href = "adminLogin.php";
 }
 
 

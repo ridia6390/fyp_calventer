@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/cover.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" /> 
-  <title>Cover</title>
+  <title> Admin Cover</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       <img class="calventer-logo" src="image/logo.png" alt="">
       <h3 class="project-name">Calventer</h3>
       <h4 class="project-tagline">Event Calender For IIUM's <br> Social Clubs</h4>
-      <button class="btn" onclick="navigateToViewerHomePage()"> Get Started</button>
+      <button class="btn" onclick="navigateToAdminHomePage1()"> Get Started</button>
     </div>
 
     <div class="video-border">
@@ -32,7 +32,7 @@
 
   </div>
 
-  <script src="js/cover.js"></script>
+  <script src="js/adminCover.js"></script>
 </body>
 
 </html>
