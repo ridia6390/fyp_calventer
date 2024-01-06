@@ -172,6 +172,26 @@ a:hover {
   display: none;
 }
 
+.btn {
+  height: 40px;
+  width: 100px;
+  background: #56ab91;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.65; 
+}
+
+
 .user-profile {
   position: relative;
   display: flex;
@@ -227,7 +247,7 @@ input {
 .fc-content {
   color: #fff ;
 }
-
+/* 
 #btnClose {
   color: crimson;
   padding: 5px;
@@ -239,7 +259,7 @@ input {
 #btnClose:hover {
   cursor: pointer;
   background-color: #333;
-}
+} */
 
 .circu {
   padding: 25px;

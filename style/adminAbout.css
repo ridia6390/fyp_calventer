@@ -1,0 +1,723 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+
+:root {
+  --box-color:#D6D6D6;
+  --header-color:#383838;
+  --background-color:#F3F3F3;
+  --buttons:#03B199;
+  --wb-color:#05B2A7;
+  --white-color: #fff;
+  --green-color: #159572;
+  --light-green-color: #95d8d6;
+  --gray-color: #f8f8f8;
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --card-color: #bbb;
+}
+
+
+
+/********************************ALL x Body*******************************************/
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  color: var(--text-color);
+  background:#d4d4d4;
+  
+}
+
+
+
+/*
+.section_clubs {
+  /*background-color: var(--wb-color);
+  padding: 20px;  Optional: Add padding for better visual appearance
+} 
+*/
+
+
+li{
+list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+a:hover{
+ color: var(--green-color);
+
+}
+
+.logo_name {
+  font-size: 14px; 
+  margin-left: 10px; 
+}
+
+.bold-text {
+  font-weight: bold; 
+  font-size: 1.1rem;
+}
+
+.smaller-text {
+  font-size: 12px; 
+}
+
+
+/********************************Navbar x header*******************************************/
+/* Add a media query for screens with a maximum width of 768px (adjust as needed) */
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 0px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .logo {
+    width: 15%; /* Adjust logo size for smaller screens */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack the navigation links vertically */
+    align-items: flex-end; /* Align the links to the right */
+    position: absolute;
+    top: 80px; /* Adjust the distance from the top */
+    left: 0;
+    width: 100%;
+    background: white; /* Background color for the mobile menu */
+    display: none; /* Hide the navigation links by default */
+  }
+
+  .navbar a {
+    padding: 15px; /* Adjust padding for the mobile menu */
+    text-align: center; /* Center the text in the mobile menu */
+    width: 100%; /* Make the links full width in the mobile menu */
+  }
+
+ 
+
+  .topnav .icon {
+    display: block; /* Display the navigation icon for smaller screens */
+    cursor: pointer;
+  }
+
+  .navbar.active {
+    display: flex; /* Display the navigation links when the mobile menu is active */
+  }
+}
+
+/*Nav*/
+.header {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 8px 11px rgba(14, 55, 54, 0.15);
+  padding: 0px 90px;
+  transition: 0.5s;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.9rem;
+}
+
+.logo {
+  width: 8%;
+  column-gap: 0.9rem;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo_name {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 1.3rem; /* Make the text within the strong element bold */
+}
+
+.smaller-text {
+  font-size: smaller; /* Set a smaller font size for the specific part of the text */
+}
+
+.navbar {
+  /* position: relative; */
+  display: flex;
+  column-gap: 0.5rem;
+  /* padding: 0px 50px; */
+}
+
+.navbar {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.navbar a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  transition: background 0.1s, color 0.1s;
+  border-radius: 5rem;
+  text-decoration: none;
+  /* margin-right: 10px;  */
+}
+
+/* .navbar a:last-child {
+  margin-right: 0; 
+} */
+
+
+
+ 
+
+.navbar a:hover,
+.navbar .about-active {
+  background: #078c7c;
+  color: var(--bg-color);
+  border-radius: 5rem;
+  transition: background 0.5s;
+}
+
+.navbar.scrolled {
+  background-color: #333;
+  color: #fff;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.btn {
+  height: 40px;
+  width: 100px;
+  background: #56ab91;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  text-decoration: none;
+  /* margin-right: 0 !important;   */
+  /* padding: 0 !important;  */
+}
+
+.btn:hover {
+  opacity: 0.65; 
+}
+
+
+/*dropdown menu*/
+
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgb(232, 232, 232);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Center items vertically */
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu li:hover {
+  transform: scale(1.05);
+  color: var(--buttons);
+}
+.dropdown_menu.open{
+  height: 300px;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/*responsive nav*/
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn{
+    display: none;
+    
+  }
+
+  .navbar .toggle_btn{
+    display: block;
+  }
+
+  .dropdown_menu{
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu{
+      left: 2rem;
+      width: unset;
+
+  }
+  
+}
+
+
+
+/********************************BANNER*******************************************/
+
+.banner {
+  position: relative;
+  text-align: center;
+  background-color: #ffffff; /* Background color of the banner */
+  color: white; /* Text color of the banner */
+  padding: 15px;
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Adjust the border-radius as needed */
+}
+
+.banner-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-content img {
+  width: 150px;
+  border-radius: 50%;
+  
+}
+
+.banner h3{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.Section_About {
+  margin-top: 30%;
+  border: 2px solid#078c7c; /* Border color */
+  border-radius: 15px; /* Adjust the value for the desired amount of rounding */
+  padding: 20px; /* Add padding to create some space between the content and the border */
+}
+
+/*Background for the meet the team */
+.Section_header{
+  padding: 40px 0; /*in the page*/
+  background: #e5e6e6;
+  color: #434343;
+  text-align: center;
+}
+
+.inner{
+  max-width: 1300px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+
+.banner header_img{
+  display: flex;
+  align-items: center;
+  column-gap: none;
+  margin-right: 60px;
+  height: 10px;
+
+}
+
+.header_img img{
+  width: 170px;
+  margin-left: 140px;
+}
+
+
+
+.custom-heading {
+  background-color: #229691; /* Change to your preferred background color */
+  color: #fff; /* Change to your preferred text color */
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-heading:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.sub-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+
+.about {
+  background: #112620;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content horizontally and vertically */
+  min-height: 100vh;
+}
+
+.about-box {
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 25px 25px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  margin-top: 80px; 
+}
+
+.about-logo {
+  width: 300px;
+  height: auto;
+  margin-right: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-box h3 {
+  color: #56ab91;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: center;
+}
+
+.about-box p {
+  line-height: 1.6;
+}
+
+.about-content a {
+  color: #56ab91;
+}
+
+#calventerContent {
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+
+
+ /********************************ABOUT US*******************************************/
+
+
+
+#services {
+  padding: 50px 10%;
+background: #e5e6e6;
+
+}
+
+
+
+#services h2 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+}
+
+
+  .border1{
+    width: 160px;
+    height: 5px;
+    background: #ffffff;
+    margin: 24px auto;
+  }
+
+  .border2{
+    width: 160px;
+    height: 5px;
+    background: #03B199;
+    margin: 24px auto;
+  }
+
+
+  .headings {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  
+  .headings h2 {
+    color:#333;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .headings .border {
+    height: 3px;
+    width: 50px;
+    background-color: #56ab91;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  
+
+#services .rownew{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ margin-top: 4rem;
+ text-align: center;
+ column-gap: 2rem;
+ row-gap: 3rem;
+}
+
+#services .rownew .item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px; /* Add some margin to separate the image from the text */
+}
+
+#services .rownew .item{
+
+  background-color: #ffffff;
+  padding: 20px 15px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
+  border-radius: 5px; 
+  transition: all 0.3s ease;
+}
+
+
+#services .rownew .item:hover{
+
+ transform: scale(1.04);
+ background-color: #f9fffe;
+ 
+}
+
+#services .rownew .item h3{
+ margin: 15px 0;
+ font-size: 15px;
+ 
+}
+
+#services .rownew .item p{
+  font-size: 13px;
+ }
+
+ @media (max-width: 1024px){
+
+  
+ #services .rownew{
+  grid-template-columns: repeat(2, 1fr);
+ }
+
+}
+
+@media (max-width: 657px){
+
+  
+  #services .rownew{
+   grid-template-columns: repeat(1, 1fr);
+  }
+ 
+ }
+ 
+
+ 
+/****************************************************TEAM*****************************************/
+
+.team {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.slide-container {
+  max-width: 1120px;
+  background-color: white;
+  padding: 50px 20px;
+  border-radius: 25px;
+  width: 80%;
+  height: 500px;
+  
+}
+
+.slide-content{
+  margin: 0 40px;
+}
+
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+
+.card {
+  border-radius: 25px;
+  background-color: #56ab91;
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #204b3e;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 15px;
+  background-color: #204b3e; 
+}
+
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #56ab91;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: white;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #56ab91;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #204b3e;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.swiper-navBtn{
+  color: #204b3e;
+  transition: color 0.3 ease;
+}
+
+.swiper-navBtn:hover{
+  color: #56ab91 ;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 40px;
+
+}
+
+.swiper-button-next{
+  right: 0;
+}
+  
+
+.swiper-button-prev{
+  left: 0;
+  
+}
+
+.swiper-pagination-bullet{
+  background-color:#56ab91;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color:#204b3e ;
+}
+
+@media screen and (max-width:768px){
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+
+}

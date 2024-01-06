@@ -30,10 +30,10 @@
         </div>
         <nav class="navbar">
             <a href="adminHome1.php" class="home-active">Home</a>
-            <a href="adminCalendar.php">Calender</a>
-            <a href="adminEvents.php">Events</a>
-            <a href="adminAbout.php">About</a>
-            <a href="adminContact.php">Contact</a>
+            <a href="adminCalendar1.php">Calender</a>
+            <a href="adminEvents1.php">Events</a>
+            <a href="adminAbout1.php">About</a>
+            <a href="adminContact1.php">Contact</a>
         </nav>
 
         <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
