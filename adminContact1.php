@@ -4,10 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
   <link rel="stylesheet" href="style/adminContact.css" />
+
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
+
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <title>Admin Contact</title>
   <!--Navbar-->
@@ -47,6 +53,34 @@
       <input type="submit" value="submit" class="submit-btn" name="submit">
     </form>
   </section>
+
+   <!-------------------------------------------------FOOTER------------------------------------------------------------->
+
+   <footer class="footer">
+        <div class="footer-col">
+            <h4>2023 Event Calendar For IIUM's Social Club</h4>
+            <ul>
+                <li>Website: <a href="www.calventer.com">www.calventer.com</a></li>
+                <li>Email: <a href="mailto:calventer@edu.my">calventer@edu.my</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-copyright">
+                Copyright &copy; 2023 calventer. Designed by <span>Ridia and Nouran</span>
+            </p>
+        </div>
+    </footer>
 
   <script src="js/adminContact.js"></script>
 

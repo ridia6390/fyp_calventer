@@ -43,24 +43,22 @@ if ($user_info) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <title>Viewer Home</title>
+
+    <!-- CSS link -->
     <link rel="stylesheet" href="style/viewerHome.css">
+
     <!-- Boxicon link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title> Viewer Home</title>
 
 
-    <!-------------------------------------------------NAV------------------------------------------------------------->
 
     <!--Navbar-->
     <header class="header">
@@ -88,23 +86,8 @@ if ($user_info) {
                     </a>
                 </div>
             <?php endif; ?>
+
         </nav>
-
-
-
-        <!-- <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div> -->
-        <!-- <div class="dropdown_menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calender">Calender</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
-            </ul>
-        </div> -->
 
     </header>
 </head>
@@ -122,7 +105,6 @@ if ($user_info) {
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <!-- <a href="#" class="home-btn">Check Calender</a> -->
             </div>
 
         </section>
@@ -132,7 +114,6 @@ if ($user_info) {
             <div class="Section_header">
                 <div class="inner">
                     <div class="custom-heading">Announcements</div>
-                    <!--<div class="border"></div>-->
                     <div class="sub-heading">Stay updated with the latest club news and posters.</div>
                     <br>
                     <section class="innercontainer">
@@ -240,7 +221,7 @@ if ($user_info) {
         </section>
     </main>
 
-
+    
     <!-------------------------------------------------FOOTER------------------------------------------------------------->
 
     <footer class="footer">
@@ -276,7 +257,7 @@ if ($user_info) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
         crossorigin="anonymous"></script>
-    <script src="js/viewerHome.js"></script>
+    <script src="js/adminHome.js"></script>
 
 
 </body>

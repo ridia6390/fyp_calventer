@@ -82,26 +82,7 @@ if ($user_info) {
           </a>
         </div>
       <?php endif; ?>
-    </nav>
-
-   
-
-
-
-
-    <!-- <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div> -->
-    <!-- <div class="dropdown_menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calender">Calender</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
-            </ul>
-        </div> -->
+      </nav>
 
   </header>
 
@@ -338,6 +319,34 @@ if ($user_info) {
       </div>
     </div>
   </section>
+
+      <!-------------------------------------------------FOOTER------------------------------------------------------------->
+
+      <footer class="footer">
+        <div class="footer-col">
+            <h4>2023 Event Calendar For IIUM's Social Club</h4>
+            <ul>
+                <li>Website: <a href="www.calventer.com">www.calventer.com</a></li>
+                <li>Email: <a href="mailto:calventer@edu.my">calventer@edu.my</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-copyright">
+                Copyright &copy; 2023 calventer. Designed by <span>Ridia and Nouran</span>
+            </p>
+        </div>
+    </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

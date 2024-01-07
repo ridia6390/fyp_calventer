@@ -38,20 +38,6 @@
 
         <button class="btn" onclick="navigateToViewerLoginPage()"> LOGIN </button>
 
-        <!-- <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div> -->
-        <!-- <div class="dropdown_menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calender">Calender</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
-            </ul>
-        </div> -->
-
     </header>
 </head>
 
@@ -68,7 +54,6 @@
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <!-- <a href="#" class="home-btn">Check Calender</a> -->
             </div>
 
         </section>
@@ -78,7 +63,6 @@
             <div class="Section_header">
                 <div class="inner">
                     <div class="custom-heading">Announcements</div>
-                    <!--<div class="border"></div>-->
                     <div class="sub-heading">Stay updated with the latest club news and posters.</div>
                     <br>
                     <section class="innercontainer">

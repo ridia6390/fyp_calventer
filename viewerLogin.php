@@ -78,17 +78,7 @@ if (isset($_POST['submit'])) {
          <input type="email" required placeholder="Enter your email" class="box" name="email">
          <input type="password" required placeholder="Enter your password" class="box" name="pass">
          <input type="submit" value="login" class="btn" name="submit">
-
-       
-
-         <!-- <p>
-            Already Club Admin ? Add Your Events Today via <a href="eventForm.php"> Event Form</a>
-         </p> -->
-
-         <!-- <div class="separator">
-            <span class="or">OR</span>
-         </div> -->
-
+         <a href="viewerHome1.php" class="back-btn">Go Back</a>
          <p>Don't have an account? <a href="viewerRegister.php"> Register</a></p>
 
          <div class="link">

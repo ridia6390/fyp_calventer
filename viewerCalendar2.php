@@ -45,12 +45,18 @@ if ($user_info) {
   <link rel="stylesheet" href="style/fullcalendar.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <link rel="stylesheet" href="style/bootstrap.min.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="style/viewerCalendar.css">
+
+  <link rel="stylesheet" href="style/adminCalendar.css">
   <!-- Boxicon link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <title> Viewer Calendar </title>
 
   <!--Navbar-->
@@ -86,6 +92,24 @@ if ($user_info) {
     </a>
 
   </header>
+  <style>
+
+    .logo-container{
+      margin-right: 60px;
+    }
+    
+    .eventForm-icon i {
+      color: #078c7c;
+      margin-top: 9px;
+      /* margin-left: 50px; */
+      font-size: 30px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .eventForm-icon:hover i {
+      color: #11dac2;
+    }
+  </style>
 </head>
 
 <body>
@@ -142,12 +166,12 @@ if ($user_info) {
         // New Event
         select: function (start, end) {
           $("#exampleModal").modal();
-          $("input[name=club_name]").val(''); // Clear club name input
-          $("input[name=event_title]").val(''); // Clear event title input
-          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
-          $("input[name=start_time]").val(''); // Clear start time input
-          $("input[name=end_time]").val(''); // Clear end time input
-          $("input[name=club_name]").val(''); // Clear club name input
+          $("input[name=club_name]").val(''); 
+          $("input[name=event_title]").val(''); 
+          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); 
+          $("input[name=start_time]").val(''); 
+          $("input[name=end_time]").val(''); 
+          $("input[name=club_name]").val(''); 
         },
 
 
@@ -185,6 +209,34 @@ if ($user_info) {
       }, 3000);
     });
   </script>
+
+  <!-------------------------------------------------FOOTER------------------------------------------------------------->
+
+  <footer class="footer">
+        <div class="footer-col">
+            <h4>2023 Event Calendar For IIUM's Social Club</h4>
+            <ul>
+                <li>Website: <a href="www.calventer.com">www.calventer.com</a></li>
+                <li>Email: <a href="mailto:calventer@edu.my">calventer@edu.my</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-copyright">
+                Copyright &copy; 2023 calventer. Designed by <span>Ridia and Nouran</span>
+            </p>
+        </div>
+    </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>

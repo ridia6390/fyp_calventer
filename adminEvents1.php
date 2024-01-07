@@ -46,13 +46,16 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="style/viewerEvents.css">
+
+  <link rel="stylesheet" href="style/adminEvents.css">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title> Admin Events</title>
+
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -126,6 +129,35 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
       </tbody>
     </table>
   </div>
+
+  <!-------------------------------------------------FOOTER------------------------------------------------------------->
+
+  <footer class="footer">
+        <div class="footer-col">
+            <h4>2023 Event Calendar For IIUM's Social Club</h4>
+            <ul>
+                <li>Website: <a href="www.calventer.com">www.calventer.com</a></li>
+                <li>Email: <a href="mailto:calventer@edu.my">calventer@edu.my</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-copyright">
+                Copyright &copy; 2023 calventer. Designed by <span>Ridia and Nouran</span>
+            </p>
+        </div>
+    </footer>
+
 
 
   <!-- Bootstrap -->
