@@ -22,14 +22,6 @@ body {
    background: #56ab91;
  }
 
-/* *{
-   font-family: 'Nunito', sans-serif;
-   margin:0; padding:0;
-   box-sizing: border-box;
-   outline: none; border:none;
-   text-decoration: none;
-} */
-
 *::-webkit-scrollbar {
   height: 5px;
   width: 10px;
@@ -114,9 +106,6 @@ html {
  {
   color: var(--black);
 }
-
-
-
 
 .form-container form p {
   font-size: 1.5rem;

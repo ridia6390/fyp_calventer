@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
   <!-- custom css file link  -->
-  <link rel="stylesheet" href="style/register.css">
+  <link rel="stylesheet" href="style/eventForm.css">
 </head>
 
 <body>
@@ -34,6 +34,7 @@
       <input type="file" name="poster" required class="box" accept="image/jpg, image/png, image/jpeg">
       <input type="text" required placeholder="Event Description" class="paragraph" name="description">
       <input type="submit" value="submit" class="btn" name="submit">
+      <a href="viewerCalendar2.php" class="back-btn">Go Back</a>
     </form>
 
 
