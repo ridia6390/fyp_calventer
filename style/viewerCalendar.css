@@ -75,6 +75,7 @@
   display: flex;
   align-items: center;
   column-gap: 0.9rem;
+  margin-right: auto;
 }
 
 .logo {
@@ -102,6 +103,8 @@
 .navbar {
   display: flex;
   column-gap: 0.5rem;
+  /* margin-right: 20px; */
+  margin-left: 65px;
 }
 
 .navbar a {
@@ -112,6 +115,7 @@
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
   text-decoration: none;
+ 
 }
 
 .navbar a:hover,
@@ -132,14 +136,16 @@
   display: none;
 }
 
+
+
 .btn {
   height: 40px;
-  width: 120px;
+  width: 100px;
   background: #56ab91;
   border: 0;
-  border-radius: 5px; /* Adjust this value for a more square look */
+  border-radius: 5px;
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -147,10 +153,67 @@
   text-decoration: none;
 }
 
-
 .btn:hover {
   opacity: 0.65; 
 }
+
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  /* margin-right: 50px;  */
+}
+
+.user-profile img {
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #159572;
+  width: 40px; /* Set the width of the circular image */
+  height: 40px; /* Set the height of the circular image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-right: 8px;
+}
+
+.user-profile .username{
+  font-weight: 600;
+}
+
+.logout-icon a {
+  color: #1d1b1b;  /* Set the desired color */
+  /* Adjust the margin as needed */
+  /* margin-bottom: 5px; */
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s; /* Add a smooth color transition */
+  display: inline-block;
+  transform: rotate(180deg);
+  font-weight: 600;
+  
+}
+
+.logout-icon a:hover{
+  color: red;
+  background-color: transparent;
+
+}
+
+.eventForm-icon {
+  margin-right: auto;
+}
+
+.eventForm-icon i {
+  color: #078c7c;
+  margin-top: 9px;
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+}
+
+.eventForm-icon:hover i {
+  color: #11dac2;
+  /* Add any additional hover styles you want */
+}
+
+
 
 
 body {

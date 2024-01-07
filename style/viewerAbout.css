@@ -231,6 +231,46 @@ a:hover{
 }
 
 
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  /* margin-right: 50px;  */
+}
+
+.user-profile img {
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #159572;
+  width: 40px; /* Set the width of the circular image */
+  height: 40px; /* Set the height of the circular image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-right: 8px;
+}
+
+.user-profile .username{
+  font-weight: 600;
+}
+
+.logout-icon a {
+  color: #1d1b1b;  /* Set the desired color */
+  /* Adjust the margin as needed */
+  /* margin-bottom: 5px; */
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s; /* Add a smooth color transition */
+  display: inline-block;
+  transform: rotate(180deg);
+  font-weight: 600;
+  
+}
+
+.logout-icon a:hover{
+  color: red;
+  background-color: transparent;
+
+}
+
 /*dropdown menu*/
 
 .dropdown_menu{

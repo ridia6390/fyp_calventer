@@ -2,6 +2,3 @@
 function navigateToViewerLoginPage() {
   window.location.href = "viewerLogin.php";
 }
-
-
-

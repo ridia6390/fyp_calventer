@@ -34,6 +34,44 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
 }
 ?>
 
+<?php
+session_start();
+
+// Function to get user information based on ID
+function getUserInfo($id)
+{
+  global $conn;
+  $select = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
+  $select->execute([$id]);
+  return $select->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+  // Redirect to the login page if not logged in
+  header('location: adminLogin.php');
+  exit();
+}
+
+// Retrieve user information from the session
+$admin_id = $_SESSION['admin_id'];
+
+// Assuming you have a function to get user information based on the ID
+$user_info = getUserInfo($admin_id);
+
+// Check if user information is available
+if ($user_info) {
+  $image = $user_info['image'];
+  $username = $user_info['name'];
+  $image_path = "image/$image";
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +84,12 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
   <link rel="stylesheet" href="style/viewerEvents.css">
+
+   <!-- Boxicon link -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -62,15 +105,26 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
     </div>
 
     <nav class="navbar">
-      <a href="viewerHome.php">Home</a>
-      <a href="viewerCalendar.php">Calender</a>
-      <a href="viewerEvents.php" class="events-active">Events</a>
-      <a href="viewerAbout.php">About</a>
-      <a href="viewerContact.php">Contact</a>
+      <a href="viewerHome2.php">Home</a>
+      <a href="viewerCalendar2.php">Calender</a>
+      <a href="viewerEvents2.php" class="events-active">Events</a>
+      <a href="viewerAbout2.php">About</a>
+      <a href="viewerContact2.php">Contact</a>
+      <?php if (isset($image) && isset($username)): ?>
+        <div class="user-profile" onclick="openUserProfileUpdate()">
+          <img src="<?php echo $image_path; ?>" alt="User Image">
+          <span class="username">
+            <?php echo $username; ?>
+          </span>
+        </div>
+        <div class="logout-icon">
+          <a href="logout.php" class='bx bx-log-out'>
+          </a>
+        </div>
+      <?php endif; ?>
     </nav>
 
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
-
+    
   </header>
 </head>
 

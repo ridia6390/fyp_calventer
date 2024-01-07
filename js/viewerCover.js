@@ -1,4 +1,4 @@
-function navigateToViewerHome1Page(){
+function navigateToViewerHomePage1(){
   window.location.href = "viewerHome1.php";
 }
 

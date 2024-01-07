@@ -5,7 +5,6 @@ include('php/config.php');
 $sqlEvents = "SELECT * FROM calendar";
 $resultEvents = mysqli_query($conn, $sqlEvents);
 
-
 $events = [];
 while ($eventData = mysqli_fetch_array($resultEvents)) {
   // Validate date range
@@ -35,44 +34,6 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
 }
 ?>
 
-<?php
-session_start();
-
-// Function to get user information based on ID
-function getUserInfo($id)
-{
-  global $conn;
-  $select = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
-  $select->execute([$id]);
-  return $select->fetch(PDO::FETCH_ASSOC);
-}
-
-?>
-
-<?php
-include 'admins.php';
-
-// Check if the user is logged in
-if (!isset($_SESSION['admin_id'])) {
-  // Redirect to the login page if not logged in
-  header('location: adminLogin.php');
-  exit();
-}
-
-// Retrieve user information from the session
-$admin_id = $_SESSION['admin_id'];
-
-// Assuming you have a function to get user information based on the ID
-$user_info = getUserInfo($admin_id);
-
-// Check if user information is available
-if ($user_info) {
-  $image = $user_info['image'];
-  $username = $user_info['name'];
-  $image_path = "image/$image";
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,31 +43,16 @@ if ($user_info) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="style/adminEvents.css">
-
-  <!-- Boxicon link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
+  <link rel="stylesheet" href="style/viewerEvents.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title> Admin Events</title>
-
+  <title> Viewer Events</title>
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -116,25 +62,14 @@ if ($user_info) {
     </div>
 
     <nav class="navbar">
-      <a href="adminHome2.php">Home</a>
-      <a href="adminCalendar2.php">Calender</a>
-      <a href="adminEvents2.php" class="events-active">Events</a>
-      <a href="adminAbout2.php">About</a>
-      <a href="adminContact2.php">Contact</a>
-      <?php if (isset($image) && isset($username)): ?>
-        <div class="user-profile" onclick="openUserProfileUpdate()">
-          <img src="<?php echo $image_path; ?>" alt="User Image">
-          <span class="username">
-            <?php echo $username; ?>
-          </span>
-        </div>
-        <div class="logout-icon">
-          <a href="logout.php" class='bx bx-log-out'>
-          </a>
-        </div>
-      <?php endif; ?>
-
+      <a href="viewerHome1.php">Home</a>
+      <a href="viewerCalendar1.php">Calender</a>
+      <a href="viewerEvents1.php" class="events-active">Events</a>
+      <a href="viewerAbout1.php">About</a>
+      <a href="viewerContact1.php">Contact</a>
     </nav>
+
+    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
 
   </header>
 </head>
@@ -159,7 +94,7 @@ if ($user_info) {
           <th scope="col">Event Title</th>
           <th scope="col">Start Time</th>
           <th scope="col">End Time</th>
-          <th scope="col">Action</th>
+          <th scope="col">Details</th>
         </tr>
       </thead>
       <tbody>
@@ -181,12 +116,10 @@ if ($user_info) {
               <?php echo $event['end_time'] ?>
             </td>
             <td>
-              <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
-                  style="margin-right: 15px;"></i></a>
-              <a href="edit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-edit fs-5 me-3"></i></a>
-              <a href="delete.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-trash fs-5"></i></a>
+              <!-- <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
+                  style="margin-right: 15px;"></i></a> -->
+              <a href="eventsDetailsViewViewer.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+                  class="fas fa-eye fs-5 me-3"></i></a>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -199,13 +132,12 @@ if ($user_info) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
         crossorigin="anonymous"></script>
-    <script src="js/adminEvents.js"></script>
+    <script src="js/viewerEvents.js"></script>
 
 
 </body>

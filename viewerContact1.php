@@ -19,13 +19,13 @@
     </div>
 
     <nav class="navbar">
-      <a href="viewerHome.php">Home</a>
-      <a href="viewerCalendar.php">Calender</a>
-      <a href="viewerEvents.php">Events</a>
-      <a href="viewerAbout.php">About</a>
-      <a href="viewerContact.php" class="contact-active">Contact</a>
+      <a href="viewerHome1.php">Home</a>
+      <a href="viewerCalendar1.php">Calender</a>
+      <a href="viewerEvents1.php">Events</a>
+      <a href="viewerAbout1.php">About</a>
+      <a href="viewerContact1.php" class="contact-active">Contact</a>
     </nav>
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+    <button class="btn" onclick="navigateToViewerLoginPage()"> LOGIN </button>
 
   </header>
 
@@ -49,7 +49,7 @@
 
 
   </section>
-
+  <script src="js/viewerContact.js"></script>
 </body>
 
 </html>

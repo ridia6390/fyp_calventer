@@ -18,7 +18,7 @@
   <section class="event-form-container">
 
     <form action="mail.php" method="post" enctype="multipart/form-data">
-      <h3> ADD UPCOMING EVENTS </h3>
+      <h3> SEND UPCOMING EVENTS INFO </h3>
       <h4 class="guidance"> Fill up the form with correct event details. Make sure all the information is accurate
         before submission.</h4>
       <h4 class="disclaimer"> * Please send us the event details at least ONE WEEK prior * </h4>

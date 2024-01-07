@@ -29,11 +29,11 @@
                     Clubs</span></div>
         </div>
         <nav class="navbar">
-            <a href="viewerHome.php" class="home-active">Home</a>
-            <a href="viewerCalendar.php">Calender</a>
-            <a href="viewerEvents.php">Events</a>
-            <a href="viewerAbout.php">About</a>
-            <a href="viewerContact.php">Contact</a>
+            <a href="viewerHome1.php" class="home-active">Home</a>
+            <a href="viewerCalendar1.php">Calender</a>
+            <a href="viewerEvents1.php">Events</a>
+            <a href="viewerAbout1.php">About</a>
+            <a href="viewerContact1.php">Contact</a>
         </nav>
 
         <button class="btn" onclick="navigateToViewerLoginPage()"> LOGIN </button>
