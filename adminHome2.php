@@ -69,11 +69,11 @@ if ($user_info) {
                     Clubs</span></div>
         </div>
         <nav class="navbar">
-            <a href="adminHome.php" class="home-active">Home</a>
-            <a href="adminCalendar.php">Calender</a>
-            <a href="adminEvents.php">Events</a>
-            <a href="viewerAbout.php">About</a>
-            <a href="adminContact.php">Contact</a>
+            <a href="adminHome2.php" class="home-active">Home</a>
+            <a href="adminCalendar2.php">Calender</a>
+            <a href="adminEvents2.php">Events</a>
+            <a href="adminAbout2.php">About</a>
+            <a href="adminContact2.php">Contact</a>
             <?php if (isset($image) && isset($username)): ?>
                 <div class="user-profile" onclick="openUserProfileUpdate()">
                     <img src="<?php echo $image_path; ?>" alt="User Image">

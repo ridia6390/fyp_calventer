@@ -5,7 +5,6 @@ include('php/config.php');
 $sqlEvents = "SELECT * FROM calendar";
 $resultEvents = mysqli_query($conn, $sqlEvents);
 
-
 $events = [];
 while ($eventData = mysqli_fetch_array($resultEvents)) {
   // Validate date range
@@ -35,6 +34,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,26 +46,13 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="style/adminEvents.css">
-
-  <!-- Boxicon link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
+  <link rel="stylesheet" href="style/viewerEvents.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title> Admin Events</title>
-
   <!--Navbar-->
   <header class="header">
     <div class="logo-container">
@@ -81,7 +68,8 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
       <a href="adminAbout1.php">About</a>
       <a href="adminContact1.php">Contact</a>
     </nav>
-    <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
+
+    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
 
   </header>
 </head>
@@ -106,7 +94,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
           <th scope="col">Event Title</th>
           <th scope="col">Start Time</th>
           <th scope="col">End Time</th>
-          <th scope="col">Action</th>
+          <th scope="col">Details</th>
         </tr>
       </thead>
       <tbody>
@@ -128,12 +116,10 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
               <?php echo $event['end_time'] ?>
             </td>
             <td>
-              <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
-                  style="margin-right: 15px;"></i></a>
-              <a href="edit.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-edit fs-5 me-3"></i></a>
-              <a href="delete.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
-                  class="fa-solid fa-trash fs-5"></i></a>
+              <!-- <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
+                  style="margin-right: 15px;"></i></a> -->
+              <a href="eventsDetailsViewViewer.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+                  class="fas fa-eye fs-5 me-3"></i></a>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -146,7 +132,6 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

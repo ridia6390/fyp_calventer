@@ -59,11 +59,11 @@ if ($user_info) {
     </div>
 
     <nav class="navbar">
-      <a href="adminHome.php">Home</a>
-      <a href="adminCalendar.php" class="calendar-active">Calendar</a>
-      <a href="adminEvents.php">Events</a>
-      <a href="viewerAbout.php">About</a>
-      <a href="adminContact.php">Contact</a>
+      <a href="adminHome2.php">Home</a>
+      <a href="adminCalendar2.php" class="calendar-active">Calendar</a>
+      <a href="adminEvents2.php">Events</a>
+      <a href="adminAbout2.php">About</a>
+      <a href="adminContact2.php">Contact</a>
       <?php if (isset($image) && isset($username)): ?>
         <div class="user-profile" onclick="openUserProfileUpdate()">
           <img src="<?php echo $image_path; ?>" alt="User Image">
@@ -164,7 +164,7 @@ if ($user_info) {
         eventRender: function (event, element) {
           element
             .find(".fc-content")
-            .prepend("<span id='btnClose'; class='closeon material-icons'>&#xe5cd;</span>");
+            .prepend("<span id='butnClose'; class='closeon material-icons'>&#xe5cd;</span>");
 
           // Delete Event
           element.find(".closeon").on("click", function () {

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
       if ($row['admin_type'] == 'admin') {
 
          $_SESSION['admin_id'] = $row['id'];
-         header('location:adminHome.php');
+         header('location:adminHome2.php');
 
       } else {
          $message[] = 'no user found!';

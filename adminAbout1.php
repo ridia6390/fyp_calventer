@@ -293,7 +293,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
     crossorigin="anonymous"></script>
-  <script src="js/viewerContact.js"></script>
+  <script src="js/adminAbout.js"></script>
 
 </body>
 
@@ -308,10 +308,3 @@
 
 
 
-</body>
-
-<script src="js/readmore.js"></script>
-<script src="js/swiper-bundle.min.js"></script>
-<script src="js/teamswiper.js"></script>
-
-</html>
