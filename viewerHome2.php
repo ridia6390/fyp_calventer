@@ -18,7 +18,7 @@ include 'admins.php';
 // Check if the user is logged in
 if (!isset($_SESSION['admin_id'])) {
     // Redirect to the login page if not logged in
-    header('location: adminLogin.php');
+    header('location: viewerLogin.php');
     exit();
 }
 
@@ -43,23 +43,22 @@ if ($user_info) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link rel="stylesheet" href="style/viewerHome.css">
-
-     <!-- Boxicon link -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
+    <link rel="stylesheet" href="style/viewerHome.css">
+    <!-- Boxicon link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-       
-        <link rel="stylesheet" type="text/css"
+
+    <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title> Viewer Home</title>
-    
+
 
     <!-------------------------------------------------NAV------------------------------------------------------------->
 
@@ -91,7 +90,7 @@ if ($user_info) {
             <?php endif; ?>
         </nav>
 
-    
+
 
         <!-- <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>

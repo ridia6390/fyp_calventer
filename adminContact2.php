@@ -72,7 +72,7 @@ if ($user_info) {
           </span>
         </div>
         <div class="logout-icon">
-          <a href="logout.php" class='bx bx-log-out'>
+          <a href="adminLogout.php" class='bx bx-log-out'>
           </a>
         </div>
       <?php endif; ?>

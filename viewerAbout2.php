@@ -18,7 +18,7 @@ include 'admins.php';
 // Check if the user is logged in
 if (!isset($_SESSION['admin_id'])) {
   // Redirect to the login page if not logged in
-  header('location: adminLogin.php');
+  header('location: viewerLogin.php');
   exit();
 }
 
@@ -78,7 +78,7 @@ if ($user_info) {
           </span>
         </div>
         <div class="logout-icon">
-          <a href="adminLogout.php" class='bx bx-log-out'>
+          <a href="viewerLogout.php" class='bx bx-log-out'>
           </a>
         </div>
       <?php endif; ?>
