@@ -53,7 +53,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Save Event</button>
+          <button type="submit" class="btn btn-success">Register</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </form>

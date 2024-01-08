@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Update Event and View Details</h5>
+        <h5 class="modal-title">Update Event and Add Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -48,7 +48,7 @@
           <input type="radio" name="color_event" id="blueUpd" value="#2196F3">
           <label for="blueUpd" class="circu" style="background-color: #2196F3;"> </label>
 
-          <input type="radio" name="color_event" id="orange" value="#FFAC1C">
+          <input type="radio" name="color_event" id="orangeUpd" value="#FFAC1C">
           <label for="orangeUpd" class="circu" style="background-color: #FFAC1C;"> </label>
 
 
@@ -56,8 +56,8 @@
 
 
         <div class="modal-footer">
-        <button type="submit" class="btn btn-success" style="background-color:#ffc869; border: 2px solid #ffc869;" >Add Details</button>
-          <button type="submit" class="btn btn-success" style="background-color:#56ab91; border: 2px solid #56ab91;">Save Changes</button>
+          <a href="adminEvents2.php" class="btn btn-add">Add Details</a>
+          <button type="submit" class="btn btn-success" >Update</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </form>

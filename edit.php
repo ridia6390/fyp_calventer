@@ -14,36 +14,42 @@ if (isset($_POST['submit'])) {
     $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
     $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
     $venue = mysqli_real_escape_string($conn, $_POST['venue']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
     
 
     // Get the current poster path
     $poster = $eventData['poster'];
 
-    // Handle file upload only if a new poster is provided
-    if (!empty($_FILES['new_poster']['name'])) {
-        $uploadDir = 'uploaded_poster/';
-        $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
 
-        if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
-            $poster = $uploadFile; // Update poster path
-        } else {
-            echo "Failed to upload poster.";
-            exit;
-        }
-    }
+    // Handle file upload only if a new poster is provided
+if (!empty($_FILES['new_poster']['name'])) {
+   $uploadDir = 'uploaded_poster/';
+   $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
+
+   if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
+       $poster = $uploadFile; // Update poster path
+   } else {
+       echo "Failed to upload poster. Please try again.";
+       exit;
+   }
+} else {
+   // Use the current poster path if no new poster is uploaded
+   $poster = $_POST['current_poster'];
+}
    
 
     $updateSql = "UPDATE events SET 
         event_theme = '$event_theme', 
         dress_code = '$dress_code', 
         venue = '$venue', 
+        description = '$description',
         poster = '$poster'
         WHERE id = $eventId";
 
     $updateResult = mysqli_query($conn, $updateSql);
 
     if ($updateResult) {
-        header("Location: adminEvents.php?msg=Event details updated successfully");
+        header("Location: adminEvents2.php?msg=Event details updated successfully");
         exit;
     } else {
         echo "Failed to update: " . mysqli_error($conn);
@@ -124,6 +130,12 @@ $eventData = mysqli_fetch_assoc($resultEvent);
                   placeholder="Main Auditorium">
             </div>
 
+            
+            <div class="mb-3">
+               <label class="form-label">Description</label>
+               <input type="text" class="form-control" name="description" value="<?= $eventData['description'] ?>" placeholder="Event Description" style= "height:100px; padding-bottom: 60px">
+            </div>
+
             <div class="mb-3">
                <label class="form-label">Current Poster</label>
                <img src="<?= $eventData['poster'] ?>" alt="Current Poster" style="max-width: 200px;">
@@ -139,11 +151,10 @@ $eventData = mysqli_fetch_assoc($resultEvent);
                <label class="form-label">New Poster</label>
                <input type="file" class="form-control" name="new_poster" accept="image/jpg, image/png, image/jpeg">
             </div>
-
             <div>
                <button type="submit" class="btn btn-success" name="submit"
                   style="background-color: #56ab91; border: 1px solid #56ab91">Update</button>
-               <a href="adminEvents.php" class="btn btn-danger">Cancel</a>
+               <a href="adminEvents2.php" class="btn btn-danger">Cancel</a>
             </div>
          </form>
       </div>

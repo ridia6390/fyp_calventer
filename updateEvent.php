@@ -24,6 +24,6 @@ $UpdateProd = "UPDATE calendar
 
 $result = mysqli_query($conn, $UpdateProd);
 
-header("Location:adminCalendar.php?ea=1");
+header("Location:adminCalendar2.php?ea=1");
 ?>
 

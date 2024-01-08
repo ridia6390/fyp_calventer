@@ -6,6 +6,7 @@ if (isset($_POST["submit"])) {
    $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
    $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
    $venue = mysqli_real_escape_string($conn, $_POST['venue']);
+   $description = mysqli_real_escape_string($conn, $_POST['description']);
    
 
    // Handle file upload
@@ -24,7 +25,7 @@ if (isset($_POST["submit"])) {
    }
 
  // Construct the SQL query
-$sql = "INSERT INTO `events` (`event_theme`, `dress_code`, `venue`, `poster`) VALUES ('$event_theme', '$dress_code', '$venue', '$poster')";
+$sql = "INSERT INTO `events` (`event_theme`, `dress_code`, `venue`,`description`,`poster`) VALUES ('$event_theme', '$dress_code', '$venue','$description','$poster')";
 
 // Execute the query
 $result = mysqli_query($conn, $sql);
@@ -36,7 +37,7 @@ if ($result) {
     // Store the event ID in the session
     $_SESSION['added_event_id'] = $event_id;
 
-    header("Location: adminEvents.php?msg=New details added successfully");
+    header("Location: adminEvents2.php?msg=New details added successfully");
     exit;
 } else {
     echo "Failed to insert data: " . mysqli_error($conn) . "<br>";
@@ -96,16 +97,20 @@ if ($result) {
             </div>
 
             <div class="mb-3">
+               <label class="form-label">Description</label>
+               <input type="text" class="form-control" name="description" placeholder="Event Description" style= "height:100px; padding-bottom: 60px">
+            </div>
+
+            <div class="mb-3">
                <label class="form-label">Poster</label>
                <input type="file" class="form-control" name="poster" required class="box"
                   accept="image/jpg, image/png, image/jpeg">
             </div>
 
-
             <div>
                <button type="submit" class="btn btn-success" name="submit"
                   style="background-color: #56ab91; border: 1px solid #56ab91">Save</button>
-               <a href="adminEvents.php" class="btn btn-danger">Cancel</a>
+               <a href="adminEvents2.php" class="btn btn-danger">Cancel</a>
             </div>
 
          </form>

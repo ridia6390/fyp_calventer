@@ -191,7 +191,25 @@ a:hover {
   opacity: 0.65; 
 }
 
+.btn-success{
+  background-color:#56ab91; 
+  border: 2px solid #56ab91;
+  color: white;
+}
 
+.btn-secondary{
+  background-color: grey; 
+  border: 2px solid grey;
+  color: white;
+}
+
+.btn-add{
+  background-color: #ffc869;
+  border: 2px solid  #ffc869;
+  color: white;
+  width: 120px;
+}
+  
 .user-profile {
   position: relative;
   display: flex;
@@ -231,8 +249,6 @@ a:hover {
   background-color: transparent;
 
 }
-
-
 
 #calendar {
   margin-top: 80px;
