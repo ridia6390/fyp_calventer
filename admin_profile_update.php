@@ -5,64 +5,72 @@ session_start();
 
 $admin_id = $_SESSION['admin_id'];
 
-if(!isset($admin_id)){
-   header('location:adminLogin.php');
-};
+if (!isset($admin_id)) {
+    header('location:adminLogin.php');
+}
 
-if(isset($_POST['update'])){
+if (isset($_POST['update'])) {
 
-   $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-   $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
-   
-   $update_profile = $conn->prepare("UPDATE `admins` SET name = ?, email = ? WHERE id = ?");
-   $update_profile->execute([$name, $email, $admin_id]);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 
-   $old_image = $_POST['old_image'];
-   $image = $_FILES['image']['name'];
-   $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_size = $_FILES['image']['size'];
-   $image_folder = 'uploaded_img/'.$image;
+    $update_profile = $conn->prepare("UPDATE `admins` SET name = ?, email = ? WHERE id = ?");
+    $update_profile->execute([$name, $email, $admin_id]);
 
-   if(!empty($image)){
+    if ($update_profile) {
+        $message[] = 'Profile information has been updated!';
 
-      if($image_size > 2000000){
-         $message[] = 'Image size is too large';
-      } else {
-         $update_image = $conn->prepare("UPDATE `admins` SET image = ? WHERE id = ?");
-         $update_image->execute([$image, $admin_id]);
+      //   if ($update_profile->rowCount() > 0) {
+      //       $message[] = 'Name and/or Email has been updated!';
+      //   } else {
+      //       $message[] = 'Name and/or Email could not be updated.';
+      //   }
+    }
 
-         if($update_image){
-            move_uploaded_file($image_tmp_name, $image_folder);
-            unlink('uploaded_img/'.$old_image);
-            $message[] = 'Image has been updated!';
-         }
-      }
+    $old_image = $_POST['old_image'];
+    $image = $_FILES['image']['name'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_size = $_FILES['image']['size'];
+    $image_folder = 'uploaded_img/' . $image;
 
-   }
+    if (!empty($image)) {
 
-   $previous_pass = $_POST['previous_pass'];
-   $new_pass = $_POST['new_pass'];
-   $confirm_pass = $_POST['confirm_pass'];
+        if ($image_size > 2000000) {
+            $message[] = 'Image size is too large';
+        } else {
+            $update_image = $conn->prepare("UPDATE `admins` SET image = ? WHERE id = ?");
+            $update_image->execute([$image, $admin_id]);
 
-   if(!empty($previous_pass) || !empty($new_pass) || !empty($confirm_pass)){
-      $select_password = $conn->prepare("SELECT password FROM `admins` WHERE id = ?");
-      $select_password->execute([$admin_id]);
-      $row = $select_password->fetch(PDO::FETCH_ASSOC);
+            if ($update_image) {
+                move_uploaded_file($image_tmp_name, $image_folder);
+                unlink('uploaded_img/' . $old_image);
+                $message[] = 'Image has been updated!';
+            }
+        }
+    }
 
-      if (password_verify($previous_pass, $row['password'])) {
-         if($new_pass === $confirm_pass){
-            $hashedPassword = password_hash($new_pass, PASSWORD_DEFAULT);
-            $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
-            $update_password->execute([$hashedPassword, $admin_id]);
-            $message[] = 'Password has been updated!';
-         } else {
-            $message[] = 'New password and confirm password do not match!';
-         }
-      } else {
-         $message[] = 'Incorrect previous password!';
-      }
-   }
+    $previous_pass = $_POST['previous_pass'];
+    $new_pass = $_POST['new_pass'];
+    $confirm_pass = $_POST['confirm_pass'];
 
+    if (!empty($previous_pass) || !empty($new_pass) || !empty($confirm_pass)) {
+        $select_password = $conn->prepare("SELECT password FROM `admins` WHERE id = ?");
+        $select_password->execute([$admin_id]);
+        $row = $select_password->fetch(PDO::FETCH_ASSOC);
+
+        if (password_verify($previous_pass, $row['password'])) {
+            if ($new_pass === $confirm_pass) {
+                $hashedPassword = password_hash($new_pass, PASSWORD_DEFAULT);
+                $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
+                $update_password->execute([$hashedPassword, $admin_id]);
+                $message[] = 'Password has been updated!';
+            } else {
+                $message[] = 'New password and confirm password do not match!';
+            }
+        } else {
+            $message[] = 'Incorrect previous password!';
+        }
+    }
 }
 
 ?>
