@@ -1,7 +1,6 @@
 <?php
 include 'admins.php';
 
-
 session_start();
 
 $admin_id = $_SESSION['admin_id'];
@@ -12,10 +11,8 @@ if(!isset($admin_id)){
 
 if(isset($_POST['update'])){
 
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+   $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
    
    $update_profile = $conn->prepare("UPDATE `admins` SET name = ?, email = ? WHERE id = ?");
    $update_profile->execute([$name, $email, $admin_id]);
@@ -29,38 +26,40 @@ if(isset($_POST['update'])){
    if(!empty($image)){
 
       if($image_size > 2000000){
-         $message[] = 'image size is too large';
-      }else{
+         $message[] = 'Image size is too large';
+      } else {
          $update_image = $conn->prepare("UPDATE `admins` SET image = ? WHERE id = ?");
          $update_image->execute([$image, $admin_id]);
 
          if($update_image){
             move_uploaded_file($image_tmp_name, $image_folder);
             unlink('uploaded_img/'.$old_image);
-            $message[] = 'image has been updated!';
+            $message[] = 'Image has been updated!';
          }
       }
 
    }
 
-   $old_pass = $_POST['old_pass'];
-   $previous_pass = md5($_POST['previous_pass']);
-   $previous_pass = filter_var($previous_pass, FILTER_SANITIZE_STRING);
-   $new_pass = md5($_POST['new_pass']);
-   $new_pass = filter_var($new_pass, FILTER_SANITIZE_STRING);
-   $confirm_pass = md5($_POST['confirm_pass']);
-   $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
+   $previous_pass = $_POST['previous_pass'];
+   $new_pass = $_POST['new_pass'];
+   $confirm_pass = $_POST['confirm_pass'];
 
    if(!empty($previous_pass) || !empty($new_pass) || !empty($confirm_pass)){
-      if($previous_pass != $old_pass){
-         $message[] = 'profile updated successfully!';
-      }elseif($new_pass != $confirm_pass){
-         $message[] = 'confirm password not matched!';
-      }
-      else{
-         $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
-         $update_password->execute([$confirm_pass, $admin_id]);
-         $message[] = 'profile has been updated!';
+      $select_password = $conn->prepare("SELECT password FROM `admins` WHERE id = ?");
+      $select_password->execute([$admin_id]);
+      $row = $select_password->fetch(PDO::FETCH_ASSOC);
+
+      if (password_verify($previous_pass, $row['password'])) {
+         if($new_pass === $confirm_pass){
+            $hashedPassword = password_hash($new_pass, PASSWORD_DEFAULT);
+            $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
+            $update_password->execute([$hashedPassword, $admin_id]);
+            $message[] = 'Password has been updated!';
+         } else {
+            $message[] = 'New password and confirm password do not match!';
+         }
+      } else {
+         $message[] = 'Incorrect previous password!';
       }
    }
 
@@ -75,7 +74,7 @@ if(isset($_POST['update'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>user profile update</title>
+   <title>Update Viewer Profile</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -99,7 +98,7 @@ if(isset($_POST['update'])){
    }
 ?>
 
-<h1 class="title"> update user profile </h1>
+<h1 class="title"> Update Viewer Profile </h1>
 
 <section class="update-profile-container">
 
@@ -113,27 +112,26 @@ if(isset($_POST['update'])){
       <img src="uploaded_img/<?= $fetch_profile['image']; ?>" alt="">
       <div class="flex">
          <div class="inputBox">
-            <span>username</span>
+            <span>Username</span>
             <input type="text" name="name" required class="box" placeholder="Enter your name" value="<?= $fetch_profile['name']; ?>">
-            <span>email</span>
+            <span>Email</span>
             <input type="email" name="email" required class="box" placeholder="Enter your email" value="<?= $fetch_profile['email']; ?>">
-            <span>profile image</span>
+            <span>Profile Image</span>
             <input type="hidden" name="old_image" value="<?= $fetch_profile['image']; ?>">
             <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
          </div>
          <div class="inputBox">
-            <input type="hidden" name="old_pass" value="<?= $fetch_profile['password']; ?>">
-            <span>old password</span>
-            <input type="password" class="box" name="previous_pass" placeholder="Enter previous password" >
-            <span>new password</span>
-            <input type="password" class="box" name="new_pass" placeholder="Enter new password" >
-            <span>confirm password</span>
-            <input type="password" class="box" name="confirm_pass" placeholder="Confirm new password" >
+            <span>Old Password</span>
+            <input type="password" class="box" name="previous_pass" placeholder="Enter previous password">
+            <span>New Password</span>
+            <input type="password" class="box" name="new_pass" placeholder="Enter new password">
+            <span>Confirm Password</span>
+            <input type="password" class="box" name="confirm_pass" placeholder="Confirm new password">
          </div>
       </div>
       <div class="flex-btn">
+         <a href="adminHome2.php" class="option-btn">go back</a>
          <input type="submit" value="update profile" name="update" class="btn">
-         <a href="viewerHome2.php" class="option-btn">go back</a>
       </div>
    </form>
 

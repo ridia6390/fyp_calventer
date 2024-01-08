@@ -41,7 +41,7 @@
 
   <section class="contact-form-container">
 
-    <form action="mail.php" method="post" enctype="multipart/form-data">
+    <form action="adminContactMail1.php" method="post" enctype="multipart/form-data">
       <h3> CONTACT </h3>
       <h4 class="guidance">We're here for you !!! Contact Us Today</h4>
       

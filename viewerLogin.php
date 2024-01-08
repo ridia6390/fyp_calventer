@@ -5,31 +5,24 @@ include 'admins.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $pass = md5($_POST['pass']);
-   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+   $pass = $_POST['pass'];
 
-   $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ? AND password = ?");
-   $select->execute([$email, $pass]);
+   $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ?");
+   $select->execute([$email]);
    $row = $select->fetch(PDO::FETCH_ASSOC);
 
    if ($select->rowCount() > 0) {
-
-      if ($row['admin_type'] == 'admin') {
-
+      if (password_verify($pass, $row['password'])) {
          $_SESSION['admin_id'] = $row['id'];
          header('location:viewerHome2.php');
-
       } else {
-         $message[] = 'no user found!';
+         $message[] = 'Incorrect email or password!';
       }
-
    } else {
-      $message[] = 'incorrect email or password!';
+      $message[] = 'Incorrect email or password!';
    }
-
 }
 
 ?>

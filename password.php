@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/password.css" />
-  <title>Help</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> Forgot Password </title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style/password.css">
+
 </head>
+
 <body>
-<div class="container">
-    <div class="box form-box">
-      <header> Trouble with Password :(</header>
-      <header2> Don't worry :) Let's solve your puzzled password together</header2>
-      <form action="cprocess.php" method="post">
-      <input type="text" name="username" class="form-control" placeholder="Username" autocomplete="off" required>
-        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
-        <!-- <input type="text" name="message" placeholder="Problem Statement...." autocomplete="off" required> -->
-        <input type="submit" class="btn" name="submit" value="Submit" required>
+   <section class="form-container">
+
+      <form action="passwordMail.php" method="post" enctype="multipart/form-data">
+         <h3> Trouble with Problem  :(( </h3>
+         <input type="name" required placeholder="Enter your username" class="box" name="name">
+         <input type="email" required placeholder="Enter your email" class="box" name="email">
+         <input type="submit" value="Submit" class="btn" name="submit">
+         <a href="viewerLogin.php" class="back-btn">Go Back</a>
       </form>
-    </div>
-  </div> 
+
+   </section>
+
 </body>
+
 </html>
-
-

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 03:57 AM
+-- Generation Time: Jan 08, 2024 at 06:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,21 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `events` (
   `id` int(255) NOT NULL,
-  `event_date` date DEFAULT NULL,
-  `club_name` varchar(255) NOT NULL,
-  `event_title` varchar(255) NOT NULL,
-  `event_details` varchar(255) NOT NULL,
-  `event_media` varchar(255) NOT NULL
+  `event_theme` varchar(255) NOT NULL,
+  `dress_code` varchar(255) NOT NULL,
+  `venue` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `poster` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `event_date`, `club_name`, `event_title`, `event_details`, `event_media`) VALUES
-(5, '0000-00-00', '', 'dddddddddddddddddddd', 'ddddddddddddddddd', 'ddddddddddddddddddddd'),
-(6, '0000-00-00', 'cc', 'ccc', 'ccccccccccccc', 'cccccccccccccccccccc'),
-(7, '2024-12-05', 'wamy', 'hhkjk', 'jkjkkk', 'jhjhjjhj');
+INSERT INTO `events` (`id`, `event_theme`, `dress_code`, `venue`, `description`, `poster`) VALUES
+(94, 'kjjj', 'ddfd', 'dd', 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 'uploaded_poster/collaborator.jpg');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +61,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

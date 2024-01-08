@@ -1,14 +1,3 @@
-<?php
-include 'admins.php';
-
-// Check if the user is logged in
-if (!isset($_SESSION['admin_id'])) {
-    // Redirect to the login page if not logged in
-    header('location: viewerLogin.php');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +17,8 @@ if (!isset($_SESSION['admin_id'])) {
 <body>
   <section class="event-form-container">
 
-    <form action="mail.php" method="post" enctype="multipart/form-data">
-      <h3> SEND UPCOMING EVENTS INFO </h3>
+    <form action="eventFormMail.php" method="post" enctype="multipart/form-data">
+      <h3> SEND UPCOMING EVENT DETAILS </h3>
       <h4 class="guidance"> Fill up the form with correct event details. Make sure all the information is accurate
         before submission.</h4>
       <h4 class="disclaimer"> * Please send us the event details at least ONE WEEK prior * </h4>

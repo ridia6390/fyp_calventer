@@ -3,42 +3,42 @@
 include 'admins.php';
 
 if(isset($_POST['submit'])){
-
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $pass = md5($_POST['pass']);
-   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-   $cpass = md5($_POST['cpass']);
-   $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+   $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+   $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+   $pass = $_POST['pass']; // Password is not sanitized to allow special characters
 
    $image = $_FILES['image']['name'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_size = $_FILES['image']['size'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ?");
-   $select->execute([$email]);
+   // Validate password length
+   if (strlen($pass) < 8) {
+      $message[] = 'Password must be at least 8 characters long!';
+   } else {
+      $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
-   if($select->rowCount() > 0){
-      $message[] = 'user already exist!';
-   }else{
-      if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
-      }elseif($image_size > 2000000){
-         $message[] = 'image size is too large!';
-      }else{
-         $insert = $conn->prepare("INSERT INTO `admins`(name, email, password, image) VALUES(?,?,?,?)");
-         $insert->execute([$name, $email, $cpass, $image]);
-         if($insert){
-            move_uploaded_file($image_tmp_name, $image_folder);
-            $messager[] = 'registered successfully!';
-            // header('location:viewerLogin.php');
+      $select = $conn->prepare("SELECT * FROM `admins` WHERE email = ?");
+      $select->execute([$email]);
+
+      if($select->rowCount() > 0){
+         $message[] = 'User already exists!';
+      } else {
+         if($image_size > 2000000){
+            $message[] = 'Image size is too large!';
+         } else {
+            $insert = $conn->prepare("INSERT INTO `admins`(name, email, password, image) VALUES(?,?,?,?)");
+            if ($insert->execute([$name, $email, $hashedPassword, $image])) {
+               move_uploaded_file($image_tmp_name, $image_folder);
+               $messager[] = 'Registered successfully!';
+               // Uncomment the line below to redirect after successful registration
+               // header('location:viewerLogin.php');
+            } else {
+               $message[] = 'Error registering user. Please try again.';
+            }
          }
       }
    }
-
 }
 
 ?>

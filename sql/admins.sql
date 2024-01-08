@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 03:58 AM
+-- Generation Time: Jan 08, 2024 at 06:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `admin_form`
+-- Database: `calventer`
 --
 
 -- --------------------------------------------------------
@@ -41,11 +41,13 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `admin_type`, `image`) VALUES
-(29, 'Mrini', 'k.rii@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'admin', 'pic-2.png'),
-(30, 'Noor hasrul', 'elm88nora@gmail.com', '41a6eddc5a25e97191f5af660b942402', 'admin', 'pic-4.png'),
-(31, 'Elin Eliana Abdul Rahim', 'enouran2001@gmail.com', '76d42880f7b3c70770d6f7de03ab4f8d', 'admin', 'pic-6.png'),
-(32, 'moor', 'moor@gmail.com', '5a690d842935c51f26f473e025c1b97a', 'admin', 'pic-1.png'),
-(38, 'nori', 'nori@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', 'pic-6.png');
+(42, 'RID', 'k.r@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'admin', 'collaborator.jpg'),
+(51, 'qwe', 'qwe@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin', 'calendar.png'),
+(52, 'rfv', 'rfv@gmail.com', 'c8ffe9a587b126f152ed3d89a146b445', 'admin', 'clock.png'),
+(53, 'edc', 'edc@gmail.com', '94f0ef2cc4bc3e9b4f00b63198685150', 'admin', 'global.png'),
+(54, 'vf', 'vf@gmail.com', '12345', 'admin', 'calendar.png'),
+(55, 'marini', 'et@gmail.com', '12345', 'admin', 'contacticon.png'),
+(56, 'Norii', 'nor@gmail.com', '$2y$10$0Uz3jZjGesGnioW5d9RZ4ObyheK1PvQQoK7tCYhYVguiaTi130A96', 'admin', 'contacticon.png');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +67,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
