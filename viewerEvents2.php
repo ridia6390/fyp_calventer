@@ -172,7 +172,7 @@ if ($user_info) {
             <td>
               <!-- <a href="addEventDetails.php" class="link-dark"><i class="fa-solid fa-plus-circle fs-5"
                   style="margin-right: 15px;"></i></a> -->
-              <a href="eventsDetailsViewViewer.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
+              <a href="viewerEventsView2.php?id=<?php echo $event["id"]; ?>" class="link-dark"><i
                   class="fas fa-eye fs-5 me-3"></i></a>
             </td>
           </tr>

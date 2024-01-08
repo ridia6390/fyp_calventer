@@ -126,7 +126,7 @@
                                 <img src="image/image2.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Alsalam IIUM Club</div>
+                                <div class="name">Alsalam IIUM</div>
                                 <p class="club">
                                     Alsalam IIUM Club at the International Islamic University Malaysia is committed to
                                     promoting peace, unity, and Islamic teachings. Through events like seminars,
@@ -148,7 +148,7 @@
                                 <img src="image/image3.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Nibras IIUM Club</div>
+                                <div class="name">Nibras IIUM</div>
                                 <p class="club">
                                     Nibras IIUM Club at the International Islamic University Malaysia empowers Muslim
                                     students through educational, social, and developmental activities. The club focuses

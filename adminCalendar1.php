@@ -39,7 +39,7 @@
       <a href="adminContact1.php">Contact</a>
     </nav>
 
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+    <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
 
   </header>
 </head>
@@ -68,7 +68,7 @@
   <div id="calendar"></div>
 
   <?php
-  include('modalViewEventViewer.php');
+  include('modalViewEventAdmin.php');
   ?>
 
   <script src="js/jquery-3.0.0.min.js"> </script>

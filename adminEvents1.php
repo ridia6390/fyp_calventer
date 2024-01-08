@@ -72,7 +72,7 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
       <a href="adminContact1.php">Contact</a>
     </nav>
 
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+    <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
 
   </header>
 </head>

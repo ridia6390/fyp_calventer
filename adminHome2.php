@@ -89,20 +89,6 @@ if ($user_info) {
 
         </nav>
 
-        <!-- <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        </div>
-        <div class="dropdown_menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calender">Calender</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
-            </ul>
-        </div> -->
-
     </header>
 </head>
 
@@ -119,7 +105,6 @@ if ($user_info) {
                 </div>
                 <h1>Calventer</h1>
                 <p>Events Calender For IIUM's Social Clubs</p>
-                <!-- <a href="#" class="home-btn">Check Calender</a> -->
             </div>
 
         </section>
@@ -129,7 +114,6 @@ if ($user_info) {
             <div class="Section_header">
                 <div class="inner">
                     <div class="custom-heading">Announcements</div>
-                    <!--<div class="border"></div>-->
                     <div class="sub-heading">Stay updated with the latest club news and posters.</div>
                     <br>
                     <section class="innercontainer">
@@ -193,7 +177,7 @@ if ($user_info) {
                                 <img src="image/image2.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Alsalam IIUM Club</div>
+                                <div class="name">Alsalam IIUM</div>
                                 <p class="club">
                                     Alsalam IIUM Club at the International Islamic University Malaysia is committed to
                                     promoting peace, unity, and Islamic teachings. Through events like seminars,
@@ -215,7 +199,7 @@ if ($user_info) {
                                 <img src="image/image3.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Nibras IIUM Club</div>
+                                <div class="name">Nibras IIUM</div>
                                 <p class="club">
                                     Nibras IIUM Club at the International Islamic University Malaysia empowers Muslim
                                     students through educational, social, and developmental activities. The club focuses

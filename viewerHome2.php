@@ -177,7 +177,7 @@ if ($user_info) {
                                 <img src="image/image2.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Alsalam IIUM Club</div>
+                                <div class="name">Alsalam IIUM</div>
                                 <p class="club">
                                     Alsalam IIUM Club at the International Islamic University Malaysia is committed to
                                     promoting peace, unity, and Islamic teachings. Through events like seminars,
@@ -199,7 +199,7 @@ if ($user_info) {
                                 <img src="image/image3.png" alt="">
                                 <br>
                                 <span class="club__title">Club name</span>
-                                <div class="name">Nibras IIUM Club</div>
+                                <div class="name">Nibras IIUM</div>
                                 <p class="club">
                                     Nibras IIUM Club at the International Islamic University Malaysia empowers Muslim
                                     students through educational, social, and developmental activities. The club focuses
@@ -257,7 +257,7 @@ if ($user_info) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
         crossorigin="anonymous"></script>
-    <script src="js/adminHome.js"></script>
+    <script src="js/viewerHome.js"></script>
 
 
 </body>

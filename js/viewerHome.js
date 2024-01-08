@@ -104,7 +104,7 @@ document.querySelector(".user-profile").addEventListener("click", function (even
 
 // Modify the openUserProfileUpdate function to navigate directly
 function openUserProfileUpdate() {
-  window.location.href = 'user_profile_update.php';
+  window.location.href = 'viewer_profile_update.php';
 }
 
 

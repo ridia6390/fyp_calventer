@@ -14,7 +14,7 @@
         <p><strong>Event Date:</strong> <span id="event_date"></span></p>
         <p><strong>Start Time:</strong> <span id="start_time"></span></p>
         <p><strong>End Time:</strong> <span id="end_time"></span></p>
-        <a href="adminEvents1.php" class="btn btn-view" style= "background-color: #ffc869; border: 2px solid  #ffc869; color: white; width: 150px;">View Details</a>
+        <a href="viewerEvents2.php" class="btn btn-view" style= "background-color: #ffc869; border: 2px solid  #ffc869; color: black; width: 150px;">View Details</a>
       </div>
     </div>
   </div>

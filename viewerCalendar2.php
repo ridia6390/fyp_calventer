@@ -137,7 +137,7 @@ if ($user_info) {
   <div id="calendar"></div>
 
   <?php
-  include('modalViewEventViewer.php');
+  include('modalViewEventViewer2.php');
   ?>
 
   <script src="js/jquery-3.0.0.min.js"> </script>

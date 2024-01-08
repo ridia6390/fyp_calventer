@@ -31,7 +31,7 @@
       <a href="adminAbout1.php">About</a>
       <a href="adminContact1.php" class="contact-active">Contact</a>
     </nav>
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
+    <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
 
   </header>
 

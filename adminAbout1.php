@@ -32,24 +32,7 @@
       <a href="adminContact1.php">Contact</a>
     </nav>
 
-    <button class="btn" onclick="navigateToLoginPage()"> LOGIN </button>
-
-
-
-
-    <!-- <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div> -->
-    <!-- <div class="dropdown_menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#calender">Calender</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
-            </ul>
-        </div> -->
+    <button class="btn" onclick="navigateToAdminLoginPage()"> LOGIN </button>
 
   </header>
 

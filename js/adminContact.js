@@ -106,12 +106,12 @@ document.querySelector(".user-profile").addEventListener("click", function (even
 
 // Modify the openUserProfileUpdate function to navigate directly
 function openUserProfileUpdate() {
-  window.location.href = 'user_profile_update.php';
+  window.location.href = 'admin_profile_update.php';
 }
 
 
 
-function navigateToLoginPage() {
+function navigateToAdminLoginPage() {
   window.location.href = "adminLogin.php";
 }
 
