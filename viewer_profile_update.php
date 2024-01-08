@@ -56,7 +56,8 @@ if(isset($_POST['update'])){
          $message[] = 'profile updated successfully!';
       }elseif($new_pass != $confirm_pass){
          $message[] = 'confirm password not matched!';
-      }else{
+      }
+      else{
          $update_password = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
          $update_password->execute([$confirm_pass, $admin_id]);
          $message[] = 'profile has been updated!';

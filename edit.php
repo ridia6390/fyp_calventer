@@ -80,6 +80,18 @@ if (mysqli_num_rows($resultEvent) == 0) {
 $eventData = mysqli_fetch_assoc($resultEvent);
 ?>
 
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to the login page if not logged in
+    header('location: adminLogin.php');
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

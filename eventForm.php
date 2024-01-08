@@ -1,3 +1,14 @@
+<?php
+include 'admins.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to the login page if not logged in
+    header('location: viewerLogin.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

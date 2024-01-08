@@ -125,7 +125,7 @@ html {
   justify-content: space-between;
   gap: 1.5rem;
   z-index: 1000;
-  background-color: rgb(255, 162, 179);
+  background-color: white;
   margin: 0 auto;
 }
 
@@ -140,9 +140,6 @@ html {
   cursor: pointer;
 }
 
-.message i:hover {
-  color: white;
-}
 
 .messager {
   position: sticky;
@@ -154,7 +151,7 @@ html {
   justify-content: space-between;
   gap: 1.5rem;
   z-index: 1000;
-  background-color: #c0f5e5;
+  background-color: white;
   margin: 0 auto;
 }
 
@@ -169,8 +166,6 @@ html {
   cursor: pointer;
 }
 
-.messager i:hover {
-  color: white;
-}
+
 
 

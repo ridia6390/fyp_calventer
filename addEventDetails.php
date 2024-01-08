@@ -46,7 +46,16 @@ if ($result) {
 }
 ?>
 
+<?php
+include 'admins.php';
 
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to the login page if not logged in
+    header('location: adminLogin.php');
+    exit();
+}
+?>
 
 
 <!DOCTYPE html>

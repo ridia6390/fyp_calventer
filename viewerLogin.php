@@ -22,11 +22,6 @@ if (isset($_POST['submit'])) {
          $_SESSION['admin_id'] = $row['id'];
          header('location:viewerHome2.php');
 
-         // }elseif($row['user_type'] == 'user'){
-
-         //    $_SESSION['user_id'] = $row['id'];
-         //    header('location:user_page.php');
-
       } else {
          $message[] = 'no user found!';
       }

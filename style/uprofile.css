@@ -155,47 +155,21 @@ html {
   justify-content: space-between;
   gap: 1.5rem;
   z-index: 1000;
-  background-color: #a4e0ce;
+  background-color: white;
   margin: 0 auto;
 }
 
 .message span {
-  color: #56ab91;
+  color: black;
   font-size: 1.5rem;
 }
 
 .message i {
-  color: var(--red);
+  color: black;
   font-size: 2.5rem;
   cursor: pointer;
 }
 
-.message i:hover {
-  color: white;
-}
 
 
-/* media queries  */
 
-/* @media (max-width: 991px) {
-  html {
-    font-size: 55%;
-  }
-}
-
-@media (max-width: 768px) {
-  .update-profile-container form .flex .inputBox {
-    width: 100%;
-  }
-}
-
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-
-  .flex-btn {
-    flex-flow: column;
-    gap: 0;
-  }
-} */

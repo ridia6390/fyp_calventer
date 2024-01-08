@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
          $insert->execute([$name, $email, $cpass, $image]);
          if($insert){
             move_uploaded_file($image_tmp_name, $image_folder);
-            $messager[] = 'registered succesfully!';
+            $messager[] = 'registered successfully!';
             // header('location:viewerLogin.php');
          }
       }
