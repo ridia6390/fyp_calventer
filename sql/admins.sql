@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2024 at 06:03 PM
+-- Generation Time: Jan 12, 2024 at 06:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,13 +41,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `admin_type`, `image`) VALUES
-(42, 'RID', 'k.r@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'admin', 'collaborator.jpg'),
-(51, 'qwe', 'qwe@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin', 'calendar.png'),
-(52, 'rfv', 'rfv@gmail.com', 'c8ffe9a587b126f152ed3d89a146b445', 'admin', 'clock.png'),
-(53, 'edc', 'edc@gmail.com', '94f0ef2cc4bc3e9b4f00b63198685150', 'admin', 'global.png'),
-(54, 'vf', 'vf@gmail.com', '12345', 'admin', 'calendar.png'),
-(55, 'marini', 'et@gmail.com', '12345', 'admin', 'contacticon.png'),
-(56, 'Norii', 'nor@gmail.com', '$2y$10$0Uz3jZjGesGnioW5d9RZ4ObyheK1PvQQoK7tCYhYVguiaTi130A96', 'admin', 'contacticon.png');
+(57, 'RIDIA ', 'ridia.kashmeri1011@gmail.com', '$2y$10$p4BlVZ0TaJ3mTrfPNAKhRecCg/W6jfXqXk3.t36G7JRZSBVhlmPhO', 'admin', 'calendar.png'),
+(58, 'WAM', 'wamy@gmail.com', '$2y$10$0QefXYKznLQHx/mwbJutkOPcxqg.WdmO4tG05Qz35WK62VuiFmzb6', 'admin', 'collaborator.jpg'),
+(59, 'SAL', 'alsalam@gmail.com', '$2y$10$kxOgVIk6SVTJ3cigOvk/seHZPtGwSIcfvVqcPWlw56c/39DzoPLgi', 'admin', 'alsalam.png');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +63,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2024 at 06:04 PM
+-- Generation Time: Jan 12, 2024 at 06:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,9 @@ CREATE TABLE `calendar` (
 --
 
 INSERT INTO `calendar` (`id`, `club_name`, `event_title`, `event_date`, `start_time`, `end_time`, `color_event`) VALUES
-(94, 'jdjijdjkd', 'Jdjkdjjd', '2024-01-03', '10:00:00', '12:00:00', '#FFAC1C');
+(109, 'wamy', 'Talk Show', '2024-01-09', '10:00:00', '12:00:00', '#0A2472'),
+(110, 'Alsalam', 'Minal Aidin', '2024-01-18', '08:00:00', '14:00:00', '#2196F3'),
+(111, 'Nibras', 'Cultural Night', '2024-01-16', '20:30:00', '22:30:00', '#FFAC1C');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `calendar`
 -- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

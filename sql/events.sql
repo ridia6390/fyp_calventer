@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2024 at 06:04 PM
+-- Generation Time: Jan 12, 2024 at 06:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `event_theme`, `dress_code`, `venue`, `description`, `poster`) VALUES
-(94, 'kjjj', 'ddfd', 'dd', 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 'uploaded_poster/collaborator.jpg');
+(109, 'Formal', 'Formal Casual', 'CAC', 'Please do bring your laptop', 'uploaded_poster/legal framework to protect women poster.jpg'),
+(110, 'Eid Event ', 'Eid Attire', 'HS Dry Area', 'Bring your family and friends', 'uploaded_poster/banner2.png'),
+(111, 'Cultural Night', 'Traditional Attire', 'Main Auditorium', 'Starpoints will be provided', 'uploaded_poster/poster.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +63,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
