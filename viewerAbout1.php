@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -14,6 +15,7 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="style/viewerAbout.css" />
+
   <title>Viewer About</title>
 
   <!--Navbar-->
@@ -56,7 +58,7 @@
     </div>
     </div>
   </section>
-  <!---------------------------------------------------------------ABOUT US------------------------------------------------------------->
+  <!---------------------------------------------------------------About Us------------------------------------------------------------->
 
 
   <section id="services">
@@ -118,7 +120,7 @@
 
   <br><br>
 
-  <!---------------------------------------------------------------TEAM------------------------------------------------------------->
+  <!---------------------------------------------------------------Team------------------------------------------------------------>
   <section class="section_news">
     <div class="Section_header">
       <div class="inner">
@@ -132,7 +134,7 @@
               <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
 
-                  <!-------------------MEET THE TEAM-------------->
+                  <!-------------------Meet The Team-------------->
 
                   <div class="card swiper-slide">
                     <div class="image-content">
@@ -175,7 +177,7 @@
                   </div>
 
 
-                  <!-------------------MEET THE CURRENT CLUBS-------------->
+                  <!-------------------Meet The Current Clubs-------------->
 
                   <div class="card swiper-slide">
                     <div class="image-content">
@@ -216,7 +218,7 @@
                     </div>
                   </div>
 
-                  <!------------FUTURE COLLABORATORS-------------->
+                  <!------------Future Collaborators------------->
 
                   <div class="card swiper-slide">
                     <div class="image-content">
@@ -269,7 +271,7 @@
     </div>
   </section>
 
-      <!-------------------------------------------------FOOTER------------------------------------------------------------->
+      <!-------------------------------------------------Footer------------------------------------------------------------>
 
       <footer class="footer">
         <div class="footer-col">

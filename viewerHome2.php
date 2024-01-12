@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
     global $conn;
@@ -15,20 +14,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login 
 if (!isset($_SESSION['admin_id'])) {
-    // Redirect to the login page if not logged in
+    // Redirecting to the Login page if not Logged in
     header('location: viewerLogin.php');
     exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking  user information availability
 if ($user_info) {
     $image = $user_info['image'];
     $username = $user_info['name'];
@@ -46,19 +45,11 @@ if ($user_info) {
 
     <title>Viewer Home</title>
 
-    <!-- CSS link -->
     <link rel="stylesheet" href="style/viewerHome.css">
-
-    <!-- Boxicon link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
 
     <!--Navbar-->
     <header class="header">

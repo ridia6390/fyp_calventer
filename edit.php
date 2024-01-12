@@ -3,13 +3,13 @@ include 'db_conn.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-    // Check if the event ID is set in the form
+    // Checking if the event ID is set in the form
     if (!isset($_POST['event_id'])) {
         echo "Invalid request: Event ID is missing.";
         exit;
     }
 
-    // Update event details
+    // Updating event details
     $eventId = $_POST['event_id'];
     $event_theme = mysqli_real_escape_string($conn, $_POST['event_theme']);
     $dress_code = mysqli_real_escape_string($conn, $_POST['dress_code']);
@@ -17,23 +17,20 @@ if (isset($_POST['submit'])) {
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     
 
-    // Get the current poster path
+    // Getting the current poster path
     $poster = $eventData['poster'];
-
-
-    // Handle file upload only if a new poster is provided
 if (!empty($_FILES['new_poster']['name'])) {
    $uploadDir = 'uploaded_poster/';
    $uploadFile = $uploadDir . basename($_FILES['new_poster']['name']);
 
    if (move_uploaded_file($_FILES['new_poster']['tmp_name'], $uploadFile)) {
-       $poster = $uploadFile; // Update poster path
+       $poster = $uploadFile; 
    } else {
        echo "Failed to upload poster. Please try again.";
        exit;
    }
 } else {
-   // Use the current poster path if no new poster is uploaded
+
    $poster = $_POST['current_poster'];
 }
    
@@ -56,7 +53,7 @@ if (!empty($_FILES['new_poster']['name'])) {
     }
 }
 
-// Fetch the event details based on the ID from the URL
+// Fetching the event details based on the ID from the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "Invalid event ID.";
     exit;
@@ -83,9 +80,9 @@ $eventData = mysqli_fetch_assoc($resultEvent);
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-    // Redirect to the login page if not logged in
+    // Redirecting to the Login page if not Logged in
     header('location: adminLogin.php');
     exit();
 }
@@ -100,11 +97,8 @@ if (!isset($_SESSION['admin_id'])) {
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!-- Bootstrap -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-   <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -153,10 +147,8 @@ if (!isset($_SESSION['admin_id'])) {
                <img src="<?= $eventData['poster'] ?>" alt="Current Poster" style="max-width: 200px;">
             </div>
 
-            <!-- Hidden input field for event ID -->
+          
             <input type="hidden" name="event_id" value="<?= $eventId ?>">
-
-            <!-- Hidden input field for the current poster -->
             <input type="hidden" name="poster" value="<?= $eventData['poster'] ?>">
 
             <div class="mb-3">
@@ -172,7 +164,6 @@ if (!isset($_SESSION['admin_id'])) {
       </div>
    </div>
 
-   <!-- Bootstrap -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"></script>

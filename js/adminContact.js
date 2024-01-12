@@ -1,30 +1,16 @@
-//------------------------Navbar----------------------------
-//  const toggleBtn = document.querySelector('.toggle_btn');
-//  const toggleBtnIcon = document.querySelector('.toggle_btn i');
-//  const dropDownMenu = document.querySelector('.dropdown_menu');
-
-//  toggleBtn.onclick = function () {
-//      dropDownMenu.classList.toggle('open');
-//      const isOpen = dropDownMenu.classList.contains('open');
-
-//      toggleBtnIcon.classList = isOpen
-//          ? 'fa-solid fa-xmark'
-//          : 'fa-solid fa-bars';
-// };
-
 //------------------------NEWS PANNEL----------------------------
 
 function scrollContainer() {
   var container = document.querySelector(".container");
-  container.scrollTop += 1; // Adjust the scrolling speed as needed
+  container.scrollTop += 1; 
 
-  // Check if the scroll has reached the height of a single card
+  
   if (container.scrollTop >= container.querySelector(".card").offsetHeight) {
-    // Move the first card to the end to create a cycling effect
+   
     var firstCard = container.querySelector(".card");
     container.appendChild(firstCard.cloneNode(true));
     container.removeChild(firstCard);
-    container.scrollTop -= firstCard.offsetHeight; // Adjusted to maintain the scroll position
+    container.scrollTop -= firstCard.offsetHeight; 
   }
 }
 
@@ -39,7 +25,7 @@ container.addEventListener("mouseleave", function () {
   scrollInterval = setInterval(scrollContainer, 50);
 });
 
-//-----------------------slider (NOT USED)-----------------------------
+
 
 let slider = document.querySelector(".slider .list");
 let items = document.querySelectorAll(".slider .list .item");
@@ -65,19 +51,19 @@ let refreshInterval = setInterval(() => {
 }, 3000);
 
 function reloadSlider() {
-  // Adjust the left style of the slider to show the current active item
+ 
   slider.style.left = -items[active].offsetLeft + "px";
 
-  // Change the active state of dots
+
   let lastActiveDot = document.querySelector(".slider .dots li.active");
   lastActiveDot.classList.remove("active");
   dots[active].classList.add("active");
 
-  // Reset the automatic slider interval
+
   clearInterval(refreshInterval);
   refreshInterval = setInterval(() => {
     next.click();
-  }, 10000); // Adjust the interval time
+  }, 10000); 
 }
 
 dots.forEach((li, key) => {
@@ -91,25 +77,16 @@ window.onresize = function (event) {
   reloadSlider();
 };
 
-//--------------------------------------------------------------
 
-
-// Add an event listener to the user-profile for opening the popup
+// An event listener to the user-profile for opening the popup
 document.querySelector(".user-profile").addEventListener("click", function (event) {
-  // Prevent the event from bubbling up to the document
   event.stopPropagation();
-
-
-  // Navigate to user_profile_update.php
   openUserProfileUpdate();
 });
 
-// Modify the openUserProfileUpdate function to navigate directly
 function openUserProfileUpdate() {
   window.location.href = 'admin_profile_update.php';
 }
-
-
 
 function navigateToAdminLoginPage() {
   window.location.href = "adminLogin.php";

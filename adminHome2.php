@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
     global $conn;
@@ -15,20 +14,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-    // Redirect to the login page if not logged in
+    // Redirecting to the Login page if not Logged in
     header('location: adminLogin.php');
     exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking user information availability
 if ($user_info) {
     $image = $user_info['image'];
     $username = $user_info['name'];
@@ -46,18 +45,11 @@ if ($user_info) {
 
     <title>Admin Home</title>
 
-    <!-- CSS link -->
     <link rel="stylesheet" href="style/adminHome.css">
-
-    <!-- Boxicon link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
 
 
     <!--Navbar-->
@@ -94,10 +86,8 @@ if ($user_info) {
 
 <body>
     <main>
-
-
-
-        <!-------------------------------------------------IMAGE HEADER------------------------------------------------------------->
+        
+        <!-------------------------------------------------Image Header------------------------------------------------------------->
         <section class="section_header" id="home">
             <div class="home-text">
                 <div class="header_img">
@@ -108,7 +98,7 @@ if ($user_info) {
             </div>
 
         </section>
-        <!-------------------------------------------------NEWS PANNEL------------------------------------------------------------->
+        <!-------------------------------------------------News Panel------------------------------------------------------------->
 
         <section class="section_news">
             <div class="Section_header">
@@ -140,7 +130,7 @@ if ($user_info) {
         </section>
         <br><br>
 
-        <!-------------------------------------------------CLUBS------------------------------------------------------------->
+        <!-------------------------------------------------Clubs------------------------------------------------------------->
 
         <section class="section_clubs">
             <div class="Section_header">
@@ -222,7 +212,7 @@ if ($user_info) {
     </main>
 
     
-    <!-------------------------------------------------FOOTER------------------------------------------------------------->
+    <!-------------------------------------------------Footer------------------------------------------------------------>
 
     <footer class="footer">
         <div class="footer-col">
@@ -249,8 +239,6 @@ if ($user_info) {
             </p>
         </div>
     </footer>
-
-    <!-------------------------------------------------JS------------------------------------------------------------->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>

@@ -1,32 +1,30 @@
 <?php
 include('php/config.php');
 
-// Fetch events from the calendar database
+// Fetching events from the calendar database
 $sqlEvents = "SELECT * FROM calendar";
 $resultEvents = mysqli_query($conn, $sqlEvents);
 
 
 $events = [];
 while ($eventData = mysqli_fetch_array($resultEvents)) {
-  // Validate date range
+  // Validating date range
   $startDateTime = strtotime($eventData['event_date'] . ' ' . $eventData['start_time']);
   $endDateTime = strtotime($eventData['event_date'] . ' ' . $eventData['end_time']);
 
-  // Check for invalid date range
+  // Checking for invalid date range
   if ($startDateTime === false || $endDateTime === false || $startDateTime >= $endDateTime) {
-    // Set empty values for time ranges
     $start_time = '';
     $end_time = '';
   } else {
-    // Valid date range, format the time
     $start_time = date('H:i A', $startDateTime);
     $end_time = date('H:i A', $endDateTime);
   }
 
-  // Store events in an array for later use
+  // Storing events in an array for later use
   $events[] = [
     'id' => $eventData['id'],
-    'event_date' => $eventData['event_date'], // Keep the date even if time is invalid 
+    'event_date' => $eventData['event_date'], 
     'club_name' => $eventData['club_name'],
     'event_title' => $eventData['event_title'],
     'start_time' => $start_time,
@@ -38,7 +36,6 @@ while ($eventData = mysqli_fetch_array($resultEvents)) {
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
   global $conn;
@@ -52,20 +49,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-  // Redirect to the login page if not logged in
+  // Redirecting to the Login page if not Logged in
   header('location: adminLogin.php');
   exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking user information is availability
 if ($user_info) {
   $image = $user_info['image'];
   $username = $user_info['name'];
@@ -82,25 +79,13 @@ if ($user_info) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
   <link rel="stylesheet" href="style/adminEvents.css">
-
-  <!-- Boxicon link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-  <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -194,7 +179,7 @@ if ($user_info) {
     </table>
   </div>
 
-   <!-------------------------------------------------FOOTER------------------------------------------------------------->
+   <!-------------------------------------------------Footer------------------------------------------------------------->
 
    <footer class="footer">
         <div class="footer-col">
@@ -222,9 +207,6 @@ if ($user_info) {
         </div>
     </footer>
 
-
-
-  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>

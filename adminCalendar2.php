@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
   global $conn;
@@ -15,20 +14,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-  // Redirect to the login page if not logged in
+  // Redirecting to the Login page if not Logged in
   header('location: adminLogin.php');
   exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking user information availablity
 if ($user_info) {
   $image = $user_info['image'];
   $username = $user_info['name'];
@@ -139,19 +138,17 @@ if ($user_info) {
         // New Event
         select: function (start, end) {
           $("#exampleModal").modal();
-          $("input[name=club_name]").val(''); // Clear club name input
-          $("input[name=event_title]").val(''); // Clear event title input
-          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
-          $("input[name=start_time]").val(''); // Clear start time input
-          $("input[name=end_time]").val(''); // Clear end time input
-          // $("input[name=club_name]").val(''); // Clear club name input
-          // $("input[name=color_event]").val(''); 
+          $("input[name=club_name]").val(''); 
+          $("input[name=event_title]").val(''); 
+          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); 
+          $("input[name=start_time]").val(''); 
+          $("input[name=end_time]").val('');
         },
 
         events: [
           <?php
           while ($eventData = mysqli_fetch_array($resultEvents)) { ?>
-                          {
+                            {
               _id: '<?php echo $eventData['id']; ?>',
               title: '<?php echo $eventData['event_title']; ?>',
               club_name: '<?php echo $eventData['club_name']; ?>',
@@ -188,29 +185,28 @@ if ($user_info) {
           });
         },
 
-        // Modify Calendar Event
+        // Modifying Calendar Event
         eventClick: function (event) {
           var idEvent = event._id;
           $('input[name=idEvent]').val(idEvent);
-          $('input[name=club_name]').val(event.club_name); // Set club name input
+          $('input[name=club_name]').val(event.club_name); 
           $('input[name=event_title]').val(event.title);
-          $('input[name=event_date]').val(moment(event.start).format('YYYY-MM-DD')); // Correctly set the date
-          $('input[name=start_time]').val(moment(event.start).format('HH:mm')); // Correctly set start time
-          $('input[name=end_time]').val(moment(event.end).format('HH:mm')); // Correctly set end time
-          // $('input[name=color_event]').val(event.color);
+          $('input[name=event_date]').val(moment(event.start).format('YYYY-MM-DD'));
+          $('input[name=start_time]').val(moment(event.start).format('HH:mm')); 
+          $('input[name=end_time]').val(moment(event.end).format('HH:mm')); 
           $("#modalUpdateEvent").modal();
         },
 
       });
 
-      // Hide Notification Messages
+      // Hiding Notification Messages
       setTimeout(function () {
         $(".alert").slideUp(300);
       }, 3000);
     });
   </script>
 
-  <!-------------------------------------------------FOOTER------------------------------------------------------------->
+  <!-------------------------------------------------Footer------------------------------------------------------------->
 
   <footer class="footer">
     <div class="footer-col">
@@ -237,13 +233,7 @@ if ($user_info) {
       </p>
     </div>
   </footer>
-
-
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5qErKeQpavO5uq6ZlS2Nl/R7RfY/Q3JXZU=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyETiRB6l5UdHgqj3sn5/jVd1FzUqI2Jf/6M"
-    crossorigin="anonymous"></script> -->
+  
   <script src="js/adminCalendar.js"></script>
 </body>
 

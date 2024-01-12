@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
   global $conn;
@@ -15,20 +14,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-  // Redirect to the login page if not logged in
+  // Redirecting to the Login page if not Logged in
   header('location: adminLogin.php');
   exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking user information availability
 if ($user_info) {
   $image = $user_info['image'];
   $username = $user_info['name'];
@@ -42,15 +41,15 @@ if ($user_info) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <!-- Boxicon link -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style/adminContact.css" />
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
+  
   <title>Admin Contact</title>
   <!--Navbar-->
   <header class="header">
@@ -103,7 +102,7 @@ if ($user_info) {
     </form>
   </section>
 
-   <!-------------------------------------------------FOOTER------------------------------------------------------------->
+   <!-------------------------------------------------Footer------------------------------------------------------------->
 
    <footer class="footer">
         <div class="footer-col">

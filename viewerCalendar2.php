@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Function to get user information based on ID
 function getUserInfo($id)
 {
   global $conn;
@@ -15,20 +14,20 @@ function getUserInfo($id)
 <?php
 include 'admins.php';
 
-// Check if the user is logged in
+// Checking User Login
 if (!isset($_SESSION['admin_id'])) {
-  // Redirect to the login page if not logged in
+  // Redirecting to the Login page if not Logged in
   header('location: viewerLogin.php');
   exit();
 }
 
-// Retrieve user information from the session
+// Retrieving user information from the session
 $admin_id = $_SESSION['admin_id'];
 
-// Assuming you have a function to get user information based on the ID
+// Assuming a function to get user information based on the ID
 $user_info = getUserInfo($admin_id);
 
-// Check if user information is available
+// Checking user information availability
 if ($user_info) {
   $image = $user_info['image'];
   $username = $user_info['name'];
@@ -42,21 +41,18 @@ if ($user_info) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
   <link rel="stylesheet" href="style/fullcalendar.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
   <link rel="stylesheet" href="style/bootstrap.min.css">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
   <link rel="stylesheet" href="style/adminCalendar.css">
-  <!-- Boxicon link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
   <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
   <title> Viewer Calendar </title>
 
   <!--Navbar-->
@@ -101,7 +97,6 @@ if ($user_info) {
     .eventForm-icon i {
       color: #078c7c;
       margin-top: 9px;
-      /* margin-left: 50px; */
       font-size: 30px;
       transition: color 0.3s ease-in-out;
     }
@@ -189,7 +184,7 @@ if ($user_info) {
           <?php } ?>
         ],
 
-        // Modify Calendar Event
+        // Modifying Calendar Event
         eventClick: function (event) {
           $('#idEvent').val(event._id);
           $('#club_name').text(event.club_name);
@@ -203,14 +198,14 @@ if ($user_info) {
 
       });
 
-      // Hide Notification Messages
+      // Hiding Notification Messages
       setTimeout(function () {
         $(".alert").slideUp(300);
       }, 3000);
     });
   </script>
 
-  <!-------------------------------------------------FOOTER------------------------------------------------------------->
+  <!-------------------------------------------------Footer------------------------------------------------------------>
 
   <footer class="footer">
         <div class="footer-col">

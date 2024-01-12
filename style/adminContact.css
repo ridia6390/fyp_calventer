@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-/*color roots*/
 :root {
   --box-color: #d6d6d6;
   --header-color: #383838;
@@ -72,43 +71,43 @@ a:hover {
 }
 
 /********************************ABOUT US*******************************************/
+
 @media only screen and (max-width: 768px) {
   .header {
-    padding: 0px 20px; /* Adjust padding for smaller screens */
+    padding: 0px 20px; 
   }
 
   .logo {
-    width: 15%; /* Adjust logo size for smaller screens */
+    width: 15%;
   }
 
   .navbar {
-    flex-direction: column; /* Stack the navigation links vertically */
-    align-items: flex-end; /* Align the links to the right */
+    flex-direction: column; 
+    align-items: flex-end; 
     position: absolute;
-    top: 80px; /* Adjust the distance from the top */
+    top: 80px;
     left: 0;
     width: 100%;
-    background: white; /* Background color for the mobile menu */
-    display: none; /* Hide the navigation links by default */
+    background: white; 
+    display: none; 
   }
 
   .navbar a {
-    padding: 15px; /* Adjust padding for the mobile menu */
-    text-align: center; /* Center the text in the mobile menu */
-    width: 100%; /* Make the links full width in the mobile menu */
+    padding: 15px; 
+    text-align: center; 
+    width: 100%; 
   }
 
   .topnav .icon {
-    display: block; /* Display the navigation icon for smaller screens */
+    display: block; 
     cursor: pointer;
   }
 
   .navbar .active {
-    display: flex; /* Display the navigation links when the mobile menu is active */
+    display: flex; 
   }
 }
 
-/*Nav*/
 .header {
   box-sizing: border-box;
   position: fixed;
@@ -144,11 +143,11 @@ a:hover {
 
 .bold-text {
   font-weight: bold;
-  font-size: 1.3rem; /* Make the text within the strong element bold */
+  font-size: 1.3rem; 
 }
 
 .smaller-text {
-  font-size: smaller; /* Set a smaller font size for the specific part of the text */
+  font-size: smaller; 
 }
 
 .navbar {
@@ -189,7 +188,7 @@ a:hover {
   width: 100px;
   background: #56ab91;
   border: 0;
-  border-radius: 5px; /* Adjust this value for a more square look */
+  border-radius: 5px; 
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -208,15 +207,14 @@ a:hover {
   display: flex;
   align-items: center;
   margin-left: 100px;
-  /* margin-right: 50px; */
 }
 
 .user-profile img {
-  border-radius: 50%; /* Make the image circular */
+  border-radius: 50%; 
   border: 2px solid #159572;
-  width: 40px; /* Set the width of the circular image */
-  height: 40px; /* Set the height of the circular image */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 40px; 
+  height: 40px; 
+  object-fit: cover; 
   margin-right: 8px;
 }
 
@@ -226,12 +224,10 @@ a:hover {
 
 
 .logout-icon a {
-  color: #1d1b1b;  /* Set the desired color */
-  /* Adjust the margin as needed */
-  /* margin-bottom: 5px; */
+  color: #1d1b1b;  
   text-decoration: none;
   font-size: 25px;
-  transition: color 0.3s; /* Add a smooth color transition */
+  transition: color 0.3s; 
   display: inline-block;
   transform: rotate(180deg);
   font-weight: 600;
@@ -246,16 +242,16 @@ a:hover {
 
 .contact-form-container {
   margin-top: 50rem;
-  max-width: 600px; /* Adjust the maximum width */
-  margin: 50px auto; /* Center the container horizontally */
-  padding: 20px; /* Add some padding for better visual appearance */
+  max-width: 600px; 
+  margin: 50px auto;
+  padding: 20px; 
 }
 
 
 .contact-form-container form {
-  width: 100%; /* Set the form width to 100% */
-  max-width: 500px; /* Adjust the maximum width of the form */
-  margin-top: 80px; /* Center the form horizontally */
+  width: 100%; 
+  max-width: 500px; 
+  margin-top: 80px; 
   border-radius: 0.5rem;
   background-color: white;
   padding: 2rem;
@@ -284,8 +280,6 @@ a:hover {
   color: var(--black);
   outline: none;
   border: 1px solid #ccc;
-  /* background-color: transparent; */
-  /* margin: 1rem 0; */
   margin-top: 15px;
 }
 .contact-form-container form .paragraph {
@@ -304,7 +298,7 @@ a:hover {
 
 .submit-btn {
   display: block;
-  width: 100%; /* Set your desired width here */
+  width: 100%; 
   background-color: #56ab91;
   border-radius: 0.5rem;
   color: var(--white);
@@ -330,13 +324,13 @@ a:hover {
 footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center; 
+  align-items: center; 
   margin-top: auto;
   background-color: var(--header-color);
   padding: 60px 10%;
   padding-right: 10px;
-  text-align: center; /* Center text within the footer */
+  text-align: center; 
 }
 
 .footer-col {
@@ -375,7 +369,7 @@ footer {
 }
 
 .footer-icons a:hover {
-  color: #078c7c; /* Change color on hover */
+  color: #078c7c; 
 }
 
 .footer_span {

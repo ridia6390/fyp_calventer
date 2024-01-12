@@ -38,7 +38,6 @@ body {
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  /* background-color: white; */
 }
 
 .form-container {
@@ -73,7 +72,6 @@ html {
   color: var(--black);
   outline: none;
   border: 1px solid #ccc;
-  /* background-color: transparent; */
   margin: 1rem 0;
 }
 

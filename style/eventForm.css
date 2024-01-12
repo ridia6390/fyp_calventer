@@ -38,7 +38,6 @@ body {
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  /* background-color: white; */
 }
 
 .btn,
@@ -72,9 +71,9 @@ html {
 }
 
 .event-form-container {
-  max-width: 500px; /* Set the maximum width */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add some padding for better visual appearance */
+  max-width: 500px; 
+  margin: 0 auto;
+  padding: 20px; 
 }
 
 

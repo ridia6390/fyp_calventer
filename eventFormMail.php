@@ -1,7 +1,4 @@
 <?php
-
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,30 +7,30 @@ require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
-// Create an instance; passing `true` enables exceptions
+
 if (isset($_POST["submit"])) {
 
   $mail = new PHPMailer(true);
 
   // Server settings
-  $mail->isSMTP();                              // Send using SMTP
-  $mail->Host = 'smtp.gmail.com';              // Set the SMTP server to send through
-  $mail->SMTPAuth = true;                      // Enable SMTP authentication
-  $mail->Username = '';                         // SMTP write your email
-  $mail->Password = '';                         // SMTP password
-  $mail->SMTPSecure = 'tls';                   // Enable implicit SSL encryption
+  $mail->isSMTP();                              
+  $mail->Host = 'smtp.gmail.com';              
+  $mail->SMTPAuth = true;                      
+  $mail->Username = '';                         
+  $mail->Password = '';                         
+  $mail->SMTPSecure = 'tls';                   
   $mail->Port = 587;
 
   // Recipients
-  $mail->setFrom($_POST["email"], $_POST["name"]); // Sender Email and name
-  $mail->addAddress(''); // Add a recipient email  
-  $mail->addReplyTo($_POST["email"], $_POST["name"]); // Reply to sender email
+  $mail->setFrom($_POST["email"], $_POST["name"]); 
+  $mail->addAddress(''); 
+  $mail->addReplyTo($_POST["email"], $_POST["name"]);
 
   // Content
-  $mail->isHTML(true);               // Set email format to HTML
-  $mail->Subject ="EVENT DETAILS";    // Email subject headings
+  $mail->isHTML(true);              
+  $mail->Subject ="EVENT DETAILS";    
 
-  // Concatenate all the form fields to create the email body
+  // Email Body
   $mail->Body .= "Email: " . $_POST["email"] . "<br>";
   $mail->Body .= "Name: " . $_POST["name"] . "<br>";
   $mail->Body .= "Title: " . $_POST["title"] . "<br>";
@@ -45,14 +42,14 @@ if (isset($_POST["submit"])) {
   $mail->Body .= "Venue: " . $_POST["venue"] . "<br>";
   $mail->Body .= "Description: " . $_POST["description"] . "<br>";
   
-// Attach the poster image to the email
+// Attaching the poster image to the email
 if (!empty($_FILES["poster"]["tmp_name"])) {
-  $allowedFormats = ['jpg', 'jpeg', 'png']; // Add more formats as needed
+  $allowedFormats = ['jpg', 'jpeg', 'png']; 
 
   $posterPath = $_FILES["poster"]["tmp_name"];
   $imageInfo = getimagesize($posterPath);
 
-  // Check if the file is an image and has an allowed format
+  // Checking if the file is an image and has an allowed format
   if ($imageInfo !== false && in_array(strtolower($imageInfo['mime']), ['image/jpeg', 'image/png'])) {
       $mail->addAttachment($posterPath, 'Poster Image', 'base64', $imageInfo['mime']);
       $mail->Body .= "Poster: <img src='cid:Poster Image'><br>";
@@ -62,7 +59,7 @@ if (!empty($_FILES["poster"]["tmp_name"])) {
   }
 }
 
-  // Additional headers and send the email
+  // Sending the email
   $mail->send();
 
   echo

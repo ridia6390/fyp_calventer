@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-
 :root {
   --box-color:#D6D6D6;
   --header-color:#383838;
@@ -16,10 +15,7 @@
   --card-color: #bbb;
 }
 
-
-
-/********************************ALL x Body*******************************************/
-
+/********************************BODY*******************************************/
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -34,16 +30,6 @@ body {
   background:#d4d4d4;
   
 }
-
-
-
-/*
-.section_clubs {
-  /*background-color: var(--wb-color);
-  padding: 20px;  Optional: Add padding for better visual appearance
-} 
-*/
-
 
 li{
 list-style: none;
@@ -74,48 +60,44 @@ a:hover{
   font-size: 12px; 
 }
 
+/********************************NAVBAR AND HEADER*******************************************/
 
-/********************************Navbar x header*******************************************/
-/* Add a media query for screens with a maximum width of 768px (adjust as needed) */
 @media only screen and (max-width: 768px) {
   .header {
-    padding: 0px 20px; /* Adjust padding for smaller screens */
+    padding: 0px 20px; 
   }
 
   .logo {
-    width: 15%; /* Adjust logo size for smaller screens */
+    width: 15%; 
   }
 
   .navbar {
-    flex-direction: column; /* Stack the navigation links vertically */
-    align-items: flex-end; /* Align the links to the right */
+    flex-direction: column; 
+    align-items: flex-end; 
     position: absolute;
-    top: 80px; /* Adjust the distance from the top */
+    top: 80px; 
     left: 0;
     width: 100%;
-    background: white; /* Background color for the mobile menu */
-    display: none; /* Hide the navigation links by default */
+    background: white; 
+    display: none; 
   }
 
   .navbar a {
-    padding: 15px; /* Adjust padding for the mobile menu */
-    text-align: center; /* Center the text in the mobile menu */
-    width: 100%; /* Make the links full width in the mobile menu */
+    padding: 15px; 
+    text-align: center; 
+    width: 100%; 
   }
 
- 
-
   .topnav .icon {
-    display: block; /* Display the navigation icon for smaller screens */
+    display: block;
     cursor: pointer;
   }
 
   .navbar.active {
-    display: flex; /* Display the navigation links when the mobile menu is active */
+    display: flex; 
   }
 }
 
-/*Nav*/
 .header {
   box-sizing: border-box;
   position: fixed;
@@ -154,18 +136,16 @@ a:hover{
 
 .bold-text {
   font-weight: bold;
-  font-size: 1.3rem; /* Make the text within the strong element bold */
+  font-size: 1.3rem; 
 }
 
 .smaller-text {
-  font-size: smaller; /* Set a smaller font size for the specific part of the text */
+  font-size: smaller; 
 }
 
 .navbar {
-  /* position: relative; */
   display: flex;
   column-gap: 0.5rem;
-  /* padding: 0px 50px; */
 }
 
 .navbar {
@@ -181,12 +161,7 @@ a:hover{
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
   text-decoration: none;
-  /* margin-right: 10px;  */
 }
-
-/* .navbar a:last-child {
-  margin-right: 0; 
-} */
 
 .navbar a:hover,
 .navbar .home-active {
@@ -229,7 +204,6 @@ a:hover{
   display: flex;
   align-items: center;
   margin-left: 100px;
-  
 }
 
 .user-profile img {
@@ -245,100 +219,26 @@ a:hover{
   font-weight: 600;
 }
 
-
 .logout-icon a {
-  color: #1d1b1b;  /* Set the desired color */
-  /* Adjust the margin as needed */
-  /* margin-bottom: 5px; */
+  color: #1d1b1b; 
   text-decoration: none;
   font-size: 25px;
-  transition: color 0.3s; /* Add a smooth color transition */
+  transition: color 0.3s; 
   display: inline-block;
   transform: rotate(180deg);
-  font-weight: 600;
-  
+  font-weight: 600; 
 }
 
 .logout-icon a:hover{
   color: red;
   background-color: transparent;
-
 }
 
-
-/*dropdown menu*/
-
-.dropdown_menu{
-  display: none;
-  position: absolute;
-  right: 2rem;
-  top: 60px;
-  height: 0;
-  width: 300px;
-  background: rgb(232, 232, 232);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dropdown_menu li {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column; /* Center items vertically */
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown_menu li:hover {
-  transform: scale(1.05);
-  color: var(--buttons);
-}
-.dropdown_menu.open{
-  height: 300px;
-}
-
-.dropdown_menu .action_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-
-
-/*responsive nav*/
-
-@media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn{
-    display: none;
-    
-  }
-
-  .navbar .toggle_btn{
-    display: block;
-  }
-
-  .dropdown_menu{
-    display: block;
-  }
-}
-
-@media (max-width: 576px) {
-  .dropdown_menu{
-      left: 2rem;
-      width: unset;
-
-  }
-  
-}
-
-
-/********************************Headings*******************************************/
-
+/********************************HEADINGS*******************************************/
 
 .custom-heading {
-  background-color: #229691; /* Change to your preferred background color */
-  color: #fff; /* Change to your preferred text color */
+  background-color: #229691;
+  color: #fff; 
   padding: 10px;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
@@ -379,12 +279,12 @@ a:hover{
   background-position: center;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  align-items: flex-end; /* Align items to the bottom of the container */
+  align-items: flex-end;
 }
 
 
 .home-text {
-  margin-bottom: 50px; /* Add margin to move the text lower */
+  margin-bottom: 50px; 
 }
 
 .home-text header_img{
@@ -409,20 +309,19 @@ a:hover{
   color: var(--background-color);
   letter-spacing: 2px;
   margin-bottom: 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust shadow values as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
   margin-left: 60px;
 }
 
 .home-text p {
   color: var(--background-color);
   font-size: 23px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust shadow values as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
   margin-left: 5px;
 }
 
-/* Add this style to adjust the position of the button */
 .home-btn {
-  margin-top: 10px; /* Adjust as needed */
+  margin-top: 10px; 
   display: inline-block;
   font-size: 16px;
   padding: 12px 15px;
@@ -439,15 +338,6 @@ a:hover{
   transform: scale(1.1);
 }
 
-
-
-
-
-
-
-/********************************slider header (NOT USED)*******************************************/
-
-
 .slider{
   width: 1300px;
   max-width: 100vw;
@@ -455,7 +345,7 @@ a:hover{
   margin: auto;
   position: relative;
   overflow: hidden;
-  top: -61px; /* Adjust the value as needed */
+  top: -61px; 
 }
 .slider .list {
   position: absolute;
@@ -464,7 +354,7 @@ a:hover{
   left: 0;
   top: 0;
   display: flex;
-  transition: 5s; /* Adjust the duration as needed */
+  transition: 5s; 
 }
 .slider .list img{
   width: 1300px;
@@ -519,10 +409,6 @@ a:hover{
   }
 }
 
-
-
-
-
 /********************************NEWS SLIDER*******************************************/
 
 
@@ -550,13 +436,13 @@ a:hover{
   border: 4px solid #000505ac;
   background-color: #ffffff;
   border-radius: 10px;
-  width: 650px; /* Adjust the width */
-  height: 409px; /* Adjust the height */
+  width: 650px; 
+  height: 409px; 
   align-items: center;
   display: flex;
   justify-content: center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.234);
-  margin: auto; /* Add this to center the container */
+  margin: auto; 
 }
 
 
@@ -565,12 +451,11 @@ a:hover{
   flex-direction: column;
   gap: 12px;
   max-height: 400px;
-  width: 540px; /* Decreased the width */
+  width: 540px; 
   background: #fafafa;
   border-radius: 12px;
-  padding: 10px; /* Increased the padding */
+  padding: 10px; 
   overflow-y: auto;
-  /*box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);*/
   border: 1px solid #ffffffd5;
 }
 
@@ -579,7 +464,7 @@ a:hover{
   flex: 0 0 100%;
   flex-direction: column;
   align-items: center;
-  padding: 10px; /* Increased the padding */
+  padding: 10px; 
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -597,8 +482,8 @@ a:hover{
 }
 
 .image img {
-  height: 100%; /* Decreased the height */
-  width: 100%; /* Decreased the width */
+  height: 100%; 
+  width: 100%; 
   border-radius: 12px;
   object-fit: cover;
 }
@@ -606,25 +491,25 @@ a:hover{
 .card h2 {
   margin-top: 15px;
   color: #333;
-  font-size: 18px; /* Decreased the font size */
+  font-size: 18px; 
   font-weight: 600;
 }
 
 .card p {
   margin-top: 8px;
-  font-size: 14px; /* Decreased the font size */
+  font-size: 14px; 
   font-weight: 400;
   color: #555;
   text-align: center;
 }
-/* Media query for smaller screens */
+
 @media only screen and (max-width: 600px) {
   .innercontainer {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; 
   }
 
   .container {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; 
   }
 }
 
@@ -634,7 +519,7 @@ a:hover{
 
 
 .Section_header{
-  padding: 40px 0; /*in the page*/
+  padding: 40px 0; 
   background: #f1f1f1;
   color: #434343;
   text-align: center;
@@ -674,7 +559,7 @@ a:hover{
   background: #fff;
   padding: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Add this line to set a fixed height */
+  height: 100%; 
 }
 
 .IIUM_clubs img {
@@ -689,25 +574,25 @@ a:hover{
 .club_code1 {
   margin-top: 0px;
   text-align: center;
-  background-color:#0A2472; /* Choose your desired background color */
-  padding: 10px; /* Add padding to create some space around the content */
-  border-radius: 1px; /* Adjust the value for the desired roundness */
+  background-color:#0A2472; 
+  padding: 10px; 
+  border-radius: 1px; 
 
 }
 .club_code2 {
   margin-top: 0px;
   text-align: center;
-  background-color:#2196F3; /* Choose your desired background color */
-  padding: 10px; /* Add padding to create some space around the content */
-  border-radius: 1px; /* Adjust the value for the desired roundness */
+  background-color:#2196F3; 
+  padding: 10px; 
+  border-radius: 1px; 
 
 }
 .club_code3 {
   margin-top: 0px;
   text-align: center;
-  background-color:#FFAC1C; /* Choose your desired background color */
-  padding: 10px; /* Add padding to create some space around the content */
-  border-radius: 1px; /* Adjust the value for the desired roundness */
+  background-color:#FFAC1C; 
+  padding: 10px; 
+  border-radius: 1px;
 }
 
 
@@ -725,7 +610,7 @@ a:hover{
 }
 
 .club-icons a:hover {
-  color: #27c0ac; /* Change color on hover */
+  color: #27c0ac; 
 }
 
 
@@ -752,31 +637,25 @@ a:hover{
   font-weight: 600;
   position: relative;
   top: 1.1em;
-  margin: 0 auto; /* Center align */
+  margin: 0 auto; 
   color: rgba(0, 0, 0, 0.5);
 
 }
-
-
-
-
-
 
  /********************************FOOTER*******************************************/
 
 footer{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center; 
+  align-items: center; 
   margin-top: auto;
   background-color: var(--header-color);
   padding: 60px 10%;
   padding-right: 10px;
-  text-align: center; /* Center text within the footer */
+  text-align: center; 
 
 }
-
 
 .footer-col{
   width: 30%;
@@ -818,7 +697,7 @@ footer{
 }
 
 .footer-icons a:hover {
-  color: #078c7c; /* Change color on hover */
+  color: #078c7c; 
 }
 
 .footer_span {

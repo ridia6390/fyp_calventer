@@ -6,19 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="style/fullcalendar.min.css">
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="style/bootstrap.min.css">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
   <link rel="stylesheet" href="style/adminCalendar.css">
   
   <title> Viewer Calendar </title>
@@ -97,12 +91,12 @@
         // New Event
         select: function (start, end) {
           $("#exampleModal").modal();
-          $("input[name=club_name]").val(''); // Clear club name input
-          $("input[name=event_title]").val(''); // Clear event title input
-          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); // Correctly set the date
-          $("input[name=start_time]").val(''); // Clear start time input
-          $("input[name=end_time]").val(''); // Clear end time input
-          $("input[name=club_name]").val(''); // Clear club name input
+          $("input[name=club_name]").val(''); 
+          $("input[name=event_title]").val(''); 
+          $("input[name=event_date]").val(moment(start).format('YYYY-MM-DD')); 
+          $("input[name=start_time]").val(''); 
+          $("input[name=end_time]").val(''); 
+          $("input[name=club_name]").val(''); 
         },
 
 
@@ -120,7 +114,7 @@
           <?php } ?>
         ],
 
-        // Modify Calendar Event
+        // Modifying Calendar Event
         eventClick: function (event) {
           $('#idEvent').val(event._id);
           $('#club_name').text(event.club_name);
@@ -134,14 +128,14 @@
 
       });
 
-      // Hide Notification Messages
+      // Hiding Notification Messages
       setTimeout(function () {
         $(".alert").slideUp(300);
       }, 3000);
     });
   </script>
 
-  <!-------------------------------------------------FOOTER------------------------------------------------------------->
+  <!-------------------------------------------------Footer------------------------------------------------------------>
 
   <footer class="footer">
     <div class="footer-col">

@@ -19,12 +19,6 @@ if (isset($_POST['update'])) {
 
     if ($update_profile) {
         $message[] = 'Profile information has been updated!';
-
-      //   if ($update_profile->rowCount() > 0) {
-      //       $message[] = 'Name and/or Email has been updated!';
-      //   } else {
-      //       $message[] = 'Name and/or Email could not be updated.';
-      //   }
     }
 
     $old_image = $_POST['old_image'];
@@ -84,10 +78,7 @@ if (isset($_POST['update'])) {
 
    <title>Update Admin Profile</title>
 
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-   <!-- custom css file link  -->
    <link rel="stylesheet" href="style/uprofile.css">
 
 </head>

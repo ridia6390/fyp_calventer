@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-
 :root {
   --box-color:#D6D6D6;
   --header-color:#383838;
@@ -18,7 +17,7 @@
 
 
 
-/********************************ALL x Body*******************************************/
+/********************************BODY*******************************************/
 
 
 * {
@@ -34,16 +33,6 @@ body {
   background:#d4d4d4;
   
 }
-
-
-
-/*
-.section_clubs {
-  /*background-color: var(--wb-color);
-  padding: 20px;  Optional: Add padding for better visual appearance
-} 
-*/
-
 
 li{
 list-style: none;
@@ -75,47 +64,47 @@ a:hover{
 }
 
 
-/********************************Navbar x header*******************************************/
-/* Add a media query for screens with a maximum width of 768px (adjust as needed) */
+/********************************NAVBAR AND HEADER*******************************************/
+
 @media only screen and (max-width: 768px) {
   .header {
-    padding: 0px 20px; /* Adjust padding for smaller screens */
+    padding: 0px 20px; 
   }
 
   .logo {
-    width: 15%; /* Adjust logo size for smaller screens */
+    width: 15%; 
   }
 
   .navbar {
-    flex-direction: column; /* Stack the navigation links vertically */
-    align-items: flex-end; /* Align the links to the right */
+    flex-direction: column; 
+    align-items: flex-end; 
     position: absolute;
-    top: 80px; /* Adjust the distance from the top */
+    top: 80px; 
     left: 0;
     width: 100%;
-    background: white; /* Background color for the mobile menu */
-    display: none; /* Hide the navigation links by default */
+    background: white; 
+    display: none; 
   }
 
   .navbar a {
-    padding: 15px; /* Adjust padding for the mobile menu */
-    text-align: center; /* Center the text in the mobile menu */
-    width: 100%; /* Make the links full width in the mobile menu */
+    padding: 15px; 
+    text-align: center; 
+    width: 100%; 
   }
 
  
 
   .topnav .icon {
-    display: block; /* Display the navigation icon for smaller screens */
+    display: block;
     cursor: pointer;
   }
 
   .navbar.active {
-    display: flex; /* Display the navigation links when the mobile menu is active */
+    display: flex; 
   }
 }
 
-/*Nav*/
+
 .header {
   box-sizing: border-box;
   position: fixed;
@@ -154,18 +143,16 @@ a:hover{
 
 .bold-text {
   font-weight: bold;
-  font-size: 1.3rem; /* Make the text within the strong element bold */
+  font-size: 1.3rem; 
 }
 
 .smaller-text {
-  font-size: smaller; /* Set a smaller font size for the specific part of the text */
+  font-size: smaller; 
 }
 
 .navbar {
-  /* position: relative; */
   display: flex;
   column-gap: 0.5rem;
-  /* padding: 0px 50px; */
 }
 
 .navbar {
@@ -181,16 +168,7 @@ a:hover{
   transition: background 0.1s, color 0.1s;
   border-radius: 5rem;
   text-decoration: none;
-  /* margin-right: 10px;  */
 }
-
-/* .navbar a:last-child {
-  margin-right: 0; 
-} */
-
-
-
- 
 
 .navbar a:hover,
 .navbar .about-active {
@@ -222,8 +200,6 @@ a:hover{
   transition: opacity 0.3s ease;
   z-index: 1;
   text-decoration: none;
-  /* margin-right: 0 !important;   */
-  /* padding: 0 !important;  */
 }
 
 .btn:hover {
@@ -235,15 +211,15 @@ a:hover{
   display: flex;
   align-items: center;
   margin-left: 100px;
-  /* margin-right: 50px; */
+  
 }
 
 .user-profile img {
-  border-radius: 50%; /* Make the image circular */
+  border-radius: 50%; 
   border: 2px solid #159572;
-  width: 40px; /* Set the width of the circular image */
-  height: 40px; /* Set the height of the circular image */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 40px; 
+  height: 40px; 
+  object-fit: cover; 
   margin-right: 8px;
 }
 
@@ -253,12 +229,10 @@ a:hover{
 
 
 .logout-icon a {
-  color: #1d1b1b;  /* Set the desired color */
-  /* Adjust the margin as needed */
-  /* margin-bottom: 5px; */
+  color: #1d1b1b;  
   text-decoration: none;
   font-size: 25px;
-  transition: color 0.3s; /* Add a smooth color transition */
+  transition: color 0.3s; 
   display: inline-block;
   transform: rotate(180deg);
   font-weight: 600;
@@ -271,90 +245,21 @@ a:hover{
 
 }
 
-
-/*dropdown menu*/
-
-.dropdown_menu{
-  display: none;
-  position: absolute;
-  right: 2rem;
-  top: 60px;
-  height: 0;
-  width: 300px;
-  background: rgb(232, 232, 232);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dropdown_menu li {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column; /* Center items vertically */
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown_menu li:hover {
-  transform: scale(1.05);
-  color: var(--buttons);
-}
-.dropdown_menu.open{
-  height: 300px;
-}
-
-.dropdown_menu .action_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-
-
-/*responsive nav*/
-
-@media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn{
-    display: none;
-    
-  }
-
-  .navbar .toggle_btn{
-    display: block;
-  }
-
-  .dropdown_menu{
-    display: block;
-  }
-}
-
-@media (max-width: 576px) {
-  .dropdown_menu{
-      left: 2rem;
-      width: unset;
-
-  }
-  
-}
-
-
-
 /********************************BANNER*******************************************/
 
 .banner {
   position: relative;
   text-align: center;
-  background-color: #ffffff; /* Background color of the banner */
-  color: white; /* Text color of the banner */
+  background-color: #ffffff; 
+  color: white; 
   padding: 15px;
-  margin-top: 10px; /* Adjust the margin as needed */
+  margin-top: 10px; 
 }
 
 .banner img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px; /* Adjust the border-radius as needed */
+  border-radius: 10px; 
 }
 
 .banner-content {
@@ -380,14 +285,13 @@ a:hover{
 
 .Section_About {
   margin-top: 30%;
-  border: 2px solid#078c7c; /* Border color */
-  border-radius: 15px; /* Adjust the value for the desired amount of rounding */
-  padding: 20px; /* Add padding to create some space between the content and the border */
+  border: 2px solid#078c7c; 
+  border-radius: 15px; 
+  padding: 20px; 
 }
 
-/*Background for the meet the team */
 .Section_header{
-  padding: 40px 0; /*in the page*/
+  padding: 40px 0; 
   background: #e5e6e6;
   color: #434343;
   text-align: center;
@@ -418,8 +322,8 @@ a:hover{
 
 
 .custom-heading {
-  background-color: #229691; /* Change to your preferred background color */
-  color: #fff; /* Change to your preferred text color */
+  background-color: #229691; 
+  color: #fff; 
   padding: 10px;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
@@ -446,7 +350,7 @@ a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content horizontally and vertically */
+  justify-content: center; 
   min-height: 100vh;
 }
 
@@ -499,13 +403,11 @@ a:hover{
  /********************************ABOUT US*******************************************/
 
 
-
 #services {
   padding: 50px 10%;
 background: #e5e6e6;
 
 }
-
 
 
 #services h2 {
@@ -534,7 +436,7 @@ background: #e5e6e6;
 
   .headings {
     text-align: center;
-    margin-bottom: 20px; /* Adjust the margin as needed */
+    margin-bottom: 20px;
   }
   
   .headings h2 {
@@ -549,7 +451,7 @@ background: #e5e6e6;
     width: 50px;
     background-color: #56ab91;
     margin: 0 auto;
-    margin-bottom: 20px; /* Adjust the margin as needed */
+    margin-bottom: 20px; 
   }
   
 
@@ -565,7 +467,7 @@ background: #e5e6e6;
 #services .rownew .item img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 15px; /* Add some margin to separate the image from the text */
+  margin-bottom: 15px; 
 }
 
 #services .rownew .item{
@@ -769,13 +671,13 @@ background: #e5e6e6;
 footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center; 
+  align-items: center;
   margin-top: auto;
   background-color: var(--header-color);
   padding: 60px 10%;
   padding-right: 10px;
-  text-align: center; /* Center text within the footer */
+  text-align: center;
 }
 
 .footer-col {
@@ -814,7 +716,7 @@ footer {
 }
 
 .footer-icons a:hover {
-  color: #078c7c; /* Change color on hover */
+  color: #078c7c; 
 }
 
 .footer_span {
